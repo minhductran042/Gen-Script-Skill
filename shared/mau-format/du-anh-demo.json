@@ -1,0 +1,251 @@
+{
+  "du_an": "Kịch bản Demo",
+  "kich_ban": [
+    {
+      "so": 1,
+      "ten": "Cà phê gói hay Phin?",
+      "thoi_luong": "~65 - 75s",
+      "boi_canh": "SÁNG - Nội",
+      "dao_cu": "1 cốc giấy/nhựa mang đi, 1 ly thủy tinh + phin nhôm cũ, phích nước nóng, chìa khóa xe máy.",
+      "tom_tat": "Cuộc đối thoại buổi sáng giữa hai người bạn cùng phòng. Sự vội vã của lối sống tiện lợi đối lập với sự kiên nhẫn trong tình cảm.",
+      "title": "NHANH HAY CHẬM?",
+      "dia_diem": "Bàn ăn cạnh cửa sổ phòng trọ",
+      "canh": [
+        {
+          "muc_dich": "Tình huống mở đầu / Hook",
+          "nhan_vat": "Nam 1 + Nam 2",
+          "noi_dung": "Hành động (0–2s): Cận cảnh hai bàn tay chia đôi khung hình: Một bên Nam 2 xé toạc túi giấy \"xoẹt\" đổ ào bột vào cốc ngoáy điên cuồng 3 giây; một bên Nam 1 nén phin nhôm chầm chậm, giọt nước sôi đầu tiên nhỏ xuống đáy cốc \"tỏng\".\n\nNam 2 cầm cốc cà phê giấy lắc lắc đá, uống ực một hơi dài rồi đập chìa khóa xe \"chát\" xuống bàn.\n\n\nNam 2: \"Xong! Mày ngồi ngắm cái phin nhôm đó từ 15 phút trước chưa chán à?\" \"Ồiii cậu ngắm, cậu ngắm đếy, mãi vẫn chưa xong..\"",
+          "bieu_cam": "Nam 2 vội vã, sốt ruột",
+          "goc_quay": "Góc Trung Đôi",
+          "text_noi_bat": "",
+          "ghi_chu": "Đoạn nhạc nền của Low G phát nhỏ dần \"chuyên gia tán gái ngoại thương trên Tinder..\"",
+          "giay": "0–5s"
+        },
+        {
+          "muc_dich": "Quan sát & Châm chọc",
+          "nhan_vat": "Nam 1 + Nam 2",
+          "noi_dung": "Nam 1 châm thêm một thìa nước sôi vào nắp phin, khói bốc nhẹ.\n\n\nNam 1: \"Đi đâu mà vội thế? Hôm nay cuối tuần mà.\" \n\n\nNam 2 khoe màn hình app hẹn hò: \"\"Đi date! Hôm qua đánh pick gặp em này, nói chuyện cuốn vãi. Tối nay vào việc luôn.\"",
+          "bieu_cam": "Nam 1 thong thả; Nam 2 đắc chí, hào hứng",
+          "goc_quay": "Cận cảnh Nam 2",
+          "text_noi_bat": "\"Match hôm qua, tối nay chốt hẹn\"",
+          "ghi_chu": "Ánh sáng màn hình điện thoại phản chiếu vào mắt Nam 2",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Khơi mào xung đột",
+          "nhan_vat": "Nam 1",
+          "noi_dung": "Nam 1 nhìn từng giọt cà phê đen đặc rơi tí tách xuống đáy ly thủy tinh.\n\n\nNam 1: \"Tuởng mày bảo em Ngoại thương là lần rung động cuối cơ mà?\"",
+          "bieu_cam": "Cười nhạt, giọng trầm và sâu cay",
+          "goc_quay": "Cận đặc tả ly cà phê",
+          "text_noi_bat": "",
+          "ghi_chu": "Cận cảnh giọt cà phê rơi chậm, bắt nét xuyên qua lớp thủy tinh",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Tự vệ & Biện hộ",
+          "nhan_vat": "Nam 2",
+          "noi_dung": "Nam 2 kéo ghế ngồi thụp xuống, tay vò nát chiếc cốc giấy rỗng.\n\n\nNam 2: \"Ừ thì... không hoà được thì tan thế thôi.\"",
+          "bieu_cam": "Thực dụng, cố chấp bảo vệ quan điểm",
+          "goc_quay": "Cận cảnh Nam 2",
+          "text_noi_bat": "\"Hợp thì tới, nhạt thì next\"",
+          "ghi_chu": "Tiếng cốc giấy bị bóp méo sột soạt",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Phản đòn triết lý",
+          "nhan_vat": "Nam 1",
+          "noi_dung": "Nam 1 nhấc phin ra, đặt nhẹ lên nắp phin nhôm \"keng\". Cậu đẩy ly cà phê nâu sẫm về phía Nam 2.\n\n\nNam 1: \"Cà phê gói thì nhanh thật đấy. Pha cái là uống được luôn. Nhưng mà mày có bao giờ ngồi đợi cà phê nhỏ từng giọt chưa?\" (nhưng chẳng đọng lại gì)",
+          "bieu_cam": "Ánh mắt nhìn thẳng, nghiêm túc",
+          "goc_quay": "Cận cảnh Nam 1",
+          "text_noi_bat": "\"Một buổi chiều ngồi nghe... còn không kiên nhẫn nổi\"",
+          "ghi_chu": "Nhịp thoại chậm lại, không gian tĩnh lặng",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Khoảng lặng thức tỉnh",
+          "nhan_vat": "Nam 2",
+          "noi_dung": "Nam 2 nhìn xuống vệt cà phê dính đáy cốc giấy méo mó, rồi nhìn sang ly cà phê đang bốc khói của Nam 1. Điện thoại Nam 2 rung bần bật tin nhắn thông báo, nhưng cậu không đưa tay nhặt máy.",
+          "bieu_cam": "Khựng lại, bối rối, ánh mắt chùng xuống",
+          "goc_quay": "Cận cảnh Nam 2",
+          "text_noi_bat": "",
+          "ghi_chu": "Tiếng rung điện thoại \"bzz... bzz\" ngắt quãng giữa khoảng im lặng",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Đòn bẩy thông điệp",
+          "nhan_vat": "Nam 1",
+          "noi_dung": "Nam 1 cầm thìa khuấy nhẹ ly cà phê, đưa lên mũi ngửi hương thơm mộc.\n\n\nNam 1:   \"Cái gì dễ đến thì cũng dễ đi thôi. Muốn có hương vị thật sự, thì phải chịu được cảm giác ngồi chờ từng giọt lắng xuống.\"",
+          "bieu_cam": "Bình thản, ấm áp",
+          "goc_quay": "Cận cảnh Nam 1",
+          "text_noi_bat": "",
+          "ghi_chu": "Bắt nét vào nụ cười nhẹ của Nam 1",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Kết & Đọng lại",
+          "nhan_vat": "Nam 1 + Nam 2",
+          "noi_dung": "Nam 2 từ từ thả lỏng vai, với tay lấy chiếc cốc thủy tinh thứ hai rót nước lọc uống chậm rãi. Cả hai ngồi im nhìn ra ngoài ban công đầy nắng sớm.\n\n\nVoice Nam 1: \"quan trong la y, a thoi, Uống đi. Uống chậm thôi cho nó ngấm.\"",
+          "bieu_cam": "Lắng đọng, bình yên",
+          "goc_quay": "Góc rộng",
+          "text_noi_bat": "Những thứ đậm đà nhất không bao giờ đến từ sự gấp gáp",
+          "ghi_chu": "Nhạc guitar mộc dạo nốt trầm buông lơi, khung hình mờ dần",
+          "giay": ""
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Sập nguồn",
+      "thoi_luong": "~60s",
+      "boi_canh": "",
+      "dao_cu": "1 xe máy, 1điện thoại",
+      "tom_tat": "Một người trẻ vừa tan ca ngồi chết lặng trên yên xe máy bên bờ kè lộng gió, cắm mặt lướt màn hình vô thức cho đến khi điện thoại sập nguồn, buộc phải ngẩng đầu nhìn thành phố đêm.",
+      "title": "SẬP NGUỒN NGOÀI PHỐ",
+      "dia_diem": "Bờ kè ven sông / Bậc thềm ven hồ ban đêm",
+      "canh": [
+        {
+          "muc_dich": "Hook mở màn",
+          "nhan_vat": "Nam (Độc diễn)",
+          "noi_dung": "Hành động (0–2s): Cận cảnh hai bàn tay chia đôi khung hình: Một bên Nam 2 xé toạc túi giấy \"xoẹt\" đổ ào bột vào cốc ngoáy điên cuồng 3 giây; một bên Nam 1 nén phin nhôm chầm chậm, giọt nước sôi đầu tiên nhỏ xuống đáy cốc \"tỏng\".\n\nNam ngồi thụp trên yên xe máy tắt máy, hai chân buông thõng, mũ bảo hiểm vẫn móc tòng teng trên gương. Ánh sáng xanh điện thoại hắt lên mặt Nam.\n\n\nNgón tay cái quẹt màn hình liên tục với tốc độ máy móc, ánh mắt đờ đẫn, vô hồn. Lướt Tiktok trong vô thức",
+          "bieu_cam": "Kiệt sức, mắt dại đi",
+          "goc_quay": "Cận đặc tả mặt",
+          "text_noi_bat": "",
+          "ghi_chu": "Tiếng âm thanh clip ngắn đổi liên tục, xen lẫn tiếng xe cộ lướt qua xé gió",
+          "giay": "0–5s"
+        },
+        {
+          "muc_dich": "Biến cố đột ngột",
+          "nhan_vat": "Nam",
+          "noi_dung": "Điện thoại màn hình đen xì, bật ko lên",
+          "bieu_cam": "Khựng lại, hụt hẫng",
+          "goc_quay": "Cận cảnh điện thoại",
+          "text_noi_bat": "",
+          "ghi_chu": "Âm thanh tắt lịm (Drop sound), giữ im lặng 1 giây",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Thói quen quán tính",
+          "nhan_vat": "Nam",
+          "noi_dung": "Nam bấm nút nguồn liên tục, đập nhẹ đáy máy vào đùi: \"Haiz... Sập nguồn r\".",
+          "bieu_cam": "Bực bội, thở dài bất lực",
+          "goc_quay": "Cận cảnh Nam",
+          "text_noi_bat": "",
+          "ghi_chu": "Tiếng bấm phím cơ tạch tạch",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Đối diện thực tại",
+          "nhan_vat": "Nam",
+          "noi_dung": "Nam buông lỏng hai tay, nhìn trân trân vào mặt kính điện thoại đen bóng. Ánh đèn đường vàng vọt phía trên hắt xuống, thấy rõ khuôn mặt hốc hác, bơ phờ của chính mình in trên màn hình.",
+          "bieu_cam": "Bàng hoàng, cay đắng",
+          "goc_quay": "Cận đặc tả mặt kính phản chiếu",
+          "text_noi_bat": "",
+          "ghi_chu": "Bắt nét vào hình ảnh phản chiếu gương mặt Nam trên lớp kính đen",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Trút bỏ gánh nặng",
+          "nhan_vat": "Nam",
+          "noi_dung": "Nam nhét hẳn điện thoại vào túi áo khoác kéo khóa lại. Cậu chống hai tay ra sau yên xe, ngửa cổ ra sau hít một hơi thật sâu làn gió đêm lùa vào mặt.",
+          "bieu_cam": "Cơ mặt giãn ra, buông xuôi",
+          "goc_quay": "Góc trung",
+          "text_noi_bat": "",
+          "ghi_chu": "Tiếng thở hắt ra thật dài giải tỏa áp lực",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Thức tỉnh & Kết mở",
+          "nhan_vat": "Nam",
+          "noi_dung": "Cậu ngồi thẳng lại, đưa mắt ngắm mặt nước hồ lấp lánh phản chiếu hàng vệt đèn đường kéo dài phía xa. Khóe môi khẽ nhếch lên một nụ cười nhẹ tênh.\n\n\nVoice Nam (nói khẽ tự nhủ): \"Đến cái máy còn cần phải sạc lại pin...\"\n\n*Nhắn sếp: \"Em xin nghỉ ngày mai nhé ạ.\"\n\nThông điệp: \"Sạc tí đi!\"",
+          "bieu_cam": "Nhẹ nhõm, bình yên",
+          "goc_quay": "Góc rộng nhìn từ sau lưng",
+          "text_noi_bat": "Biết tự ngắt nguồn để tự cứu mình",
+          "ghi_chu": "Khung hình mở rộng ra khoảng trời đêm, nhạc guitar mộc đệm nốt trầm buông lơi",
+          "giay": ""
+        }
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Đổi chỗ lướt máy?",
+      "thoi_luong": "~70s",
+      "boi_canh": "",
+      "dao_cu": "1 bàn nhựa vỉa hè (hoặc 3 yên xe máy dựng sát nhau), 3 cốc trà đá, 1 đĩa hạt hướng dương, 2 chiếc điện thoại.",
+      "tom_tat": "Ba thằng bạn hẹn nhau ra vỉa hè hóng gió đổi gió, nhưng cuối cùng lại thành buổi tụ tập mà mỗi đứa cắm mặt vào một chiếc màn hình riêng.",
+      "title": "ĐỔI CHỖ LƯỚT MÁY?",
+      "dia_diem": "Quán trà đá vỉa hè vắng ban đêm",
+      "canh": [
+        {
+          "muc_dich": "Tình huống mở đầu (Hook)",
+          "nhan_vat": "Nam 1 + Nam 2 + Nam 3",
+          "noi_dung": "Tiếng Game Liên quân (sound gì đó hài hài) kiểu enemy Pentakill,... Zoom out ra xa\n\nBàn nhựa lùn đặt 3 cốc trà đá đầy ắp và đĩa hạt hướng dương. Nam 1 bốc một nhúm cắn \"tách\" một cái, nhìn sang hai bên.\n\n\nNam 1: \"Rủ đi trà đá mà mỗi thằng lại đá một máy, Anh em tâm sự tí đê\"",
+          "bieu_cam": "Hào hứng, thoải mái",
+          "goc_quay": "Góc Trung Đôi",
+          "text_noi_bat": "",
+          "ghi_chu": "Tiếng Liên Quân ingame",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Bơ đẹp giữa phố",
+          "nhan_vat": "Nam 2 + Nam 3",
+          "noi_dung": "Nam 2 ngồi cong lưng, ngón tay cái miết màn hình lia lịa: \"Mày AFK à, thằng rừng nó xuống gank kìa\"\n\n\nNam 3 một tay cầm cốc nước, mắt dán chặt vào tin nhắn: \"Rừng cái gì, tao bị ông Sếp lại gank, dí task khẩn cấp đây này\"",
+          "bieu_cam": "Dán mắt vào màn hình",
+          "goc_quay": "Góc trung bao quát",
+          "text_noi_bat": "\"Chờ tí nốt pha này...\"",
+          "ghi_chu": "Tiếng in-game Liên Quân, tiếng lúc mình bị hạ",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Bực mình đỉnh điểm",
+          "nhan_vat": "Nam 1",
+          "noi_dung": "Nam 1 nhìn đĩa hướng dương đầy nguyên, rồi nhìn hai đứa bạn. Cậu đặt mạnh cốc trà đá xuống bàn nhựa \"chát\", nước đá bắn cả ra mép bàn.",
+          "bieu_cam": "Cáu thật sự, khó chịu",
+          "goc_quay": "Cận cảnh cốc nước va bàn",
+          "text_noi_bat": "",
+          "ghi_chu": "Tiếng va đập mạnh làm rung bàn nhựa",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Nói thẳng mặt",
+          "nhan_vat": "Nam 1",
+          "noi_dung": "Nam 1 chỉ tay vào mặt từng đứa, giọng gắt nhưng không sến.\n\n\nNam 1: \"Đứa nào hồi chiều nằng nặc đòi tao dắt ra đây hóng gió cho đỡ ngột ngạt? Ra đến nơi rồi mỗi thằng ôm một góc cắm mặt vào máy. Thế chúng mày dắt tao ra đây để đổi chỗ lướt điện thoại à?\"",
+          "bieu_cam": "Bất bình, gằn giọng",
+          "goc_quay": "Cận cảnh Nam 1",
+          "text_noi_bat": "\"Dắt nhau ra đây để đổi chỗ lướt điện thoại?\"",
+          "ghi_chu": "Tiếng xe cộ phía sau lướt qua làm nền cho sự im lặng",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Sượng sùng thức tỉnh",
+          "nhan_vat": "Nam 2 + Nam 3",
+          "noi_dung": "Nam 2 giật mình, ngón tay khựng lại trên màn hình. Nam 3 lúng túng nhìn cốc nước của Nam 1 rồi nhìn đĩa hướng dương. Cả hai đứa biết mình lố.",
+          "bieu_cam": "Ngượng, chột dạ",
+          "goc_quay": "Góc Trung Đôi",
+          "text_noi_bat": "",
+          "ghi_chu": "Khoảng lặng ngột ngạt 2 giây không đứa nào dám cãi",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Phá tan không khí",
+          "nhan_vat": "Nam 2 + Nam 3",
+          "noi_dung": "Nam 2 úp mạnh cái điện thoại xuống bàn nhựa \"bốp\", với tay bốc cả vốc hướng dương ném vào người Nam 1.\n\n\nNam 2: \"Cáu cái gì, thua mẹ ván game rồi đây này! Đưa đĩa hướng dương đây!\"\n\n\nNam 3 cũng tắt màn hình nhét tọt vào túi quần, cầm cốc trà đá lên cụng vào cốc Nam 1: \"Rồi rồi, tao xong việc rồi, uống đi ông nội!\"",
+          "bieu_cam": "Chữa ngượng, cười trừ, tự nhiên",
+          "goc_quay": "Cận cảnh bàn tay cụng cốc",
+          "text_noi_bat": "",
+          "ghi_chu": "Tiếng đá va lách cách giòn giã",
+          "giay": ""
+        },
+        {
+          "muc_dich": "Kết nối thực tế",
+          "nhan_vat": "Cả 3 người",
+          "noi_dung": "Ba thằng chụm đầu quanh bàn nhựa vỉa hè, vừa cắn hướng dương vừa trêu chọc chuyện công việc, tiếng cười rôm rả át cả tiếng xe máy chạy ngoài đường.\n\n\nNam 1 vừa cắn hạt vừa lầm bầm: \"Thằng nào rút máy ra lần nữa tao bắt bao cả bàn.\"",
+          "bieu_cam": "Vui vẻ, rạng rỡ, đúng chất bạn bè",
+          "goc_quay": "Góc rộng",
+          "text_noi_bat": "",
+          "ghi_chu": "Bắt hình ảnh hai chiếc điện thoại nằm úp mặt im lìm trên góc bàn",
+          "giay": ""
+        }
+      ]
+    }
+  ]
+}

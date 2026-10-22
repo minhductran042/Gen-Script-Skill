@@ -1,0 +1,17 @@
+# Analysis tools installed on first use by shared/scripts/phan_tich_mau.py (venv + whisper models)
+.cong-cu/
+
+# Reference-video media: downloaded / extracted only for analysis, never shared
+du-an/**/mau/**/*.mp4
+du-an/**/mau/**/*.webm
+du-an/**/mau/**/*.mkv
+du-an/**/mau/**/*.mov
+du-an/**/mau/**/*.wav
+du-an/**/mau/**/khung/
+du-an/*-mau-*/**/*.mp4
+du-an/*-mau-*/**/*.wav
+du-an/*-mau-*/**/khung/
+
+__pycache__/
+
+lich-su

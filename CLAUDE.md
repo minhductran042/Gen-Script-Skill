@@ -1,7 +1,8 @@
 # Workspace kịch bản video ngắn
 
 Bộ skill brainstorm, viết và review kịch bản video ngắn dọc mang chất điện ảnh cho TikTok / YouTube Shorts.
-Đọc `README.md` để biết luồng và cấu trúc thư mục.
+Đọc `README.md` để biết luồng và cấu trúc thư mục. Cửa vào duy nhất cho người dùng là `/vid`; sở thích mặc định
+của team ở `shared/cau-hinh.md`.
 
 - Trả lời người dùng bằng tiếng Việt.
 - Mọi kịch bản lưu dạng JSON (`kich-ban-vN.json`) làm bản gốc, Excel chỉ là bản xuất. Sửa JSON rồi xuất lại, không

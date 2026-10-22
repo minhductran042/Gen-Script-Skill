@@ -1,6 +1,6 @@
 ---
 name: vid-brainstorm
-description: "Brainstorm concept video ngắn dọc mang chất điện ảnh, ẩn dụ hài đời thường cho khán giả 17–30 trên TikTok / YouTube Shorts. Đi qua năm pha: đào vấn đề thật (insight), phân kỳ ít nhất 15 ý thô qua sáu lăng kính (đồ vật, tình huống song song, phóng đại thể loại, nhân hoá, thế giới đảo luật, đảo vai), hội tụ bằng ma trận chấm điểm, phát triển thành thẻ concept (logline, hook có mã dạng, ẩn dụ và điểm khớp, beat lật, kết, nhân vật, bối cảnh, rủi ro quay), rồi tự phản biện từng concept. Nhận đầu vào là ý tưởng thô, hoặc video / kịch bản mẫu mà người dùng muốn học cấu trúc rồi biến tấu khác đi. Dùng khi user nói 'brainstorm video', 'nghĩ ý tưởng', 'cho vài concept', 'từ video mẫu này nghĩ cái khác', 'ý tưởng về <chủ đề>'. Viết kịch bản đầy đủ thì dùng vid-viet-kich-ban; chạy cả quy trình thì dùng vid-flow."
+description: "Brainstorm concept video ngắn dọc mang chất điện ảnh, ẩn dụ hài đời thường cho khán giả 17–30 trên TikTok / YouTube Shorts. Đi qua năm pha: đào vấn đề thật (insight), phân kỳ ít nhất 15 ý thô qua sáu lăng kính (đồ vật, tình huống song song, phóng đại thể loại, nhân hoá, thế giới đảo luật, đảo vai), hội tụ bằng ma trận chấm điểm, phát triển thành thẻ concept (logline, hook có mã dạng, ẩn dụ và điểm khớp, beat lật, kết, nhân vật, bối cảnh, rủi ro quay), rồi tự phản biện từng concept. Nhận đầu vào là ý tưởng thô, hoặc video / kịch bản mẫu mà người dùng muốn học cấu trúc rồi biến tấu khác đi. Dùng khi user nói 'brainstorm video', 'nghĩ ý tưởng', 'cho vài concept', 'từ video mẫu này nghĩ cái khác', 'ý tưởng về <chủ đề>'. Viết kịch bản đầy đủ thì dùng vid-viet-kich-ban; chạy cả quy trình thì dùng /vid."
 argument-hint: <ý tưởng | đường dẫn 00-brief.md>
 ---
 
@@ -25,8 +25,11 @@ khuôn luật và nghề. Không lấy nội dung trong `shared/mau-format/` là
 
 ## Đầu vào
 
-- `00-brief.md` (khi chạy từ vid-flow), hoặc lời người dùng.
+- `00-brief.md` (khi chạy từ /vid), hoặc lời người dùng.
 - Gọi trực tiếp mà thiếu thời lượng: hỏi một lần, gộp các câu.
+- Mục "Chế độ" của brief là **nhanh**: pha 2 tối thiểu 8 ý thô (mỗi lăng kính ít nhất 1), pha 3 chọn 3 concept (vẫn giữ một
+  concept "liều" nếu có ý đủ lạ), pha 5 chỉ ghi điểm yếu nhất và cách sửa. Các luật loại ý (quay được, vùng cấm) giữ
+  nguyên.
 - Đầu vào chưa rõ chủ đề, câu chuyện hay thông điệp: xử lý theo `chu-de-va-thong-diep.md` mục 3, không chặn lại hỏi
   trừ trường hợp hoàn toàn không có chủ đề.
 
@@ -168,6 +171,17 @@ chạy `vid-phan-tich-mau` trước.
 
 ## Tóm tắt (để người dùng chọn)
 | # | Tên / Title | Chủ đề | Thông điệp | Ẩn dụ | Hook | Nhân vật · Bối cảnh | Độ khó quay | Điểm mạnh nhất |
+(xếp theo tổng điểm pha 3 từ cao xuống)
+
+## Thẻ xem trước
+Mỗi concept đúng 6 dòng, mỗi dòng dưới khoảng 70 ký tự, để `/vid` đặt cạnh nút chọn:
+### C<n>
+Logline: <…>
+Hook: <HK-Dxx> <khung đầu>
+Ẩn dụ: <hình ảnh> = <vấn đề>
+Kết: <câu đọng>
+Vai · nơi: <số người, nam / nữ> · <bối cảnh>
+Độ khó quay: <Dễ | Vừa | Khó> · <điểm mạnh nhất>
 
 ## Insight
 ## Cấu trúc rút từ mẫu (nếu có)

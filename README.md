@@ -1,50 +1,65 @@
 # Bộ skill kịch bản video ngắn
 
 Mở Claude Code ở thư mục này (`D:\scripts-gen-skills`) thì các skill trong `.claude/skills/` tự được nạp.
-Bắt đầu nhanh: `/vid-flow <ý tưởng>`.
+Chỉ cần nhớ một lệnh: **`/vid`**.
+
+| Gõ | Kết quả |
+|---|---|
+| `/vid` | Menu: làm video mới · làm tiếp dự án dở · mổ video mẫu · review kịch bản |
+| `/vid bố ít nói, 60s` | Làm video mới từ ý tưởng |
+| `/vid làm 3 video về deadline` | Ba kịch bản, một file Excel ba sheet |
+| `/vid <link video> làm theo cái này` | Phân tích mẫu rồi làm video theo công thức của mẫu |
+| `/vid theo mẫu <tên>` | Dùng bản phân tích đã lưu trong thư viện |
+| `/vid tiếp` | Làm tiếp dự án dở |
+| `/vid du-an/<...>/kich-ban-v2.json` | Review kịch bản có sẵn |
+| `/vid series …` | Lên khung series |
+| thêm chữ `nhanh` | Chế độ nhanh: 3 concept, sửa tối đa 1 vòng |
+
+Sở thích mặc định của team (thời lượng, khán giả, tông…) ghi ở `shared/cau-hinh.md`; mục nào đã ghi thì không bị hỏi lại.
 
 ## Luồng
 
 ```
- Ý tưởng thô (± tham khảo tuỳ chọn, ± link / file video mẫu tuỳ chọn)
+ /vid ─ chọn hướng (menu khi gọi trống)
           │
    [0a] chỉ khi có video mẫu: vid-phan-tich-mau (agent) ─ vì sao mẫu thu hút + công thức + không được chép
           │
-   [0] vid-flow: chốt brief ─ thiếu thì hỏi một lượt (có mẫu: học gì, mức bám, lưu thư viện)
+   [0] chốt brief ─ một lượt hỏi, tối đa 4 câu bằng nút bấm; mục có trong cau-hinh.md thì không hỏi
           │
-   [1] vid-brainstorm ─ insight → ≥15 ý thô → chấm → 5–8 concept → tự phản biện
+   [1] vid-brainstorm ─ insight → ≥15 ý thô → chấm → 5–8 concept → tự phản biện (nhanh: 8 ý, 3 concept)
           │
-   ⏸ người dùng chọn / ghép / yêu cầu nghĩ lại
+   ⏸ chọn trong 3 concept điểm cao nhất (thẻ xem trước) / xem thêm / ghép / nghĩ lại
           │
    [2] vid-viet-kich-ban ─ 8 lượt viết → kiem → JSON + Excel
           │
    [3] vid-review (agent độc lập) ─ 5 lượt đọc → bảng lỗi có mã + điểm
           │
-   Đạt? ─ không → [4] sửa → review lại (tối đa 2 vòng, quá thì hỏi người dùng)
+   Đạt? ─ không → [4] sửa → review lại (tối đa 2 vòng, nhanh 1 vòng; quá thì hỏi người dùng)
           │ có
-   ⏸ người dùng duyệt
+   ⏸ người dùng duyệt (cả lô một lần)
           │
-   [5] kich-ban-final.xlsx + 05-ban-giao.md (đạo cụ, thứ tự quay, cảnh chèn, ghi chú dựng)
+   [5] kich-ban-final.xlsx (mỗi kịch bản một sheet, có Tổng quan) + 05-ban-giao.md
 ```
 
-Series: chạy `/vid-series` trước để có `series.md`, rồi mỗi tập đi qua `vid-flow`.
+Series: chạy `/vid-series` trước để có `series.md`, rồi mỗi tập đi qua `/vid`.
 
 ## Skill
 
 | Skill | Làm gì | Gọi khi |
 |---|---|---|
-| `vid-flow` | Điều phối cả luồng, giữ trạng thái, gói bàn giao | Làm một video từ đầu tới cuối, hoặc làm tiếp |
+| `/vid` | Cửa vào duy nhất: chọn hướng, điều phối cả luồng, giữ trạng thái, gói bàn giao | Mọi lúc; các skill dưới gọi thẳng khi chỉ cần một việc |
 | `vid-brainstorm` | Năm pha: insight, phân kỳ, hội tụ, thẻ concept, phản biện | Chỉ cần ý tưởng |
 | `vid-viet-kich-ban` | Viết mới (8 lượt), sửa theo review, chuyển format | Có concept, cần kịch bản |
 | `vid-review` | Năm lượt đọc, bảng lỗi có mã, điểm theo mốc | Có kịch bản, cần góp ý |
 | `vid-series` | Loại series, động cơ tập, nhân vật cố định, danh sách tập | Làm nhiều tập |
-| `vid-phan-tich-mau` | Tải / tách video mẫu, đo nhịp dựng, chép lời, mổ theo lớp, vì sao thu hút, công thức, thư viện mẫu | Có video mẫu; `vid-flow` tự gọi |
+| `vid-phan-tich-mau` | Tải / tách video mẫu, đo nhịp dựng, chép lời, mổ theo lớp, vì sao thu hút, công thức, thư viện mẫu | Có video mẫu; `/vid` tự gọi |
 
 ## Cấu trúc
 
 ```
-.claude/skills/            6 skill
+.claude/skills/            6 skill (vid là cửa vào)
 shared/
+  cau-hinh.md              sở thích mặc định của team, mục đã ghi thì /vid không hỏi lại
   luat/                    RÀNG BUỘC CỨNG, luôn áp
     format-kich-ban.md       10 cột, cách viết từng cột, JSON
     dieu-kien-san-xuat.md    9 người, 1 máy quay, hệ quả khi viết, kiểm "quay được"
@@ -90,10 +105,10 @@ Python thì skill tự cài bằng winget / brew / apt.
 
 ## Dùng tham khảo cho một lần làm
 
-Nói kèm khi gọi, ví dụ `/vid-flow <ý tưởng>, tham khảo shared/tham-khao/kho-hook.md`.
+Nói kèm khi gọi, ví dụ `/vid <ý tưởng>, tham khảo shared/tham-khao/kho-hook.md`.
 Không nói gì thì skill không đọc `tham-khao/`.
 
-Video mẫu cũng là tuỳ chọn: `/vid-flow <ý tưởng> <link video>` hoặc `/vid-flow <ý tưởng>, theo mẫu <slug>`. Không đưa
+Video mẫu cũng là tuỳ chọn: `/vid <ý tưởng> <link video>` hoặc `/vid <ý tưởng>, theo mẫu <slug>`. Không đưa
 mẫu thì luồng không hỏi gì về mẫu. Chỉ muốn mổ video: `/vid-phan-tich-mau <link>`.
 
 ## Còn CHƯA CHỐT

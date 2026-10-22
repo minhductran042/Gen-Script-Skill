@@ -1,6 +1,6 @@
 ---
 name: vid-series
-description: "Lên khung series video ngắn dọc nhiều tập: chọn loại series (cùng công thức khác nhân vật, nhân vật cố định mỗi tập trọn chuyện, hay có mạch xuyên tập), định nghĩa động cơ tập (công thức lặp sinh ra tập mới), nhân vật cố định với tính cách, mong muốn, tật, câu cửa miệng và quan hệ, dấu hiệu nhận diện (tên, câu mở, nhạc, khung chữ), danh sách tập với insight, ẩn dụ, hook và móc nối, luật để mỗi tập xem độc lập vẫn hiểu. Ra series.md làm kinh thánh series cho các tập; từng tập sau đó đi qua vid-flow. Có chế độ thêm tập và cập nhật kinh thánh sau mỗi tập. Dùng khi user nói 'làm series', 'lên khung nhiều tập', 'phát triển ý tưởng này thành series', 'thêm tập mới cho series <tên>', 'nghĩ tiếp tập sau'."
+description: "Lên khung series video ngắn dọc nhiều tập: chọn loại series (cùng công thức khác nhân vật, nhân vật cố định mỗi tập trọn chuyện, hay có mạch xuyên tập), định nghĩa động cơ tập (công thức lặp sinh ra tập mới), nhân vật cố định với tính cách, mong muốn, tật, câu cửa miệng và quan hệ, dấu hiệu nhận diện (tên, câu mở, nhạc, khung chữ), danh sách tập với insight, ẩn dụ, hook và móc nối, luật để mỗi tập xem độc lập vẫn hiểu. Ra series.md làm kinh thánh series cho các tập; từng tập sau đó đi qua /vid. Có chế độ thêm tập và cập nhật kinh thánh sau mỗi tập. Dùng khi user nói 'làm series', 'lên khung nhiều tập', 'phát triển ý tưởng này thành series', 'thêm tập mới cho series <tên>', 'nghĩ tiếp tập sau'."
 argument-hint: <ý tưởng series | du-an/<series>/series.md để thêm tập>
 ---
 
@@ -123,7 +123,7 @@ Ghi vào `du-an/<YYYY-MM-DD>-<slug-series>/series.md`:
 ## Chế độ 2: Làm từng tập
 
 - Mỗi tập là một thư mục con `du-an/<series>/tap-<n>/`.
-- Chạy `vid-flow` với brief ghi "Dạng: tập <n> của series <tên>", trỏ tới `series.md`.
+- Chạy `/vid` với brief ghi "Dạng: tập <n> của series <tên>", trỏ tới `series.md`.
 - Các skill con đọc `series.md` để giữ tính cách, câu cửa miệng và dấu hiệu nhận diện; `vid-review` kiểm SR-01, SR-02,
   SR-03.
 

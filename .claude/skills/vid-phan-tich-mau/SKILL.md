@@ -1,6 +1,6 @@
 ---
 name: vid-phan-tich-mau
-description: "Phân tích video mẫu (link TikTok / YouTube / Reels, file .mp4, hoặc ảnh chụp + mô tả) để chỉ ra vì sao video thu hút: hook ba lớp, điểm giữ chân, cấu trúc beat, ẩn dụ và thông điệp, cơ chế hài, ngôn ngữ điện ảnh, nhịp dựng đo được (số cut, độ dài shot, khoảng lặng), lời thoại chép tự động có mốc giây, bình luận nổi bật. Mỗi nhận định kèm bằng chứng và tách đo được / suy đoán; có phần làm lại được với đội mình, công thức rút gọn để brainstorm, và danh sách không được chép. Lần đầu dùng tự cài công cụ (yt-dlp, ffmpeg, whisper), người dùng không phải cài gì. Dùng khi user dán link video, nói 'phân tích video này', 'video này hay ở đâu', 'mổ video mẫu', 'vì sao video này viral', 'video này flop vì sao'; vid-flow tự gọi khi brief có video mẫu. Viết kịch bản từ mẫu thì dùng vid-flow (nó gọi skill này rồi đi tiếp)."
+description: "Phân tích video mẫu (link TikTok / YouTube / Reels, file .mp4, hoặc ảnh chụp + mô tả) để chỉ ra vì sao video thu hút: hook ba lớp, điểm giữ chân, cấu trúc beat, ẩn dụ và thông điệp, cơ chế hài, ngôn ngữ điện ảnh, nhịp dựng đo được (số cut, độ dài shot, khoảng lặng), lời thoại chép tự động có mốc giây, bình luận nổi bật. Mỗi nhận định kèm bằng chứng và tách đo được / suy đoán; có phần làm lại được với đội mình, công thức rút gọn để brainstorm, và danh sách không được chép. Lần đầu dùng tự cài công cụ (yt-dlp, ffmpeg, whisper), người dùng không phải cài gì. Dùng khi user dán link video, nói 'phân tích video này', 'video này hay ở đâu', 'mổ video mẫu', 'vì sao video này viral', 'video này flop vì sao'; /vid tự gọi khi brief có video mẫu. Viết kịch bản từ mẫu thì dùng /vid (nó gọi skill này rồi đi tiếp)."
 argument-hint: <link | file.mp4 | ảnh chụp + mô tả> [flop] [lưu]
 ---
 
@@ -16,7 +16,7 @@ nó và luồng làm kịch bản không hỏi gì về mẫu.
 
 | Chế độ | Khi nào | Thư mục ghi |
 |---|---|---|
-| **Trong luồng** | `vid-flow` gọi (thường qua subagent) | `du-an/<dự án>/mau/<k>/` (k = 1, 2, 3 theo thứ tự mẫu) |
+| **Trong luồng** | `/vid` gọi (thường qua subagent) | `du-an/<dự án>/mau/<k>/` (k = 1, 2, 3 theo thứ tự mẫu) |
 | **Độc lập** | Người dùng chỉ muốn mổ video, chưa viết kịch bản | `du-an/<YYYY-MM-DD>-mau-<slug>/` |
 | **Nhiều mẫu** | 2–3 video cùng lúc | Mỗi mẫu một thư mục con, cộng `tong-hop.md` |
 | **Mẫu flop** | Người dùng nói video này flop / không hiệu quả | Như trên; mục 5 đổi thành "Vì sao không giữ được người xem" |
@@ -212,7 +212,7 @@ Làm lại với đội mình: <được hết | cần thay: …>
 File: <đường dẫn phan-tich.md>
 ```
 
-Chế độ độc lập: hỏi thêm "Lưu vào thư viện mẫu để dùng lại không?" (xem mục Thư viện). Chế độ trong luồng: `vid-flow`
+Chế độ độc lập: hỏi thêm "Lưu vào thư viện mẫu để dùng lại không?" (xem mục Thư viện). Chế độ trong luồng: `/vid`
 tự hỏi, skill này không hỏi.
 
 ### Nhiều mẫu: `tong-hop.md`
@@ -230,7 +230,7 @@ hơn một video); điểm riêng của từng mẫu; một công thức chung �
 - Lưu: chép `phan-tich.md` thành `shared/tham-khao/mau/<slug>.md`, thêm một dòng vào `shared/tham-khao/mau/INDEX.md`.
   **Không** lưu video, ảnh, âm thanh vào thư viện (nặng, và là nội dung của người khác).
 - Trùng nguồn với một mục đã có: hỏi ghi đè hay giữ cả hai.
-- Dùng lại: người dùng nói "theo mẫu <slug>" thì `vid-flow` đọc file trong thư viện, không chạy lại skill này.
+- Dùng lại: người dùng nói "theo mẫu <slug>" thì `/vid` đọc file trong thư viện, không chạy lại skill này.
 
 ## Tự cải thiện
 

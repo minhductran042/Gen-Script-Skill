@@ -26,6 +26,27 @@ MAX_ACTORS = 6  # see shared/luat/dieu-kien-san-xuat.md
 STRIPPED_WORDS = {"la", "thoi", "khong", "duoc", "nguoi", "nhung", "cua", "voi", "roi", "gi", "nay", "dang",
                   "nhieu", "minh", "toi", "phai", "biet", "muon", "lam", "trong", "quan", "y", "a", "di", "day"}
 
+# Overview block printed above each script's table: (label, key, stored under kb["overview"]?)
+OVERVIEW_FIELDS = [
+    ("Tóm tắt", "tom_tat", False),
+    ("Title", "title", False),
+    ("Nhóm chủ đề", "chu_de", True),
+    ("Thông điệp", "thong_diep", True),
+    ("Khán giả chính", "khan_gia", True),
+    ("Tông", "tong", True),
+    ("Hook", "hook", True),
+    ("Diễn biến chính", "dien_bien", True),
+    ("Kết", "ket", True),
+    ("Nhân vật", "nhan_vat", True),
+    ("Địa điểm", "dia_diem", False),
+    ("Thời điểm", "boi_canh", False),
+    ("Đạo cụ", "dao_cu", False),
+    ("Lưu ý sản xuất", "luu_y_san_xuat", True),
+]
+OVERVIEW_BY_LABEL = {label: (key, nested) for label, key, nested in OVERVIEW_FIELDS}
+OVERVIEW_REQUIRED = ["chu_de", "thong_diep", "hook", "nhan_vat"]
+SEC_OVERVIEW, SEC_SCRIPT = "TỔNG QUAN", "KỊCH BẢN CHI TIẾT"
+
 TITLE_RE = re.compile(r"^Kịch bản\s*(\d+)\s*:\s*(.*?)\s*\((?:Thời lượng dự kiến:\s*)?([^()]*)\)\s*$")
 GIAY_RE = re.compile(r"^(.*?)\s*\((\d+\s*[–-]\s*\d+\s*s)\)\s*$")
 
@@ -37,9 +58,11 @@ def _s(v):
 # ---------------------------------------------------------------- doc (xlsx -> json)
 
 def doc(path_in, path_out):
-    ws = openpyxl.load_workbook(path_in).active
+    """Read both layouts: one sheet per script (current) and several scripts stacked in one sheet (old)."""
+    wb = openpyxl.load_workbook(path_in)
     scripts, cur, in_table = [], None, False
-    for row in ws.iter_rows(min_row=1, max_col=10, values_only=True):
+    rows = [row for ws in wb.worksheets for row in ws.iter_rows(min_row=1, max_col=10, values_only=True)]
+    for row in rows:
         cells = [_s(v) for v in row]
         a = cells[0]
         if not any(cells):
@@ -51,13 +74,19 @@ def doc(path_in, path_out):
             scripts.append(cur)
             in_table = False
             continue
-        if cur is None:
+        if cur is None or a in (SEC_OVERVIEW, SEC_SCRIPT):
             continue
         if a == "STT":
             in_table = True
             continue
         if not in_table:
-            if a.startswith("Đạo cụ:"):
+            if a in OVERVIEW_BY_LABEL:
+                key, nested = OVERVIEW_BY_LABEL[a]
+                if nested:
+                    cur.setdefault("overview", {})[key] = cells[2]
+                else:
+                    cur[key] = cells[2]
+            elif a.startswith("Đạo cụ:"):
                 cur["dao_cu"] = a[len("Đạo cụ:"):].strip()
             else:
                 cur["boi_canh"] = re.sub(r"\s+", " ", a)
@@ -77,7 +106,7 @@ def doc(path_in, path_out):
         if cells[2] and cells[2] != cur["dia_diem"]:
             scene["dia_diem"] = cells[2]
         cur["canh"].append(scene)
-    data = {"du_an": ws.title, "kich_ban": scripts}
+    data = {"du_an": wb.properties.title or wb.worksheets[0].title, "kich_ban": scripts}
     with open(path_out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"Đã đọc {len(scripts)} kịch bản, {sum(len(k['canh']) for k in scripts)} beat → {path_out}")
@@ -123,6 +152,9 @@ def kiem(path_in):
         for key in ["ten", "thoi_luong", "dao_cu", "tom_tat", "title", "dia_diem"]:
             if not _s(kb.get(key)):
                 add("Vừa", "NH-03", tag, f"thiếu trường '{key}'")
+        for key in OVERVIEW_REQUIRED:
+            if not _s((kb.get("overview") or {}).get(key)):
+                add("Nhẹ", "NH-03", tag, f"phần tổng quan thiếu 'overview.{key}'")
         canh = kb.get("canh", [])
         if not canh:
             add("Nặng", "NH-03", tag, "không có beat nào")
@@ -169,29 +201,69 @@ def kiem(path_in):
 
 # ---------------------------------------------------------------- xuat (json -> xlsx)
 
+COL_WIDTHS = [6, 26, 16, 20, 16, 50, 20, 20, 22, 18]  # A..J, sized for 12pt text; F (Nội dung) is the long column
+OVERVIEW_CHARS_PER_LINE = 140                          # rough fit of 12pt text across merged C:J
+
+
+def _sheet_name(kb, used):
+    name = re.sub(r"[\[\]:*?/\\]", "", f"KB{kb['so']} - {_s(kb.get('ten'))}").strip()[:31] or f"KB{kb['so']}"
+    base, n = name, 2
+    while name in used:
+        name = f"{base[:28]}({n})"
+        n += 1
+    used.add(name)
+    return name
+
+
 def xuat(path_in, path_out):
     with open(path_in, encoding="utf-8") as f:
         data = json.load(f)
     wb = openpyxl.Workbook()
-    ws = wb.active
-    ws.title = _s(data.get("du_an")) or "Kịch bản"
+    wb.remove(wb.active)
+    wb.properties.title = _s(data.get("du_an")) or "Kịch bản"
     color = "FF1F1F1F"
-    f_title = Font(name="Google Sans", size=8, bold=True, color=color)
-    f_body = Font(name="Google Sans Text", size=8, italic=True, color=color)
+    f_title = Font(name="Times New Roman", size=13, bold=True, color=color)
+    f_section = Font(name="Times New Roman", size=12, bold=True, color=color)
+    f_label = Font(name="Times New Roman", size=12, bold=True, color=color)
+    f_body = Font(name="Times New Roman", size=12, color=color)
     yellow = PatternFill("solid", fgColor="FFFFFF00")
+    grey = PatternFill("solid", fgColor="FFD9D9D9")
     wrap = Alignment(wrap_text=True, vertical="top")
-    ws.column_dimensions["F"].width = 32.25
-    ws.column_dimensions["J"].width = 11.25
 
-    r = 1
+    used = set()
     for kb in data.get("kich_ban", []):
+        ws = wb.create_sheet(_sheet_name(kb, used))
+        for col, width in zip("ABCDEFGHIJ", COL_WIDTHS):
+            ws.column_dimensions[col].width = width
+
+        def section(row, text):
+            c = ws.cell(row, 1, text)
+            c.font, c.fill = f_section, grey
+            ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=10)
+
+        r = 1
         ws.cell(r, 1, f"Kịch bản {kb['so']}: {kb['ten']} (Thời lượng dự kiến: {kb['thoi_luong']})").font = f_title
+        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=10)
         r += 1
-        if _s(kb.get("boi_canh")):
-            ws.cell(r, 1, kb["boi_canh"]).font = f_body
-            ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=26)
+        section(r, SEC_OVERVIEW)
+        r += 1
+        overview = kb.get("overview") or {}
+        for label, key, nested in OVERVIEW_FIELDS:
+            value = _s(overview.get(key) if nested else kb.get(key))
+            if not value:
+                continue
+            lc = ws.cell(r, 1, label)
+            lc.font, lc.alignment = f_label, wrap
+            vc = ws.cell(r, 3, value)
+            vc.font, vc.alignment = f_body, wrap
+            ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=2)
+            ws.merge_cells(start_row=r, start_column=3, end_row=r, end_column=10)
+            # Excel never auto-fits merged cells, so size the row from the text length
+            lines = sum(max(1, -(-len(p) // OVERVIEW_CHARS_PER_LINE)) for p in value.split("\n"))
+            ws.row_dimensions[r].height = 17 * lines
             r += 1
-        ws.cell(r, 1, f"Đạo cụ: {_s(kb.get('dao_cu'))}").font = f_body
+        r += 1
+        section(r, SEC_SCRIPT)
         r += 1
         for col, h in enumerate(HEADERS, 1):
             c = ws.cell(r, col, h)
@@ -214,6 +286,8 @@ def xuat(path_in, path_out):
                 c = ws.cell(r, col, v if v != "" else None)
                 c.font, c.alignment = f_body, wrap
             r += 1
+    if not wb.worksheets:
+        wb.create_sheet("Kịch bản")
     wb.save(path_out)
     print(f"Đã xuất {len(data.get('kich_ban', []))} kịch bản → {path_out}")
 

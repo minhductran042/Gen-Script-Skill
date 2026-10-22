@@ -168,7 +168,7 @@ Nhóm này nói về **hành vi và lối sống**, không nói về chính tr�
 
 ## 3. Khi đầu vào chưa rõ
 
-Dùng ở `vid-flow` bước 0 và `vid-brainstorm` pha 1.
+Dùng ở `/vid` bước 0 và `vid-brainstorm` pha 1.
 
 | Người dùng đưa | Làm gì |
 |---|---|

@@ -112,7 +112,9 @@ Cột Text nổi bật:
 
 ### Soát và xuất
 
-Ghi `du-an/<dự án>/kich-ban-v1.json` theo cấu trúc ở `format-kich-ban.md` mục 3, rồi:
+Ghi `du-an/<dự án>/kich-ban-v1.json` theo cấu trúc ở `format-kich-ban.md` mục 3. Điền đủ phần tổng quan (`overview`,
+mục 1a): lấy nhóm chủ đề, thông điệp, khán giả, tông từ brief; hook, diễn biến, kết, nhân vật từ thẻ concept và từ chính
+kịch bản vừa viết (kịch bản đã khác concept thì ghi theo kịch bản); lưu ý sản xuất từ lượt 7. Rồi:
 
 ```
 py -I shared/scripts/kich_ban.py kiem du-an/<dự án>/kich-ban-v1.json

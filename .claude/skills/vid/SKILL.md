@@ -49,6 +49,12 @@ Luôn đọc:
 
 Không đọc `shared/tham-khao/`, trừ khi brief ghi ở mục "Tham khảo". Các skill con tự đọc phần nghề của mình.
 
+## Máy mới
+
+Không bắt người dùng cài gì. Các script tự cài thứ còn thiếu vào `.cong-cu/venv` ở lần đầu (`kich_ban.py`: openpyxl;
+`phan_tich_mau.py`: công cụ video). Lần đầu thấy dòng "Lần đầu: …" thì báo người dùng một dòng là đang tự cài.
+Máy không có cả `py` lẫn `python3`: cài Python theo bước 0 của `vid-phan-tich-mau` rồi chạy lại lệnh vừa lỗi.
+
 ---
 
 ## Bước 0: Cửa vào và brief

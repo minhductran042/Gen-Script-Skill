@@ -6,16 +6,47 @@ Usage:
     py -I kich_ban.py xuat <in.json> <out.xlsx>   # JSON -> Excel (team format)
 
 Format spec: shared/luat/format-kich-ban.md. Error codes: shared/luat/loi-kich-ban.md.
+
+Needs openpyxl. When the system Python lacks it, the script installs it into <repo>/.cong-cu/venv (the same
+git-ignored venv phan_tich_mau.py uses) and re-runs itself there, so a fresh clone needs nothing but Python.
 """
 import json
 import re
+import subprocess
 import sys
 import unicodedata
-
-import openpyxl
-from openpyxl.styles import Alignment, Font, PatternFill
+from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
+sys.stderr.reconfigure(encoding="utf-8")
+
+VENV = Path(__file__).resolve().parents[2] / ".cong-cu" / "venv"
+VENV_PY = VENV / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
+
+
+def _ensure_openpyxl():
+    try:
+        import openpyxl  # noqa: F401
+        return
+    except ImportError:
+        pass
+    pip = ["-m", "pip", "install", "--disable-pip-version-check", "-q", "openpyxl"]
+    if Path(sys.prefix).resolve() == VENV.resolve():
+        subprocess.run([sys.executable, *pip], check=True)
+        return
+    if not VENV_PY.exists():
+        print("Lần đầu: tạo môi trường riêng ở .cong-cu/venv ...")
+        subprocess.run([sys.executable, "-m", "venv", str(VENV)], check=True)
+    if subprocess.run([str(VENV_PY), "-I", "-c", "import openpyxl"], capture_output=True).returncode:
+        print("Lần đầu: cài openpyxl (đọc / ghi Excel) ...")
+        subprocess.run([str(VENV_PY), *pip], check=True)
+    sys.exit(subprocess.run([str(VENV_PY), "-I", str(Path(__file__).resolve()), *sys.argv[1:]]).returncode)
+
+
+_ensure_openpyxl()
+
+import openpyxl  # noqa: E402
+from openpyxl.styles import Alignment, Font, PatternFill  # noqa: E402
 
 HEADERS = ["STT", "Tóm tắt - Title", "Địa điểm", "Mục đích", "Nhân vật",
            "Nội dung", "Biểu cảm", "Góc quay", "Text nổi bật", "Ghi chú"]

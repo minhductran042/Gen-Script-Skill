@@ -1,7 +1,37 @@
 # Bộ skill kịch bản video ngắn
 
-Mở Claude Code ở thư mục này (`D:\scripts-gen-skills`) thì các skill trong `.claude/skills/` tự được nạp.
+Mở Claude Code ở thư mục gốc của repo thì các skill trong `.claude/skills/` tự được nạp.
 Chỉ cần nhớ một lệnh: **`/vid`**.
+
+## Lần đầu trên máy mới
+
+Cần có sẵn: [Claude Code](https://docs.claude.com/en/docs/claude-code) đã đăng nhập, Git, Python 3 (Windows: `py --version`;
+macOS / Linux: `python3 --version`).
+
+```
+git clone https://github.com/minhductran042/Gen-Script-Skill.git
+cd Gen-Script-Skill
+claude
+```
+
+1. Claude Code hỏi có tin thư mục này không: chọn đồng ý. Skill chỉ được nạp khi mở Claude Code **đúng thư mục repo**.
+2. Gõ `/vid`. Thấy menu (làm video mới, mổ video mẫu, review kịch bản…) là chạy được.
+3. Khi skill chạy lệnh `py …` / `python3 …`, Claude Code hỏi quyền: cho phép.
+4. (Tuỳ chọn) điền `shared/cau-hinh.md` để đỡ bị hỏi lại thời lượng, khán giả.
+
+Không phải tự cài thư viện nào. Lần đầu dùng tới, script tự tạo `.cong-cu/venv` (không đưa lên git, máy nào tự cài
+máy đó) và cài vào đó:
+
+| Lúc | Tự cài | Mất bao lâu |
+|---|---|---|
+| Lần đầu xuất / đọc Excel kịch bản | `openpyxl` (chỉ khi Python của máy chưa có) | Vài giây |
+| Lần đầu phân tích video mẫu | yt-dlp, ffmpeg, faster-whisper, Pillow + mô hình chép lời (~480 MB) | Khoảng 15 phút; từ lần sau video 20 giây mất ~30 giây |
+
+Máy chưa có Python: khi phân tích video mẫu, skill tự cài bằng winget (Windows) / brew (macOS) / apt (Linux); hoặc tự
+cài Python 3 từ python.org (Windows: tích "Add python.exe to PATH").
+
+Kiểm công cụ phân tích video: `py -I shared/scripts/phan_tich_mau.py kiem-cai`. Mạng chặn TikTok (thường là mạng công
+ty) thì lưu video về máy rồi đưa file `.mp4`, hoặc gửi ảnh chụp màn hình.
 
 | Gõ | Kết quả |
 |---|---|
@@ -90,7 +120,7 @@ py -I shared/scripts/kich_ban.py kiem <kich-ban.json>
 py -I shared/scripts/kich_ban.py xuat <kich-ban.json> <ra.xlsx>
 ```
 
-Máy không có `py` thì dùng `python3`. Cần `openpyxl` (`pip install openpyxl`).
+Máy không có `py` thì dùng `python3`. Không cần cài `openpyxl` tay: thiếu thì script tự cài vào `.cong-cu/venv`.
 
 Phân tích video mẫu (skill tự gọi, không cần gõ tay):
 

@@ -1,0 +1,4 @@
+# Project config, read only when the project is trusted in Codex.
+# The skills install openpyxl and the video tools on first use, and download reference videos.
+[sandbox_workspace_write]
+network_access = true

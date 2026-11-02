@@ -412,3 +412,23 @@ không vào danh mục và trùng nghĩa.
 - Checklist quay được thêm tuổi; vai học sinh không có tình huống lãng mạn; sửa README, `tham-khao/README.md`.
 
 Giữ nguyên, chờ người dùng quyết: `.gitignore` bỏ qua `lich-su/`, `du-an/`; kiểu xuống dòng lẫn lộn CRLF / LF.
+
+---
+
+## 13. Phiên 2026-11-02: dùng được trên Codex
+
+**Người dùng:** "hien toi muon bo skill nay su dung duoc tren codex, them cac phan de bo skill nay co the su dung duoc voi
+codex hay hien tai da co the dung"
+
+Trước đó chưa dùng được: Codex quét `.agents/skills`, đọc `AGENTS.md`, không đọc `.claude/skills` hay `CLAUDE.md`.
+
+Đã làm:
+
+- Chuyển hướng dẫn dự án sang `AGENTS.md`; `CLAUDE.md` chỉ còn dòng nhập `@AGENTS.md`.
+- `shared/scripts/dong_bo_codex.py` sinh `.agents/skills/<tên>/SKILL.md` trỏ về `.claude/skills/`, có `--kiem`. Không dùng symlink
+  vì symlink git hỏng trên Windows khi chưa bật Developer Mode.
+- `.codex/config.toml` bật mạng trong sandbox, cần cho tự cài công cụ và tải video; chỉ có hiệu lực khi project được tin cậy.
+- `vid/SKILL.md` thêm bảng hai công cụ (gọi skill, hỏi, subagent); không tạo được subagent thì không tự review, chuyển sang
+  phiên mới. Prompt review ghi rõ đường dẫn skill. `vid-phan-tich-mau` bỏ tên công cụ riêng của Claude Code.
+
+**Chưa kiểm:** máy này không có Codex, chưa chạy thử thật.

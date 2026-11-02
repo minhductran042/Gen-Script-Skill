@@ -1,7 +1,7 @@
 # Bộ skill kịch bản video ngắn
 
-Mở Claude Code ở thư mục gốc của repo thì các skill trong `.claude/skills/` tự được nạp.
-Chỉ cần nhớ một lệnh: **`/vid`**.
+Mở Claude Code hoặc Codex ở thư mục gốc của repo thì các skill tự được nạp.
+Chỉ cần nhớ một lệnh: **`/vid`** (Claude Code) hoặc **`$vid`** (Codex).
 
 ## Lần đầu trên máy mới
 
@@ -65,6 +65,24 @@ xuất" thì mỗi concept tự mang tông suy từ insight, cả bộ trải í
 làm chính. Review chấm theo tông đã chọn, nên kịch bản không hài, không ẩn dụ vẫn ĐẠT được. Team muốn một tông cố định thì
 ghi vào `shared/cau-hinh.md`. Chi tiết ở `shared/nghe/tong-cam-xuc.md`.
 
+## Dùng với Codex
+
+Cần Codex CLI hoặc tiện ích IDE đã đăng nhập, cùng Git và Python 3 như trên.
+
+1. Mở Codex ở thư mục gốc repo và chọn tin cậy project. Không tin cậy thì Codex bỏ qua `.codex/config.toml`, script không có
+   mạng để tự cài công cụ hoặc tải video.
+2. Gõ `$vid`, hoặc `/skills` để chọn. Mọi lệnh ở bảng trên dùng được, chỉ thay `/` bằng `$`.
+3. Khi skill hỏi mà không có nút bấm, gõ số lựa chọn.
+
+| Thành phần | Claude Code | Codex |
+|---|---|---|
+| Hướng dẫn dự án | `CLAUDE.md` (nhập từ `AGENTS.md`) | `AGENTS.md` |
+| Skill | `.claude/skills/` (bản gốc) | `.agents/skills/` (file trỏ về bản gốc) |
+| Mạng cho script | Theo quyền Claude Code | `.codex/config.toml` bật mạng trong sandbox |
+
+Sửa nội dung skill ở `.claude/skills/`. Đổi `name`, `description` hoặc thêm, xoá skill thì chạy
+`py -I shared/scripts/dong_bo_codex.py`; `--kiem` để kiểm có lệch không.
+
 ## Luồng
 
 ```
@@ -105,7 +123,10 @@ Series: chạy `/vid-series` trước để có `series.md`, rồi mỗi tập �
 ## Cấu trúc
 
 ```
-.claude/skills/            6 skill (vid là cửa vào)
+.claude/skills/            6 skill (vid là cửa vào), bản gốc dùng chung
+.agents/skills/            file trỏ về bản gốc cho Codex, do script sinh
+.codex/config.toml         bật mạng trong sandbox Codex
+AGENTS.md                  hướng dẫn dự án dùng chung (CLAUDE.md nhập file này)
 shared/
   cau-hinh.md              sở thích mặc định của team, mục đã ghi thì /vid không hỏi lại
   luat/                    RÀNG BUỘC CỨNG, luôn áp
@@ -125,6 +146,7 @@ shared/
   tham-khao/               THAM KHẢO TUỲ CHỌN, chỉ đọc khi brief ghi
     mau/                     thư viện bản phân tích video mẫu (INDEX.md), chỉ lưu khi người dùng đồng ý
   scripts/kich_ban.py      doc (xlsx→json) · kiem (soát) · xuat (json→xlsx)
+  scripts/dong_bo_codex.py sinh .agents/skills/ cho Codex từ .claude/skills/
   scripts/phan_tich_mau.py cai · chay (tải → tách khung, đo cut → chép lời) · tai · tach · chep
   mau-format/              file Excel mẫu ĐỊNH DẠNG (không dùng nội dung)
 .cong-cu/                  công cụ tự cài lần đầu (venv, mô hình chép lời); không commit

@@ -39,6 +39,19 @@ Ngoài hai điểm dừng, không chen câu hỏi nào khác. Mọi câu hỏi v
 
 Mọi file của một dự án nằm trong `du-an/<YYYY-MM-DD>-<slug>/`. `slug` là tên ngắn không dấu, nối bằng gạch ngang.
 
+## Chạy trên Claude Code và Codex
+
+Skill dùng chung cho hai công cụ. Chỗ nào nói "skill", "subagent", "nút bấm" thì làm theo cột của công cụ đang chạy.
+
+| Việc | Claude Code | Codex |
+|---|---|---|
+| Gọi skill | `/vid` | `$vid` (thay `/` bằng `$` ở mọi lệnh) |
+| Hỏi bằng nút bấm | Câu hỏi có nút bấm | Có công cụ hỏi người dùng thì dùng; không có thì in danh sách đánh số rồi dừng lượt, chờ người dùng gõ |
+| Subagent | Công cụ Agent, loại `general-purpose` | Tạo một subagent với đúng prompt bên dưới, chờ nó xong rồi mới đi tiếp |
+
+Không tạo được subagent: **không tự review trong phiên đang viết**. Lưu trạng thái, báo người dùng mở phiên mới và gọi
+`vid-review` với file kịch bản, rồi quay lại làm tiếp. Video mẫu thì chạy `vid-phan-tich-mau` ở phiên riêng theo cách tương tự.
+
 ## Kiến thức dùng
 
 Luôn đọc:
@@ -111,8 +124,8 @@ instagram.com), đường dẫn file `.mp4` / `.mov`, ảnh chụp kèm câu "l�
 | Ảnh chụp / mô tả | Như trên; agent tự chạy tầng 3 của `vid-phan-tich-mau` |
 
 Báo người dùng một dòng "đang phân tích video mẫu" (lần đầu trên máy: "lần đầu cài công cụ và tải mô hình, khoảng 15
-phút"; từ lần sau khoảng nửa phút cho video 20 giây). Gọi công cụ **Agent**
-(subagent_type `general-purpose`) để ảnh và lời thoại của mẫu không chiếm ngữ cảnh phiên chính. Nhiều mẫu thì một agent
+phút"; từ lần sau khoảng nửa phút cho video 20 giây). Tạo **subagent**
+để ảnh và lời thoại của mẫu không chiếm ngữ cảnh phiên chính. Nhiều mẫu thì một agent
 mỗi mẫu, gọi song song; xong thì một lượt nữa viết `tong-hop.md`.
 
 ```
@@ -283,13 +296,13 @@ Gọi `vid-viet-kich-ban` (chế độ viết mới) với brief + concept đư�
 
 ## Bước 3: Review độc lập
 
-Gọi công cụ **Agent** (subagent_type `general-purpose`). Không review trong phiên đang viết: người viết tự chấm bài
+Tạo **subagent**. Không review trong phiên đang viết: người viết tự chấm bài
 mình thường chấm dễ và không thấy lỗ hổng của chính mình.
 
 Prompt giao cho agent:
 
 ```
-Chạy skill vid-review cho du-an/<dự án>/kich-ban-vN.json, ghi du-an/<dự án>/03-review-vN.md.
+Chạy skill vid-review (.claude/skills/vid-review/SKILL.md) cho du-an/<dự án>/kich-ban-vN.json, ghi du-an/<dự án>/03-review-vN.md.
 
 Được đọc: kịch bản, du-an/<dự án>/00-brief.md, shared/luat/, shared/nghe/, và file tham khảo mà brief ghi ở mục
 "Tham khảo" (nếu có), kể cả phan-tich.md của video mẫu. Không đọc 01-concepts.md, các bản review trước, và mọi file

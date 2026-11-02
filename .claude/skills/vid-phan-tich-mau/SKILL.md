@@ -53,7 +53,7 @@ Người dùng **không phải cài hay tìm hiểu gì**. Skill tự làm:
    `yt-dlp`, `imageio-ffmpeg` (có sẵn ffmpeg), `faster-whisper`, `Pillow`, rồi tự tải mô hình chép lời khi cần.
    - **Thời gian:** lần đầu cài gói vài phút; `kiem-cai` báo `whisper small CHƯA TẢI` thì thêm **10–15 phút** tải mô hình
      (khoảng 480 MB, đã đo: 335 MB sau 8 phút). Từ lần thứ hai, video 20 giây chạy hết khoảng 30 giây.
-   - Lần đầu: chạy lệnh ở **chế độ nền** (Bash `run_in_background`) và chờ thông báo xong, đừng để lệnh chạy trước mặt
+   - Lần đầu: chạy lệnh ở **chế độ nền** (Claude Code: Bash `run_in_background`; công cụ không có chế độ nền thì đặt thời gian chờ đủ dài) và chờ thông báo xong, đừng để lệnh chạy trước mặt
      rồi bị cắt ở mốc 10 phút. Báo người dùng một dòng "lần đầu: đang cài công cụ và tải mô hình, khoảng 15 phút".
    - Người dùng cần nhanh: `--model base` (khoảng 140 MB, chép kém hơn), hoặc `--khong-chep` rồi dựa vào phụ đề `.vtt`.
 
@@ -88,7 +88,7 @@ mục dự án (tầng 2), hoặc gửi ảnh chụp (tầng 3).
 
 ## Bước 2: Đọc dữ liệu
 
-Đọc mọi file bằng công cụ đọc file (Read), **không** in ra bằng `py -I -c "print(...)"`: trên Windows, `-I` bỏ qua
+Đọc mọi file và ảnh bằng công cụ đọc file của công cụ đang chạy (Claude Code: Read; Codex: đọc file, xem ảnh), **không** in ra bằng `py -I -c "print(...)"`: trên Windows, `-I` bỏ qua
 cấu hình mã hoá và in tiếng Việt / emoji sẽ lỗi `UnicodeEncodeError`.
 
 Theo thứ tự, vì số đo giúp đọc ảnh đúng chỗ:

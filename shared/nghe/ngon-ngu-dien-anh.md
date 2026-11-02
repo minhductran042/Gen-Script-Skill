@@ -9,7 +9,8 @@ quay và người dựng đọc là hiểu ngay.
 
 Điện ảnh không có nghĩa là tốn tiền hay thiết bị đắt. Video ngắn mang chất điện ảnh khi:
 
-1. **Kể bằng hình, không kể bằng lời.** Câu nào thay được bằng một hình ảnh thì thay.
+1. **Hình và lời cùng kể.** Câu chỉ nói cho người xem nghe mà hình thay được thì thay; đoạn thoại có việc để làm thì được
+   giữ và phải được dàn cảnh (mục 11).
 2. **Mỗi khung hình có ý đồ.** Biết vì sao chọn góc đó, cỡ cảnh đó, ở thời điểm đó.
 3. **Âm thanh được thiết kế**, không phải âm thanh thu được gì dùng nấy.
 4. **Ánh sáng có lý do**: đến từ một nguồn có thật trong cảnh, và nói lên cảm xúc.
@@ -117,3 +118,18 @@ Công cụ mạnh:
 - [ ] Ánh sáng có nguồn và có nghĩa ở các cảnh chính?
 - [ ] Mỗi khoảnh khắc chính có một tiếng động đặc trưng được viết cụ thể?
 - [ ] Không có beat nào chỉ là "hai người đứng nói chuyện"?
+
+## 11. Quay đoạn đối thoại bằng một máy
+
+Áp cho mọi tông khi kịch bản có đoạn thoại dài. Viết cho khung dọc 9:16.
+
+- **Dàn cảnh theo diễn biến:** đổi thế đứng, quay lưng, bước lại gần, cầm lên hay đặt xuống một đồ vật đúng lúc tình thế
+  đổi. Người nói không đứng yên từ đầu tới cuối.
+- **Cỡ cảnh leo cùng căng thẳng:** mở bằng Trung hai người để rõ quan hệ, vào Qua vai rồi Cận khi chuyện nặng dần, giữ cỡ
+  gần nhất cho câu nặng nhất.
+- **Cắt sang phản ứng:** đoạn dài không cần luôn nhìn người nói; mặt người nghe thường mang nhiều cảm xúc hơn.
+- **Khung dọc:** hai người xếp trước sau (mục 2), không đứng ngang hàng. Tiền cảnh che một phần tạo chiều sâu và cảm giác
+  nhìn trộm.
+- **Góc thấp hoặc đổi tầm máy** cho nhân vật đang chiếm thế, tầm ngang khi hai bên ngang nhau.
+- **Một máy:** diễn lại nguyên đoạn cho từng góc (Trung, Qua vai A, Qua vai B, Cận). Ghi thứ tự ở Lưu ý sản xuất, giữ
+  liên tục thế đứng và đạo cụ. Đoạn dài thì chia đợt để diễn viên nhớ thoại.

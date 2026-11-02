@@ -40,8 +40,9 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 | GC-03 | Vừa | Lộ kết sớm | Câu chốt, hoặc thông điệp nếu có, nói ra trong nửa đầu video | Dời xuống sau đỉnh hoặc beat lật |
 | GC-04 | Vừa | Đoán được kết (chỉ khi chuyện dựa vào bất ngờ) | Đọc tới giữa đã đoán đúng | Thêm một chi tiết lệch hướng; đổi kiểu kết |
 | GC-05 | Vừa | Đoạn chết trên khoảng 5 giây | Không có thông tin, hành động, góc hay âm thanh mới, và cảm xúc không lớn thêm (cảnh giữ lâu có chủ đích ở tông chậm không phải lỗi) | Chèn phản ứng, đặc tả, đổi góc, hoặc cắt |
-| GC-06 | Nhẹ | **[script]** Thoại dài | Một lượt thoại trên khoảng 25 từ | Tách lượt, cắt ý, hoặc thay bằng hình |
+| GC-06 | Nhẹ | **[script]** Thoại dài | Một lượt thoại trên khoảng 25 từ. Được bỏ qua nếu là lượt thoại đỉnh | Tách lượt, cắt ý, hoặc thay bằng hình |
 | GC-07 | Vừa | Kéo dài sau payoff | Còn trên 1 beat sau câu chốt mà không phải miếng thoát hay hình kết | Cắt |
+| GC-08 | Vừa | Dài mà không có lý do | Có đoạn trên 20 giây không có thông tin mới, không đổi thế, cảm xúc không lớn thêm; cắt đi chuyện không mất gì. Đây là căn cứ duy nhất để đề nghị rút ngắn, phải chỉ ra đúng đoạn | Cắt đoạn đó, hoặc thêm một điều mới có thật trong chuyện |
 
 ### AD: Ẩn dụ, hài và thông điệp
 
@@ -78,13 +79,22 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 
 | Mã | Mức | Lỗi | Dấu hiệu | Hướng sửa |
 |---|---|---|---|---|
-| DA-01 | Vừa | Beat chỉ có thoại | Nội dung chỉ là hai người nói chuyện; Ghi chú trống | Thêm hành động, đặc tả hoặc tiếng động mang nghĩa |
-| DA-02 | Vừa | Kể bằng lời điều hình kể được | Thoại mô tả cảm xúc / sự việc mà hình đã thể hiện hoặc có thể thể hiện | Bỏ câu đó, thay bằng hình |
+| DA-01 | Vừa | Beat nói suông | Thoại không làm đổi tình thế, **và** không có dàn cảnh, phản ứng hay đổi cỡ cảnh | Thêm việc cho đoạn thoại, hoặc dàn cảnh theo `ngon-ngu-dien-anh.md` mục 11 |
+| DA-02 | Vừa | Kể bằng lời điều hình kể được | Câu chỉ nói cho người xem nghe, mô tả điều hình đã thể hiện. Câu nhân vật cần nói với nhau (tấn công, biện hộ, che giấu) không phải lỗi | Bỏ câu đó, thay bằng hình |
 | DA-03 | Nhẹ | Góc máy đơn điệu | Ba beat liền nhau cùng một cỡ cảnh | Đổi cỡ cảnh theo cảm xúc |
 | DA-04 | Nhẹ | Âm thanh không cụ thể | Ghi "có nhạc", "tiếng động" chung chung | Ghi tính chất nhạc, tiếng động bằng từ tượng thanh, lúc vào / ra |
 | DA-05 | Nhẹ | Không có khoảnh khắc lặng | Không beat nào chỉ có hình + âm thanh | Thêm 1–2 giây lặng trước / sau lật |
 | DA-06 | Nhẹ | Đồ vật ẩn dụ không có đặc tả (chỉ khi dùng ẩn dụ) | Đồ vật chỉ xuất hiện ở góc trung / toàn | Thêm đặc tả |
 | DA-07 | Vừa | Biểu cảm không quay được | Cột Biểu cảm / Nội dung ghi cảm xúc trừu tượng mà không có hành động thể hiện | Ghi hành động nhìn thấy được |
+
+### TH: Thoại và độ gần gũi
+
+Áp mọi chủ đề và mọi tông, thước đo ở `shared/nghe/thoai-va-do-gan.md`. Không có thoại nhiều thì không phải lỗi.
+
+| Mã | Mức | Lỗi | Dấu hiệu | Hướng sửa |
+|---|---|---|---|---|
+| TH-01 | Vừa | Thoại như văn viết | Đọc thành tiếng thấy giả; câu trọn vẹn, văn vẻ, xưng hô không đúng quan hệ | Viết lại như người đang nói: câu cụt, ngắt lời, chi tiết cụ thể |
+| TH-02 | Vừa | Nhân vật không có lý do riêng | Nhân vật chỉ tồn tại để phục vụ tình huống, không muốn gì cho mình. Hài phóng đại thì hạ xuống Nhẹ | Cho nhân vật một mong muốn và một lý lẽ của mình |
 
 ### KT: Kết
 
@@ -105,7 +115,7 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 | SX-05 | Vừa | Đạo cụ thiếu trong dòng Đạo cụ | Đồ vật xuất hiện ở cột Nội dung nhưng không có trong danh sách | Bổ sung |
 | SX-06 | Vừa | Hiệu ứng dựng không được viết ra | Kịch bản ngầm định hiệu ứng mà Ghi chú không ghi | Ghi ở cột Ghi chú |
 | SX-07 | Nhẹ | Quá 4 nhân vật mà concept không cần | 5–6 nhân vật, có vai không có thoại hay chức năng | Bỏ vai |
-| SX-08 | Vừa | **[script]** Tổng thời lượng lệch mục tiêu trên 10% | Cộng giây các beat, hoặc ước theo thoại | Cắt theo thứ tự ở `cau-truc-va-nhip.md` mục 5 |
+| SX-08 | Vừa | **[script]** Tổng thời lượng lệch mục tiêu trên 10% | Cộng giây các beat, hoặc ước theo thoại. Brief ghi "Theo chuyện" thì `thoi_luong` là khoảng đã bấm giờ, script so với khoảng đó | Cắt theo thứ tự ở `cau-truc-va-nhip.md` mục 5 |
 | SX-09 | Nặng | **[script]** Vượt cơ cấu giới tính diễn viên (1 nữ, 5 nam) | Hai nhân vật nữ cùng lộ mặt, hoặc trên 5 nhân vật nam (script chỉ đếm vai có ghi `nữ`) | Nhân vật nữ thứ hai chỉ nghe giọng / qua màn hình / quay tay, lưng; hoặc đổi giới tính vai |
 | SX-10 | Vừa | Vai lộ mặt lệch xa độ tuổi diễn viên (21–22) | Bố mẹ, ông bà, sếp trung niên lộ mặt mà không phải chủ ý gây hài | Chỉ nghe giọng / qua màn hình / quay tay, lưng; hoặc đổi vai về cùng lứa |
 | SX-11 | Vừa | Chữ, nút hoặc hành động chính nằm trong vùng giao diện che | Đặt ở đáy hoặc cạnh phải khung (`khan-gia-va-nen-tang.md`). Nguồn: gói dùng thử beat 4–5, phòng trọ | Dời vào vùng an toàn, ghi vị trí ở Ghi chú |
@@ -157,7 +167,7 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 | **Giữ chân, nhịp** | 2 | Có đoạn chết, đoán được kết | Mâu thuẫn tăng, một chỗ hơi chậm | Mỗi beat mới, có vòng mở, kết bất ngờ mà hợp lý hoặc trọn vẹn đúng tông |
 | **Sức mạnh cảm xúc** | 1.5 | Không gây được cảm xúc rõ, hoặc lệch tông | Đúng tông nhưng nhẹ, hoặc có chỗ gượng | Gây đúng cảm xúc đã chọn, có đỉnh rõ, không gượng; có hài thì hài từ nhân vật, nhịp đúng |
 | **Cách kể** | 1.5 | Phải giải thích mới hiểu, hoặc chung chung | Hiểu được, nhưng quen | Hiểu ngay và mới. Ẩn dụ: mở khoá bằng hình, có diễn biến. Kể thẳng: chi tiết cụ thể, thật. Mượn thể loại: đúng luật thể loại |
-| **Chất điện ảnh** | 1.5 | Chỉ có thoại | Có đặc tả hoặc âm thanh được thiết kế | Kể bằng hình, ánh sáng / âm thanh mang nghĩa, có khoảnh khắc lặng |
+| **Chất điện ảnh** | 1.5 | Đứng nói suông, không dàn cảnh | Có đặc tả, dàn cảnh hoặc âm thanh được thiết kế | Hình, thoại, âm thanh cùng kể; ánh sáng / âm thanh mang nghĩa, có khoảnh khắc lặng |
 | **Quay được** | 1 | Có cảnh không quay được | Quay được nhưng tốn công | Gọn, thiết kế cho một máy quay, hiệu ứng dựng viết rõ |
 
 Điểm tổng = Σ (điểm tiêu chí × trọng số) / 10, giữ hai chữ số thập phân, không làm tròn khi so ngưỡng. Mọi tiêu chí chấm theo

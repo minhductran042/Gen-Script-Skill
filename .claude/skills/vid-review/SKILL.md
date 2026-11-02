@@ -1,6 +1,6 @@
 ---
 name: vid-review
-description: "Review một kịch bản video ngắn dọc qua năm lượt đọc với năm vai: người lướt (3 giây đầu, tắt tiếng), người xem hết (nhịp, đoán kết, đúng tông cảm xúc, cách kể), đạo diễn (chất điện ảnh), đội sản xuất (một máy quay, sáu diễn viên, bối cảnh, đạo cụ, dựng), và nền tảng (vùng cấm, bản quyền). Mỗi lỗi có mã từ danh mục (HK, GC, AD, CX, DA, KT, SX, AT, NH, SR), mức Nặng / Vừa / Nhẹ, vị trí beat và giây, trích nguyên văn, và gợi ý sửa viết sẵn. Chấm điểm theo bảng tiêu chí có mốc, kết luận ĐẠT / CHƯA ĐẠT, ghi điểm mạnh nên giữ. Nhận JSON hoặc file Excel đúng format team. Dùng khi user nói 'review kịch bản', 'kịch bản này ổn chưa', 'chấm kịch bản', 'chỗ nào chưa ổn', 'cải tiến kịch bản này', 'góp ý kịch bản'. Không sửa kịch bản (sửa thì dùng vid-viet-kich-ban chế độ sửa)."
+description: "Review một kịch bản video ngắn dọc qua năm lượt đọc với năm vai: người lướt (3 giây đầu, tắt tiếng), người xem hết (nhịp, đoán kết, đúng tông cảm xúc, cách kể), đạo diễn (chất điện ảnh), đội sản xuất (một máy quay, sáu diễn viên, bối cảnh, đạo cụ, dựng), và nền tảng (vùng cấm, bản quyền). Mỗi lỗi có mã từ danh mục (HK, GC, AD, CX, DA, TH, KT, SX, AT, NH, SR), mức Nặng / Vừa / Nhẹ, vị trí beat và giây, trích nguyên văn, và gợi ý sửa viết sẵn. Chấm điểm theo bảng tiêu chí có mốc, kết luận ĐẠT / CHƯA ĐẠT, ghi điểm mạnh nên giữ. Nhận JSON hoặc file Excel đúng format team. Dùng khi user nói 'review kịch bản', 'kịch bản này ổn chưa', 'chấm kịch bản', 'chỗ nào chưa ổn', 'cải tiến kịch bản này', 'góp ý kịch bản'. Không sửa kịch bản (sửa thì dùng vid-viet-kich-ban chế độ sửa)."
 argument-hint: <kich-ban-vN.json | file .xlsx>
 ---
 
@@ -14,7 +14,7 @@ về một chỗ cụ thể trong kịch bản.
 Luôn đọc:
 - `shared/luat/loi-kich-ban.md`: danh mục lỗi, mức, bảng chấm.
 - `shared/luat/dieu-kien-san-xuat.md`, `vung-cam.md`, `format-kich-ban.md`.
-- `shared/nghe/` (cả bảy file): làm thước đo.
+- `shared/nghe/` (cả tám file): làm thước đo.
 - `00-brief.md` của dự án nếu có: mục tiêu, nhóm khán giả, thời lượng, **tông**. Series thì đọc thêm `series.md`.
 
 **Chấm theo tông đã chọn, không theo sở thích hài.** Lấy tông từng kịch bản theo thứ tự: `overview.tong`, dòng "Tông đã
@@ -32,6 +32,8 @@ brief) có mặt không; đếm số biến số đã đổi theo mức bám. M�
 ---
 
 ## Bước 0: Chuẩn bị
+
+macOS / Linux: thay `py -I` bằng `python3 -I` ở mọi lệnh dưới đây.
 
 1. Đầu vào là `.xlsx` thì đọc ra JSON trước:
    ```
@@ -60,6 +62,8 @@ ngờ (`tong-cam-xuc.md` mục 6).
 
 - Câu hỏi kịch tính chính rõ trong 5 giây đầu chưa? (GC-01)
 - Đánh dấu chỗ nào thấy chán, chậm, trùng ý. (GC-02, GC-05)
+- Có đoạn trên 20 giây không có gì mới, cắt đi chuyện không mất gì không? (GC-08)
+- Đọc thoại thành tiếng: có nghe như người thật không? Mỗi nhân vật có lý do riêng không? (TH-01, TH-02)
 - Kết có trùng điều bạn đoán ở giữa không? (GC-04)
 - Có thông điệp: lộ ra ở beat nào, có trước beat lật không? Câu chốt có lộ sớm không? (GC-03)
 - Tông: đọc xong thấy cảm xúc gì, có đúng tông đã chọn không? Cảm xúc có leo thang tới đỉnh không? Có sến, ép cảm xúc không? Có chỗ hài phá cảnh lặng không? (CX-01, CX-02, CX-03, CX-04, CX-05)
@@ -76,8 +80,8 @@ ngờ (`tong-cam-xuc.md` mục 6).
 
 Đối chiếu với `shared/nghe/ngon-ngu-dien-anh.md` mục 10.
 
-- Beat nào chỉ có thoại? (DA-01)
-- Câu thoại nào kể điều hình kể được? (DA-02)
+- Beat nào nói suông: thoại không đổi tình thế và không có dàn cảnh, phản ứng hay đổi cỡ cảnh? (DA-01)
+- Câu nào chỉ nói cho người xem nghe, mô tả điều hình đã thể hiện? (DA-02)
 - Cỡ cảnh có thay đổi theo cảm xúc không? (DA-03)
 - Âm thanh, ánh sáng có cụ thể và mang nghĩa không? (DA-04)
 - Có khoảnh khắc lặng không? Dùng ẩn dụ thì có đặc tả đồ vật ẩn dụ không? (DA-05, DA-06)
@@ -182,5 +186,7 @@ Một file JSON có nhiều kịch bản thì mỗi kịch bản một mục k�
 - Không viết lại toàn bộ kịch bản. Mọi gợi ý gắn với một lỗi cụ thể.
 - Không chấm ĐẠT khi còn lỗi Nặng.
 - Không gợi ý thêm hài hay ẩn dụ khi tông không có.
+- Không gợi ý rút ngắn chỉ vì video dài; muốn cắt phải chỉ ra đoạn dính GC-08.
+- Không gợi ý thêm thoại hay đổi cách kể chỉ để giống một video mẫu.
 - Không đề xuất concept khác, không thêm việc ngoài bảng lỗi.
 - Không chấm theo phong cách tham khảo khi brief không ghi tham khảo.

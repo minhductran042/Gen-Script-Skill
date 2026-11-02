@@ -13,4 +13,5 @@ du-an/*-mau-*/**/*.wav
 du-an/*-mau-*/**/khung/
 
 __pycache__/
+.DS_Store
 du-an

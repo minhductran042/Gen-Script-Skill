@@ -25,18 +25,18 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))   # -I leaves the script's folder off sys.path
+import moi_truong  # noqa: E402
+from moi_truong import TOOLS, VENV, VENV_PY  # noqa: E402
+
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
-ROOT = Path(__file__).resolve().parents[2]
-TOOLS = ROOT / ".cong-cu"
-VENV = TOOLS / "venv"
-VENV_PY = VENV / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
 MODELS = TOOLS / "whisper-models"
 MARKER = TOOLS / "da-cai.json"
-PACKAGES = ["yt-dlp", "imageio-ffmpeg", "faster-whisper", "Pillow"]
-MODULES = {"yt-dlp": "yt_dlp", "imageio-ffmpeg": "imageio_ffmpeg", "faster-whisper": "faster_whisper",
-           "Pillow": "PIL"}
+CORE_PACKAGES = ["yt-dlp", "certifi", "imageio-ffmpeg", "Pillow", "numpy"]  # certifi: yt-dlp on python.org macOS builds
+WHISPER = "faster-whisper"   # optional: no wheel on some machines (older Intel Macs), the rest must still work
+PACKAGES = [*CORE_PACKAGES, WHISPER]
 
 HOOK_END = 3.0        # seconds sampled densely: the hook decides whether people stop scrolling
 HOOK_STEP = 0.5
@@ -45,15 +45,18 @@ LINE_GAP = 0.6        # a pause this long between words starts a new transcript 
 NO_SPEECH_MIN = 0.8   # pauses this long between lines are reported as khong_thoai
 MAX_FRAMES = 60
 GRID_COLS, GRID_ROWS, THUMB_W = 4, 3, 360
+SAMPLE_FPS = 2        # frames per second read when looking for black bars and an end card
+SAMPLE_W = 64         # sampled frame width; height keeps the aspect ratio
+BLACK_LEVEL = 24      # gray value at or below this counts as black
+ROW_FILLED = 0.5      # a row / column shows picture when this share of it is not black
+PICTURE_FRAMES = 0.3  # ... in at least this share of frames (night scenes are often near-black)
+OUTRO_LEN = (1.5, 6.0)  # end card length in seconds
+OUTRO_FLAT = 0.6      # share of pixels with the same gray level on an end card
 
 
 def _die(msg, code=1):
     print(f"LỖI: {msg}", file=sys.stderr)
     sys.exit(code)
-
-
-def _in_venv():
-    return Path(sys.prefix).resolve() == VENV.resolve()
 
 
 # ---------------------------------------------------------------- cai (setup)
@@ -73,25 +76,29 @@ def _venv_status():
         return {p: None for p in PACKAGES}
 
 
+def _core_ready(status):
+    return all(status[p] for p in CORE_PACKAGES)
+
+
 def cai():
-    TOOLS.mkdir(exist_ok=True)
-    if not VENV_PY.exists():
-        print(f"Tạo môi trường riêng ở {VENV} ...")
-        subprocess.run([sys.executable, "-m", "venv", str(VENV)], check=True)
-    missing = [p for p, v in _venv_status().items() if v is None]
+    moi_truong.ensure_venv()
+    status = _venv_status()
+    missing = [p for p in CORE_PACKAGES if not status[p]]
     if missing:
         print(f"Cài {', '.join(missing)} (lần đầu mất vài phút) ...")
-        r = subprocess.run([str(VENV_PY), "-m", "pip", "install", "--disable-pip-version-check", "-q", *PACKAGES])
-        if r.returncode:
+        if not moi_truong.pip_install(*CORE_PACKAGES):
             _die("pip install thất bại. Xem lỗi ở trên; nếu báo thiếu bản dựng cho phiên bản Python này thì cài "
                  "Python 3.12 rồi xoá thư mục .cong-cu và chạy lại.")
+    if not _venv_status()[WHISPER] and not moi_truong.pip_install(WHISPER):
+        print("Không cài được faster-whisper trên máy này: vẫn đo được cut và lưới ảnh, lời thoại lấy từ phụ đề "
+              "trên hình.", file=sys.stderr)
     status = _venv_status()
-    not_ok = [p for p, v in status.items() if v is None]
+    not_ok = [p for p in CORE_PACKAGES if not status[p]]
     if not_ok:
         _die(f"vẫn thiếu: {', '.join(not_ok)}")
     MARKER.write_text(json.dumps({"python": sys.version.split()[0], "goi": status}, ensure_ascii=False, indent=2),
                       encoding="utf-8")
-    print("Sẵn sàng: " + ", ".join(f"{p} {v}" for p, v in status.items()))
+    print("Sẵn sàng: " + ", ".join(f"{p} {v}" for p, v in status.items() if v))
     print("Mô hình chép lời tải về lần đầu khi chạy 'chep' (small khoảng 480 MB).")
 
 
@@ -103,13 +110,13 @@ def kiem_cai():
         snap = list(MODELS.glob(f"models--Systran--faster-whisper-{name}/snapshots/*/model.bin"))
         state = "đã tải" if snap else "CHƯA TẢI (tự tải khi chép lời; small ~480 MB, có thể 10–15 phút)"
         print(f"{'whisper ' + name:16} {state}")
-    sys.exit(0 if all(status.values()) else 1)
+    sys.exit(0 if _core_ready(status) else 1)
 
 
 def _ensure_venv_and_reexec(argv):
-    if _in_venv():
+    if moi_truong.in_venv():
         return
-    if not all(_venv_status().values()):
+    if not moi_truong.venv_ok() or not _core_ready(_venv_status()):
         print("Lần đầu dùng: tự cài công cụ phân tích video.")
         cai()
     r = subprocess.run([str(VENV_PY), "-I", str(Path(__file__).resolve()), *argv])
@@ -198,8 +205,75 @@ def tai(url, out):
 
 # ---------------------------------------------------------------- tach (frames, cuts, silence, audio)
 
-def _cuts(video, threshold):
-    _, err = _ff(["-i", str(video), "-an", "-vf", f"select='gt(scene,{threshold})',showinfo", "-f", "null", "-"])
+def _gray_frames(video, w, h):
+    """Small grayscale frames as an array of shape (n, height, width)."""
+    import numpy as np
+    sh = max(round(h * SAMPLE_W / w / 2) * 2, 2) if w else 2
+    r = subprocess.run([_ffmpeg(), "-hide_banner", "-loglevel", "error", "-i", str(video), "-an", "-vf",
+                        f"fps={SAMPLE_FPS},scale={SAMPLE_W}:{sh},format=gray", "-f", "rawvideo", "-"],
+                       capture_output=True)
+    return np.frombuffer(r.stdout, dtype=np.uint8).reshape(-1, sh, SAMPLE_W)
+
+
+def _picture_span(filled):
+    """Longest run of True in a boolean array, as (start, end); None when there is none."""
+    best, start = None, None
+    for i, on in enumerate([*filled, False]):
+        if on and start is None:
+            start = i
+        elif not on and start is not None:
+            if best is None or i - start > best[1] - best[0]:
+                best = (start, i)
+            start = None
+    return best
+
+
+def _picture_box(gray, w, h):
+    """Crop box (x, y, width, height) of the picture inside black bars; None when the file has no bars.
+
+    Burned-in subtitles and watermarks in the bars cover too little of a row to count as picture.
+    """
+    if not len(gray):
+        return None
+    lit = gray > BLACK_LEVEL
+    rows = _picture_span((lit.mean(axis=2) >= ROW_FILLED).mean(axis=0) >= PICTURE_FRAMES)
+    if not rows:
+        return None
+    cols = _picture_span((lit[:, rows[0]:rows[1]].mean(axis=1) >= ROW_FILLED).mean(axis=0) >= PICTURE_FRAMES)
+    if not cols:
+        return None
+    sh, sw = gray.shape[1:]
+    x0, x1 = cols[0] * w // sw, cols[1] * w // sw
+    y0, y1 = rows[0] * h // sh, rows[1] * h // sh
+    cw, ch = (x1 - x0) // 2 * 2, (y1 - y0) // 2 * 2
+    if cw * ch >= 0.95 * w * h or cw < 16 or ch < 16:
+        return None
+    return x0, y0, cw, ch
+
+
+def _outro_start(gray, dur, silences):
+    """Second where a platform end card begins, or None.
+
+    An end card is silent to the end of the file, motionless and mostly one flat colour. A held last shot of the
+    film itself keeps its texture, so it is not cut.
+    """
+    import numpy as np
+    if not silences or dur - silences[-1][1] > 0.3:
+        return None
+    start = silences[-1][0]
+    if not OUTRO_LEN[0] <= dur - start <= OUTRO_LEN[1]:
+        return None
+    tail = gray[int((start + 1.0) * SAMPLE_FPS):]
+    if not len(tail) or np.abs(tail.astype(int) - tail[-1].astype(int)).mean() >= 2:
+        return None
+    flat = max(np.bincount(f.ravel(), minlength=256).max() for f in tail) / tail[0].size
+    return start if flat >= OUTRO_FLAT else None
+
+
+def _cuts(video, threshold, box=None):
+    """Scene changes, measured on the picture only: black bars flatten ffmpeg's scene score, so cuts go unseen."""
+    crop = "crop={2}:{3}:{0}:{1},".format(*box) if box else ""
+    _, err = _ff(["-i", str(video), "-an", "-vf", f"{crop}select='gt(scene,{threshold})',showinfo", "-f", "null", "-"])
     return [round(float(t), 2) for t in re.findall(r"pts_time:([\d.]+)", err)]
 
 
@@ -276,8 +350,13 @@ def tach(video, out, threshold=0.3):
     if frame_dir.exists():
         shutil.rmtree(frame_dir)
     frame_dir.mkdir()
-    dur, w, h, has_audio = _probe(video)
-    cuts = [c for c in _cuts(video, threshold) if 0.1 < c < dur - 0.1]
+    file_dur, w, h, has_audio = _probe(video)
+    silences = _silences(video) if has_audio else []
+    gray = _gray_frames(video, w, h)
+    outro = _outro_start(gray, file_dur, silences)
+    dur = outro if outro is not None else file_dur
+    box = _picture_box(gray[:int(dur * SAMPLE_FPS)], w, h)
+    cuts = [c for c in _cuts(video, threshold, box) if 0.1 < c < dur - 0.1]
     frames = []
     for t, kind in _frame_times(dur, cuts):
         f = frame_dir / f"{t:07.2f}s.jpg"
@@ -288,12 +367,15 @@ def tach(video, out, threshold=0.3):
     grids = _grids(frames, out)
     bounds = [0.0, *cuts, dur]
     shots = [round(b - a, 2) for a, b in zip(bounds, bounds[1:])]
-    silences = _silences(video) if has_audio else []
+    silences = [s for s in silences if s[0] < dur]
     if has_audio:
         _ff(["-i", str(video), "-vn", "-ac", "1", "-ar", "16000", "-y", str(out / "am-thanh.wav")])
     info = {
-        "video": str(video), "thoi_luong": round(dur, 2), "khung_hinh": f"{w}x{h}",
-        "doc": h > w, "co_am_thanh": has_audio, "nguong_cat": threshold,
+        "video": str(video), "thoi_luong": round(dur, 2), "thoi_luong_file": round(file_dur, 2),
+        "outro_tu": round(outro, 2) if outro is not None else None,
+        "khung_file": f"{w}x{h}", "vung_hinh": dict(zip("xywh", box)) if box else None,
+        "khung_hinh": f"{box[2]}x{box[3]}" if box else f"{w}x{h}",
+        "doc": (box[3] > box[2]) if box else h > w, "co_am_thanh": has_audio, "nguong_cat": threshold,
         "so_cut": len(cuts), "so_shot": len(shots), "cut_luc": cuts,
         "shot_trung_binh": round(dur / len(shots), 2), "shot_dai_nhat": max(shots), "shot_ngan_nhat": min(shots),
         "cut_trong_3s_dau": sum(1 for c in cuts if c <= HOOK_END),
@@ -319,7 +401,15 @@ def chep(out, model="small"):
     import numpy as np
     os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
     os.environ.setdefault("HF_HUB_DISABLE_IMPLICIT_TOKEN", "1")
-    from faster_whisper import WhisperModel
+    os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")   # two OpenMP copies in the wheels abort the process on macOS
+    try:
+        from faster_whisper import WhisperModel
+    except ImportError:
+        (out / "loi.json").write_text(json.dumps(
+            {"ghi_chu": "máy không chạy được faster-whisper; lấy lời từ phụ đề trên hình", "doan": []},
+            ensure_ascii=False, indent=2), encoding="utf-8")
+        print("Không có faster-whisper, bỏ qua chép lời.")
+        return
     MODELS.mkdir(parents=True, exist_ok=True)
     # Decode the 16 kHz mono wav ourselves: faster-whisper's own decoder breaks on newer PyAV releases.
     with wave.open(str(wav)) as w:

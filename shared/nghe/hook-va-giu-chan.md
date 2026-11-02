@@ -89,5 +89,6 @@ Hai luật cho phần kết:
 ## 7. Ba bài kiểm
 
 1. **Bài 3 giây:** chỉ đọc beat đầu. Bạn có lướt qua không?
-2. **Bài tắt tiếng:** chỉ đọc cột Nội dung (phần hành động) và Text nổi bật. Bạn có hiểu chuyện gì xảy ra không?
+2. **Bài tắt tiếng:** chỉ đọc hành động và Text nổi bật của beat hook. Bạn có hiểu vì sao nên dừng lại không? Phần sau của
+   video được dựa vào thoại, miễn là thoại quan trọng có phụ đề.
 3. **Bài đoán kết** (chỉ với chuyện dựa vào bất ngờ)**:** đọc tới giữa kịch bản rồi dừng, đoán kết. Đoán trúng thì phải thêm lệch hướng.

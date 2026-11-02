@@ -14,7 +14,7 @@ Luôn đọc:
 - `shared/luat/vung-cam.md`.
 - `shared/luat/loi-kich-ban.md`: biết trước lỗi để tránh.
 - `shared/nghe/tong-cam-xuc.md`: ba trục tông, cơ chế và bẫy của cảm xúc đã chọn, luật nào áp theo tông (mục 7).
-- `shared/nghe/cau-truc-va-nhip.md`, `hook-va-giu-chan.md`, `ngon-ngu-dien-anh.md`, `chu-de-va-thong-diep.md`.
+- `shared/nghe/cau-truc-va-nhip.md`, `hook-va-giu-chan.md`, `ngon-ngu-dien-anh.md`, `chu-de-va-thong-diep.md`, `thoai-va-do-gan.md`.
 - `shared/nghe/an-du-va-hai.md`: chỉ khi tông có ẩn dụ hoặc hài.
 
 Tham khảo: **chỉ khi brief ghi ở mục "Tham khảo"**, và chỉ đúng thứ được nêu. Không lấy nội dung trong
@@ -53,7 +53,8 @@ Ghi vào đầu `ghi-chu-viet.md` của dự án (file nháp, không xuất Exce
 - Chọn cấu trúc theo concept và cảm xúc (`tong-cam-xuc.md` mục 6, `cau-truc-va-nhip.md` mục 4). Số beat theo chuyện, không
   mặc định 8; không có lật thì không tạo lật.
 - Lập danh sách beat: mỗi beat có **Mục đích** (chức năng) và **mốc giây**, theo bảng phân bổ ở mục 3 của file đó.
-- Kiểm: mỗi beat chỉ một chức năng; không có hai beat liền nhau cùng ý; tổng giây khớp mục tiêu.
+- Kiểm: mỗi beat chỉ một chức năng; không có hai beat liền nhau cùng ý; tổng giây khớp mục tiêu nếu brief có mục tiêu cố
+  định. Brief ghi "Theo chuyện" thì độ dài do chuyện quyết định, mỗi đợt phải có điều mới (`thoai-va-do-gan.md` mục 4).
 
 ### Lượt 3: Hình ảnh
 
@@ -67,14 +68,15 @@ Với từng beat, viết phần **hành động** của cột Nội dung, cột
 - Hình, âm, nhịp dựng theo cảm xúc đã chọn (`tong-cam-xuc.md` mục 3).
 - Cột **Biểu cảm**: trạng thái + biểu hiện nhìn thấy được.
 
-Kiểm bằng bài tắt tiếng (`hook-va-giu-chan.md` mục 7): chỉ đọc hành động, có hiểu câu chuyện không?
+Kiểm bằng bài tắt tiếng (`hook-va-giu-chan.md` mục 7): hook phải hiểu được bằng hình và chữ.
 
 ### Lượt 4: Thoại
 
 Thêm thoại vào cột Nội dung, sau hành động:
 
-- **Chỉ thêm thoại ở chỗ hình không tự kể được.** Câu nào hình đã nói thì bỏ.
-- Mỗi lượt thoại ngắn, ưu tiên dưới khoảng 20 từ; nói như người trẻ nói: câu cụt, tiếng lóng vừa phải, xưng hô hợp quan
+- **Hình và thoại cùng kể**, chuyện cần bên nào thì bên đó gánh. Mỗi đoạn thoại phải có việc để làm
+  (`thoai-va-do-gan.md` mục 2). Câu chỉ nói cho người xem nghe mà hình thay được thì bỏ.
+- Lượt thoại thường ngắn, gợi ý dưới khoảng 20 từ, trừ lượt thoại đỉnh; nói như người trẻ nói: câu cụt, tiếng lóng vừa phải, xưng hô hợp quan
   hệ nhân vật.
 - **Mỗi nhân vật một giọng**: một người nói ngắn và thẳng, người kia vòng vo; một người hay hỏi lại, người kia hay
   đùa. Che tên nhân vật đi mà vẫn đoán được ai nói thì đạt.
@@ -115,12 +117,15 @@ Cột Text nổi bật:
 ### Lượt 8: Đọc thử bấm giờ
 
 - Ước thời lượng từng beat theo `cau-truc-va-nhip.md` mục 5 (thoại + hành động + khoảng lặng). Ghi vào `giay`.
-- Tổng lệch mục tiêu trên 10% thì cắt theo thứ tự ở mục đó.
+- Brief có mục tiêu cố định mà tổng lệch trên 10% thì cắt theo thứ tự ở mục đó. Brief ghi "Theo chuyện" thì ghi `thoi_luong`
+  là khoảng đã bấm giờ, ví dụ `90–130s`, và chỉ cắt đoạn không có gì mới.
 - Đọc lại cả kịch bản một mạch, như người xem. Chỗ nào thấy chán thì sửa.
 - Kiểm tông: đọc xong có đúng cảm xúc đã chọn không, có rơi vào bẫy của cảm xúc đó không, có chỗ nào tự trôi về hài không?
 - Chạy ba bài kiểm ở `hook-va-giu-chan.md` mục 7.
 
 ### Soát và xuất
+
+macOS / Linux: thay `py -I` bằng `python3 -I` ở mọi lệnh dưới đây.
 
 Ghi `du-an/<dự án>/kich-ban-v1.json` theo cấu trúc ở `format-kich-ban.md` mục 3. Điền đủ phần tổng quan (`overview`,
 mục 1a): lấy nhóm chủ đề, thông điệp, khán giả từ brief; tông từ dòng "Tông đã chốt" (ghi tông cụ thể, thông điệp Không thì để

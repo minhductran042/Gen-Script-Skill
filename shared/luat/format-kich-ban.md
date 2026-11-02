@@ -189,5 +189,6 @@ Mọi kịch bản lưu dạng JSON. Excel chỉ là bản xuất ra từ JSON.
 ```
 
 - `giay` bắt buộc ở beat Hook, nên có ở các beat còn lại. Khi xuất Excel, `giay` được nối vào cột Mục đích.
+- `thoi_luong`: brief có số cố định thì ghi số đó; brief ghi "Theo chuyện" thì ghi khoảng đã bấm giờ, ví dụ `90–130s`.
 - Beat đổi địa điểm thì ghi thêm `canh[i].dia_diem`.
 - Xuống dòng trong ô dùng `\n`.

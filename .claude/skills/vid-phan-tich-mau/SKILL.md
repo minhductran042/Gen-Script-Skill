@@ -30,6 +30,7 @@ Luôn đọc, vì đây là thước đo để gọi tên những gì thấy tro
 - `shared/nghe/tong-cam-xuc.md`: ba trục tông, cơ chế của từng cảm xúc, đường cảm xúc.
 - `shared/nghe/an-du-va-hai.md`: kiểu ẩn dụ, lúc lộ ẩn dụ, cơ chế hài, nhịp hài.
 - `shared/nghe/ngon-ngu-dien-anh.md`: cỡ cảnh, chuyển động, ánh sáng, âm thanh, nhịp dựng.
+- `shared/nghe/thoai-va-do-gan.md`: thoại làm việc gì, độ gần gũi.
 - `shared/nghe/chu-de-va-thong-diep.md`: nhóm chủ đề, câu chuyện bề mặt và thông điệp.
 - `shared/nghe/khan-gia-va-nen-tang.md`: nhóm tuổi, hành vi lướt.
 - `shared/luat/dieu-kien-san-xuat.md`: để chấm phần "làm lại được với đội mình".
@@ -46,7 +47,8 @@ Người dùng **không phải cài hay tìm hiểu gì**. Skill tự làm:
 1. Có Python chưa: thử `py --version`, rồi `python3 --version`.
    - Không có trên Windows: `winget install -e --id Python.Python.3.12 --accept-source-agreements --accept-package-agreements`,
      rồi mở lại shell hoặc gọi thẳng `py`.
-   - Không có trên macOS: `brew install python`. Linux: `sudo apt install -y python3 python3-venv`.
+   - Không có trên macOS: `brew install python`. Máy chưa có `brew`: chạy `xcode-select --install`, báo người dùng bấm
+     Install ở hộp thoại hiện ra rồi chờ xong. `python3` tự hiện hộp thoại này là bình thường, không phải lỗi. Linux: `sudo apt install -y python3 python3-venv`.
    - Không cài được (không có quyền, không có mạng): chuyển sang **tầng 3** ở bước 1 và báo một dòng lý do.
 2. Chạy `py -I shared/scripts/phan_tich_mau.py kiem-cai` để biết đây có phải lần đầu không.
 3. Gọi lệnh phân tích ở bước 1. Script tự kiểm, thiếu thì tự tạo môi trường riêng ở `.cong-cu/venv` và cài
@@ -55,6 +57,8 @@ Người dùng **không phải cài hay tìm hiểu gì**. Skill tự làm:
      (khoảng 480 MB, đã đo: 335 MB sau 8 phút). Từ lần thứ hai, video 20 giây chạy hết khoảng 30 giây.
    - Lần đầu: chạy lệnh ở **chế độ nền** (Claude Code: Bash `run_in_background`; công cụ không có chế độ nền thì đặt thời gian chờ đủ dài) và chờ thông báo xong, đừng để lệnh chạy trước mặt
      rồi bị cắt ở mốc 10 phút. Báo người dùng một dòng "lần đầu: đang cài công cụ và tải mô hình, khoảng 15 phút".
+   - `kiem-cai` ghi `faster-whisper CHƯA CÓ` mà vẫn thoát bình thường: máy không cài được gói này (thường là Mac Intel
+     đời cũ). Không phải lỗi, script vẫn đo cut và ra lưới ảnh; `loi.json` rỗng thì lấy lời từ phụ đề trên hình.
    - Người dùng cần nhanh: `--model base` (khoảng 140 MB, chép kém hơn), hoặc `--khong-chep` rồi dựa vào phụ đề `.vtt`.
 
 Lệnh chạy bằng `py -I` trên Windows, `python3 -I` trên macOS / Linux. Đường dẫn tính từ gốc repo.
@@ -93,7 +97,8 @@ cấu hình mã hoá và in tiếng Việt / emoji sẽ lỗi `UnicodeEncodeErro
 
 Theo thứ tự, vì số đo giúp đọc ảnh đúng chỗ:
 
-1. `canh.json`: `thoi_luong`, `khung_hinh`, `doc` (true = khung dọc), `cut_luc` (giây), `so_shot`, `shot_trung_binh`,
+1. `canh.json`: `thoi_luong` (đã trừ outro nền tảng; `thoi_luong_file`, `outro_tu` là số của file), `khung_hinh`, `doc`
+   (true = khung dọc; hai trường này tính trên vùng hình đã bỏ viền đen, `vung_hinh` là vùng đó), `cut_luc` (giây), `so_shot`, `shot_trung_binh`,
    `shot_dai_nhat`, `cut_trong_3s_dau`, `im_lang` (các đoạn **tắt tiếng thật**, dưới −35 dB từ 0,4s trở lên), `khung`
    (danh sách ảnh: `t`, `loai` = hook / cut / giua / cuoi).
 2. `luoi-01.jpg`, `luoi-02.jpg`…: xem **hết**, theo thứ tự. Lưới 1 bắt đầu bằng 0,0–3,0s (0,5s một ảnh); sau đó có một
@@ -165,7 +170,8 @@ Bình luận nói gì: <các nhóm ý, mỗi nhóm một dòng kèm số like>
 | Yếu tố của mẫu | Đội làm được? (6 diễn viên: 1 nữ 5 nam, 1 máy quay, thiết bị hiện có) | Cách thay nếu không |
 
 ## 8. Công thức rút gọn
-- Giữ (hằng số): dạng hook, khung beat có giây, nhịp dựng, kiểu kết, kỹ thuật giữ chân chính
+- Giữ (hằng số): dạng hook, khung beat có giây, nhịp dựng, kiểu kết, kỹ thuật giữ chân chính, kỹ thuật thoại (thoại làm
+  việc gì, leo thang và đổi thế ra sao, cài – trả bằng lời nào; chỉ tả kỹ thuật, không trích câu)
 - Đổi (biến số): vấn đề, đồ vật / hình ảnh ẩn dụ, bối cảnh, quan hệ nhân vật
 - Khung beat trừu tượng: "0–2s <loại hành động>, 2–8s <…>, …" (không chứa nội dung cụ thể của mẫu)
 
@@ -180,6 +186,8 @@ Kỹ thuật thấy trong mẫu mà shared/nghe/ chưa có. Chỉ đề xuất, 
 ### Luật viết
 
 - **Mọi nhận định ở mục 4–5 có bằng chứng**: mốc giây, số đo trong `canh.json`, hoặc bình luận. Không có thì không viết.
+- **Đặc điểm của file không phải lựa chọn sáng tác.** Viền đen, watermark, outro nền tảng, độ phân giải thấp thường do cách
+  cắt hoặc tải video: không phân tích, không đưa vào mục 8, không kết luận tỉ lệ khung của video gốc khi file có viền.
 - **Tách đo được và suy đoán.** "Cắt 6 lần trong 3 giây đầu" là đo được. "Người 22–25 thấy mình trong đó" là suy đoán.
   View cao không chứng minh lý do: không viết "video viral vì …" như một sự thật.
 - **Gọi tên bằng từ vựng nghề có sẵn** (`HK-Dxx`, tên kỹ thuật, tên cơ chế hài). Hook không khớp dạng nào: ghi
@@ -253,6 +261,11 @@ hơn một video); điểm riêng của từng mẫu; một công thức chung �
 | 60 bình luận tải về gần hết là trả lời của một bình luận | YouTube trả cả luồng trả lời | Script chỉ tải bình luận gốc |
 | Một đoạn lời dài 8 giây, mốc giây thô | Whisper gộp nhiều câu thành một đoạn | Script lấy mốc từng từ rồi chia lại theo quãng nghỉ ≥ 0,6s và dấu câu |
 | Lời whisper sai chữ dù độ tin cậy cao ("one of" thay "in front of") | Giới hạn của mô hình | Tin chữ trên màn hình > `.vtt` > whisper (bước 2) |
+| Video cắt từ TikTok báo 0 cut dù nhìn rõ có cut | Viền đen chiếm phần lớn khung làm điểm đổi cảnh của ffmpeg quá thấp | Script tự dò vùng hình và đo cut trên vùng đó; ảnh lưới vẫn giữ cả viền vì phụ đề có thể nằm ở đó |
+| Thời lượng, shot và khoảng lặng cuối gồm cả màn outro TikTok | Outro nằm trong file | Script nhận outro (cuối file, im lặng, đứng yên, nền phẳng) và trừ khỏi số đo; `thoi_luong_file` giữ số gốc |
+| `No module named pip`, `bad interpreter`, hoặc venv hỏng sau `brew upgrade` / chép từ máy khác | venv trỏ tới Python đã mất, khác hệ điều hành, hoặc cài dở | `moi_truong.py` kiểm venv mỗi lần và tự tạo lại; thiếu `ensurepip` thì tự tải pip |
+| Mac báo Python quá cũ, tải link video lỗi | Python 3.9 đi kèm Xcode | Script tự tìm Python 3.10 trở lên, cả ở `/opt/homebrew/bin` và `/usr/local/bin`; không có thì cảnh báo, cài bằng `brew install python` |
+| `OMP: Error #15` làm chép lời dừng đột ngột trên Mac | Hai bản OpenMP trong các gói | Script đặt `KMP_DUPLICATE_LIB_OK` trước khi nạp whisper |
 | `UnicodeEncodeError: 'charmap'` khi in json bằng `py -I -c` | `-I` bỏ qua cấu hình mã hoá trên Windows | Đọc file bằng Read, không in bằng Python |
 
 ## Không làm

@@ -18,6 +18,7 @@ Luôn đọc:
 - `shared/nghe/tong-cam-xuc.md`: ba trục tông, tám cảm xúc và cơ chế của từng cảm xúc.
 - `shared/nghe/an-du-va-hai.md`: tìm và chấm ẩn dụ, cơ chế hài, kho bối cảnh / đồ vật. Chỉ dùng khi tông có ẩn dụ hoặc hài.
 - `shared/nghe/hook-va-giu-chan.md`: mã dạng hook `HK-Dxx`, kiểu kết.
+- `shared/nghe/thoai-va-do-gan.md`: độ gần gũi, thoại có việc để làm; áp cho mọi chủ đề và tông.
 - `shared/nghe/cau-truc-va-nhip.md`: logline, câu hỏi kịch tính, các cấu trúc khác.
 - `shared/luat/dieu-kien-san-xuat.md` mục 5: kiểm quay được.
 - `shared/luat/vung-cam.md`.
@@ -113,7 +114,7 @@ Chấm mọi ý thô theo ma trận dưới (1–5 điểm mỗi tiêu chí), gh
 | **Khớp tông** | Không rõ gây cảm xúc gì, hoặc lệch tông đã chọn | Thấy rõ khoảnh khắc gây đúng cảm xúc, theo đúng cơ chế ở `tong-cam-xuc.md` mục 3 |
 | **Sức hook** | Không nghĩ ra khung đầu nào lạ | Đã thấy rõ khung hình đầu tiên |
 | **Độ mới** | Đã thấy nhiều trên nền tảng | Góc nhìn, tình huống hoặc hình ảnh chưa ai làm |
-| **Chất điện ảnh** | Chỉ kể được bằng thoại | Kể được bằng hình, có đặc tả, có khoảnh khắc lặng |
+| **Chất điện ảnh** | Không có hình hay dàn cảnh nào đáng nhớ | Hình, thoại, âm thanh cùng kể; có đặc tả hoặc dàn cảnh đáng nhớ, có khoảnh khắc lặng |
 | **Quay được** | Cần nhiều bối cảnh, người, thiết bị | 1–2 bối cảnh, ≤ 4 người, đồ có sẵn |
 
 Chọn ra 5–8 ý để phát triển:

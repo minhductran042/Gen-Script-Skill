@@ -53,6 +53,10 @@ HEADERS = ["STT", "Tóm tắt - Title", "Địa điểm", "Mục đích", "Nhân
 SCENE_KEYS = ["muc_dich", "nhan_vat", "noi_dung", "bieu_cam", "goc_quay", "text_noi_bat", "ghi_chu"]
 REQUIRED_SCENE_KEYS = ["muc_dich", "nhan_vat", "noi_dung", "goc_quay"]
 MAX_ACTORS = 6  # see shared/luat/dieu-kien-san-xuat.md
+MAX_FEMALE = 1
+MAX_LOCATIONS = 2
+MAX_LINE_WORDS = 25
+MAX_HOOK_TEXT_WORDS = 10
 # Common Vietnamese words in their diacritic-stripped form (là, thôi, không, được...).
 STRIPPED_WORDS = {"la", "thoi", "khong", "duoc", "nguoi", "nhung", "cua", "voi", "roi", "gi", "nay", "dang",
                   "nhieu", "minh", "toi", "phai", "biet", "muon", "lam", "trong", "quan", "y", "a", "di", "day"}
@@ -75,7 +79,7 @@ OVERVIEW_FIELDS = [
     ("Lưu ý sản xuất", "luu_y_san_xuat", True),
 ]
 OVERVIEW_BY_LABEL = {label: (key, nested) for label, key, nested in OVERVIEW_FIELDS}
-OVERVIEW_REQUIRED = ["chu_de", "thong_diep", "hook", "nhan_vat"]
+OVERVIEW_REQUIRED = ["chu_de", "tong", "hook", "nhan_vat"]
 SEC_OVERVIEW, SEC_SCRIPT = "TỔNG QUAN", "KỊCH BẢN CHI TIẾT"
 
 TITLE_RE = re.compile(r"^Kịch bản\s*(\d+)\s*:\s*(.*?)\s*\((?:Thời lượng dự kiến:\s*)?([^()]*)\)\s*$")
@@ -160,12 +164,44 @@ def _no_diacritics_line(line):
     return False
 
 
-def _actors(nhan_vat):
-    text = re.sub(r"\(.*?\)", "", nhan_vat)
-    if re.search(r"cả\s*\d+\s*người", text, re.I):
+OFFSCREEN_RE = re.compile(r"^voice\s|chỉ giọng|chỉ nghe|giọng qua|voice|lồng tiếng|qua điện thoại|qua màn hình", re.I)
+FEMALE_RE = re.compile(r"\(\s*nữ\b|^\s*nữ\b", re.I)
+
+
+def _roles(nhan_vat):
+    """Split a Nhân vật cell into on-screen roles. Parenthesised notes may hold commas, so they don't split.
+
+    Voice-only / on-screen-device roles need no actor in frame (dieu-kien-san-xuat.md), so they are left out.
+    """
+    if re.search(r"cả\s*\d+\s*người", nhan_vat, re.I):
         return None  # group label, counted by other beats
-    names = [n.strip() for n in re.split(r"[+,&]| và ", text) if n.strip()]
-    return [re.sub(r"^voice\s+", "", n, flags=re.I) for n in names]
+    parts = re.split(r"[+,&](?![^(]*\))|\svà\s(?![^(]*\))", nhan_vat)
+    return [p.strip() for p in parts if p.strip() and not OFFSCREEN_RE.search(p)]
+
+
+def _name(role):
+    return re.sub(r"\(.*?\)", "", role).strip().lower()
+
+
+def _seconds(giay):
+    """(start, end) from "0–4s" / "47,5–49s"; None when unreadable."""
+    m = re.fullmatch(r"\s*([\d.,]+)\s*[–-]\s*([\d.,]+)\s*s?\s*", giay)
+    return (float(m.group(1).replace(",", ".")), float(m.group(2).replace(",", "."))) if m else None
+
+
+def _check_time(add, tag, kb, canh):
+    spans = [_seconds(_s(c.get("giay"))) for c in canh]
+    for i, span in enumerate(spans, 1):
+        if span is None:
+            add("Nhẹ", "NH-06", f"{tag} beat {i}", "thiếu mốc giây hoặc mốc không đọc được")
+        elif i > 1 and spans[i - 2] and abs(span[0] - spans[i - 2][1]) > 0.01:
+            add("Nhẹ", "NH-06", f"{tag} beat {i}", f"mốc đầu {span[0]:g}s không nối beat trước ({spans[i - 2][1]:g}s)")
+    target = [float(n) for n in re.findall(r"\d+", _s(kb.get("thoi_luong")))]
+    ends = [s[1] for s in spans if s]
+    if target and ends:
+        low, high = min(target) * 0.9, max(target) * 1.1
+        if not low <= max(ends) <= high:
+            add("Vừa", "SX-08", tag, f"tổng {max(ends):g}s lệch mục tiêu {_s(kb.get('thoi_luong'))} trên 10%")
 
 
 def kiem(path_in):
@@ -196,15 +232,33 @@ def kiem(path_in):
         if not _s(canh[-1].get("text_noi_bat")):
             add("Nhẹ", "KT-02", f"{tag} beat {len(canh)}", "beat cuối chưa có Text nổi bật")
 
-        actors = set()
+        tong = _s((kb.get("overview") or {}).get("tong"))
+        if "đề xuất" in tong.lower():
+            add("Vừa", "NH-03", tag, f"overview.tong phải là tông cụ thể, đang ghi '{tong}'")
+        _check_time(add, tag, kb, canh)
+        for line in _s(first.get("text_noi_bat")).splitlines():
+            if len(line.split()) > MAX_HOOK_TEXT_WORDS:
+                add("Nhẹ", "HK-06", f"{tag} beat 1", f"chữ hook trên {MAX_HOOK_TEXT_WORDS} từ: {line[:60]}")
+
+        actors, female = set(), set()
+        for line in _s((kb.get("overview") or {}).get("nhan_vat")).splitlines():
+            if FEMALE_RE.search(line) and not OFFSCREEN_RE.search(line.split(":")[0]):
+                female.add(_name(line.split(":")[0]))
+        places = {p.lower() for p in [_s(kb.get("dia_diem"))] + [_s(c.get("dia_diem")) for c in canh] if p}
+        if len(places) > MAX_LOCATIONS:
+            add("Vừa", "SX-03", tag, f"{len(places)} bối cảnh > {MAX_LOCATIONS}")
         for i, c in enumerate(canh, 1):
             where = f"{tag} beat {i}"
             for key in REQUIRED_SCENE_KEYS:
                 if not _s(c.get(key)):
                     add("Vừa", "NH-03", where, f"trống cột '{key}'")
-            names = _actors(_s(c.get("nhan_vat")))
-            if names:
-                actors.update(n.lower() for n in names)
+            roles = _roles(_s(c.get("nhan_vat")))
+            if roles:
+                actors.update(_name(r) for r in roles)
+                female.update(_name(r) for r in roles if FEMALE_RE.search(r))
+            for quote in re.findall(r"[“\"]([^”\"]+)[”\"]", _s(c.get("noi_dung"))):
+                if len(quote.split()) > MAX_LINE_WORDS:
+                    add("Nhẹ", "GC-06", where, f"lượt thoại {len(quote.split())} từ: {quote[:50]}…")
             for line in _s(c.get("noi_dung")).splitlines():
                 line = line.strip()
                 if _no_diacritics_line(line):
@@ -216,6 +270,8 @@ def kiem(path_in):
                         add("Nặng", "NH-01", where, f"đoạn trùng nguyên văn với kịch bản {other}: {line[:60]}…")
         if len(actors) > MAX_ACTORS:
             add("Nặng", "SX-01", tag, f"{len(actors)} nhân vật ({', '.join(sorted(actors))}) > {MAX_ACTORS} diễn viên")
+        if len(female) > MAX_FEMALE:
+            add("Nặng", "SX-09", tag, f"{len(female)} nhân vật nữ lộ mặt ({', '.join(sorted(female))}) > {MAX_FEMALE}")
 
     order = {"Nặng": 0, "Vừa": 1, "Nhẹ": 2}
     issues.sort(key=lambda x: order[x[0]])

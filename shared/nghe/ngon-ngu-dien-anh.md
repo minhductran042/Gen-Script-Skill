@@ -111,7 +111,7 @@ Công cụ mạnh:
 
 ## 10. Kiểm "có điện ảnh chưa"
 
-- [ ] Có ít nhất một đặc tả đồ vật ẩn dụ?
+- [ ] Có ít nhất một đặc tả mang nghĩa (đồ vật ẩn dụ nếu có, hoặc chi tiết nói hộ cảm xúc)?
 - [ ] Có ít nhất một khoảnh khắc không thoại, chỉ hình + âm thanh?
 - [ ] Cỡ cảnh thay đổi theo cảm xúc (xa khi lạc lõng, gần khi nhận ra)?
 - [ ] Ánh sáng có nguồn và có nghĩa ở các cảnh chính?

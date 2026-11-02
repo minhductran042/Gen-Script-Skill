@@ -8,8 +8,8 @@ Thư mục này **không phải luật**. Skill chỉ đọc file ở đây khi 
 - Tham khảo: không
 ```
 
-Brief ghi "không", hoặc không nêu gì, thì skill **không đọc** thư mục này. Khi đó skill sáng tác chỉ dựa vào `shared/luat/`
-và brief.
+Brief ghi "không", hoặc không nêu gì, thì skill **không đọc** thư mục này. Khi đó skill sáng tác dựa vào `shared/luat/`,
+`shared/nghe/` và brief.
 
 Khi đọc tham khảo, skill chỉ học cấu trúc / tinh thần, không chép thoại, cảnh hay chuỗi hành động.
 

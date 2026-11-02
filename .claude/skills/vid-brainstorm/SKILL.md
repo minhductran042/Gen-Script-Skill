@@ -1,6 +1,6 @@
 ---
 name: vid-brainstorm
-description: "Brainstorm concept video ngắn dọc mang chất điện ảnh, ẩn dụ hài đời thường cho khán giả 17–30 trên TikTok / YouTube Shorts. Đi qua năm pha: đào vấn đề thật (insight), phân kỳ ít nhất 15 ý thô qua sáu lăng kính (đồ vật, tình huống song song, phóng đại thể loại, nhân hoá, thế giới đảo luật, đảo vai), hội tụ bằng ma trận chấm điểm, phát triển thành thẻ concept (logline, hook có mã dạng, ẩn dụ và điểm khớp, beat lật, kết, nhân vật, bối cảnh, rủi ro quay), rồi tự phản biện từng concept. Nhận đầu vào là ý tưởng thô, hoặc video / kịch bản mẫu mà người dùng muốn học cấu trúc rồi biến tấu khác đi. Dùng khi user nói 'brainstorm video', 'nghĩ ý tưởng', 'cho vài concept', 'từ video mẫu này nghĩ cái khác', 'ý tưởng về <chủ đề>'. Viết kịch bản đầy đủ thì dùng vid-viet-kich-ban; chạy cả quy trình thì dùng /vid."
+description: "Brainstorm concept video ngắn dọc mang chất điện ảnh cho khán giả 17–30 trên TikTok / YouTube Shorts, theo tông cảm xúc người dùng chọn hoặc tự đề xuất (không mặc định hài hay ẩn dụ). Đi qua năm pha: đào vấn đề thật (insight), phân kỳ ít nhất 15 ý thô qua các lăng kính ẩn dụ (đồ vật, tình huống song song, phóng đại thể loại, nhân hoá, thế giới đảo luật, đảo vai) và kể thẳng (sự thật trần trụi, khoảnh khắc nhỏ, bí mật hé dần, đổi góc nhìn, nhảy thời gian), hội tụ bằng ma trận chấm điểm, phát triển thành thẻ concept (logline, tông cảm xúc, hook có mã dạng, cách kể, beat lật, kết, nhân vật, bối cảnh, rủi ro quay), rồi tự phản biện từng concept. Nhận đầu vào là ý tưởng thô, hoặc video / kịch bản mẫu mà người dùng muốn học cấu trúc rồi biến tấu khác đi. Dùng khi user nói 'brainstorm video', 'nghĩ ý tưởng', 'cho vài concept', 'từ video mẫu này nghĩ cái khác', 'ý tưởng về <chủ đề>'. Viết kịch bản đầy đủ thì dùng vid-viet-kich-ban; chạy cả quy trình thì dùng /vid."
 argument-hint: <ý tưởng | đường dẫn 00-brief.md>
 ---
 
@@ -12,9 +12,11 @@ những ý không quay được hoặc không giữ chân được.
 ## Kiến thức dùng
 
 Luôn đọc:
+- `du-an/*/06-sau-dang.md` nếu có: tông, hook nào đang hiệu quả với khán giả thật; chỉ để tham khảo, không giới hạn ý.
 - `shared/nghe/chu-de-va-thong-diep.md`: 8 nhóm chủ đề, lồng câu chuyện với thông điệp, ghép chủ đề, xử lý đầu vào chưa rõ.
 - `shared/nghe/khan-gia-va-nen-tang.md`: chọn nhóm khán giả, kiểm relatable.
-- `shared/nghe/an-du-va-hai.md`: tìm và chấm ẩn dụ, cơ chế hài, kho bối cảnh / đồ vật.
+- `shared/nghe/tong-cam-xuc.md`: ba trục tông, tám cảm xúc và cơ chế của từng cảm xúc.
+- `shared/nghe/an-du-va-hai.md`: tìm và chấm ẩn dụ, cơ chế hài, kho bối cảnh / đồ vật. Chỉ dùng khi tông có ẩn dụ hoặc hài.
 - `shared/nghe/hook-va-giu-chan.md`: mã dạng hook `HK-Dxx`, kiểu kết.
 - `shared/nghe/cau-truc-va-nhip.md`: logline, câu hỏi kịch tính, các cấu trúc khác.
 - `shared/luat/dieu-kien-san-xuat.md` mục 5: kiểm quay được.
@@ -27,7 +29,7 @@ khuôn luật và nghề. Không lấy nội dung trong `shared/mau-format/` là
 
 - `00-brief.md` (khi chạy từ /vid), hoặc lời người dùng.
 - Gọi trực tiếp mà thiếu thời lượng: hỏi một lần, gộp các câu.
-- Mục "Chế độ" của brief là **nhanh**: pha 2 tối thiểu 8 ý thô (mỗi lăng kính ít nhất 1), pha 3 chọn 3 concept (vẫn giữ một
+- Mục "Chế độ" của brief là **nhanh**: pha 2 tối thiểu 8 ý thô (trải đủ các nhóm lăng kính đang dùng), pha 3 chọn 3 concept (vẫn giữ một
   concept "liều" nếu có ý đủ lạ), pha 5 chỉ ghi điểm yếu nhất và cách sửa. Các luật loại ý (quay được, vùng cấm) giữ
   nguyên.
 - Đầu vào chưa rõ chủ đề, câu chuyện hay thông điệp: xử lý theo `chu-de-va-thong-diep.md` mục 3, không chặn lại hỏi
@@ -38,9 +40,12 @@ khuôn luật và nghề. Không lấy nội dung trong `shared/mau-format/` là
 ## Pha 1: Đào vấn đề
 
 Ý tưởng người dùng đưa thường là một **chủ đề** ("chuyện tình yêu thời nay"). Concept tốt cần một **insight**: một sự
-thật cụ thể, hơi đau, mà người xem nhận ra là đúng với mình nhưng chưa ai nói ra.
+thật cụ thể (thường hơi đau, nhưng cũng có thể buồn cười, đáng sợ hay đáng tự hào) mà người xem nhận ra là đúng với mình nhưng chưa ai nói ra.
 
-Trước tiên, xác định **nhóm chủ đề** (`chu-de-va-thong-diep.md` mục 2):
+Trước tiên, đọc **tông** trong brief (`tong-cam-xuc.md` mục 2). Đã chốt thì mọi concept theo tông đó. "Để skill
+đề xuất" hoặc chưa có thì mỗi concept tự mang tông suy từ insight, theo luật đa dạng ở mục 2 của file đó.
+
+Rồi xác định **nhóm chủ đề** (`chu-de-va-thong-diep.md` mục 2):
 
 - Brief chỉ có một nhóm: chọn 3–4 chủ đề con khác nhau trong nhóm, và thêm ít nhất **một cặp ghép** với nhóm khác (mục 1,
   bảng ghép).
@@ -50,18 +55,28 @@ Trước tiên, xác định **nhóm chủ đề** (`chu-de-va-thong-diep.md` m�
 Rồi với từng chủ đề con, trả lời các câu hỏi sau (ghi ngắn vào `01-concepts.md` mục "Insight"):
 
 1. Chủ đề này xảy ra **ở đâu, lúc nào, với đồ vật gì** trong một ngày của người 17–30?
-2. Người ta **làm gì** khi gặp nó (hành vi), khác với **nói gì** về nó (lời)? Khoảng lệch giữa làm và nói là mỏ hài.
+2. Người ta **làm gì** khi gặp nó (hành vi), khác với **nói gì** về nó (lời)? Khoảng lệch giữa làm và nói là mỏ kịch tính: hài hay đau là tuỳ tông.
 3. Điều gì người ta **ngại thừa nhận** về nó?
 4. Có **thói quen nhỏ** nào ai cũng có liên quan tới nó?
 5. Chủ đề này **khác nhau thế nào** giữa ba nhóm tuổi 17–21, 22–25, 26–30?
 6. Nếu phóng đại nó lên 10 lần thì nó thành cái gì?
+7. Nếu kể thẳng, không đùa, thì **khoảnh khắc nào** làm người ta nghẹn, sợ hoặc rung động nhất?
 
 Rút ra **3–5 insight**, mỗi insight một câu cụ thể. Ví dụ minh hoạ: chủ đề "bận rộn" → insight "ta trả lời tin nhắn công
 việc trong 30 giây, nhưng để tin nhắn của mẹ tới tối".
 
 ## Pha 2: Phân kỳ (ít nhất 15 ý thô)
 
-Với mỗi insight, cho ý thô đi qua **sáu lăng kính** (chi tiết ở `an-du-va-hai.md` mục 2). Mỗi ý thô chỉ một dòng.
+Với mỗi insight, cho ý thô đi qua các lăng kính theo Cách kể trong brief. Mỗi ý thô chỉ một dòng.
+
+| Cách kể | Lăng kính dùng |
+|---|---|
+| Kể thẳng đời thực | Nhóm B |
+| Ẩn dụ | Nhóm A (trừ khi người dùng muốn thêm) |
+| Mượn thể loại | Phóng đại thể loại (quay nghiêm túc được, không cần hài) + nhóm B |
+| Để skill đề xuất | Cả hai nhóm, mỗi nhóm ít nhất 6 ý |
+
+**Nhóm A: ẩn dụ** (chi tiết ở `an-du-va-hai.md` mục 2)
 
 | Lăng kính | Câu hỏi kích ý |
 |---|---|
@@ -72,11 +87,21 @@ Với mỗi insight, cho ý thô đi qua **sáu lăng kính** (chi tiết ở `a
 | Thế giới đảo luật | Luật lạ nào làm insight hiện ra rõ? ("Nếu mỗi lần nói dối thì …") |
 | Đảo vai | Đổi vai ai với ai thì insight lộ ra? |
 
+**Nhóm B: kể thẳng**
+
+| Lăng kính | Câu hỏi kích ý |
+|---|---|
+| Sự thật trần trụi | Nếu quay đúng chuyện này, không tô vẽ, thì cảnh nào khó xem nhất? |
+| Khoảnh khắc nhỏ | Một cử chỉ, một tin nhắn, một giây nào chứa hết chuyện này? |
+| Bí mật hé dần | Người xem nên biết điều gì trước nhân vật, và biết lúc nào? |
+| Đổi góc nhìn | Kể từ phía người bị bỏ quên trong chuyện này thì khác thế nào? |
+| Nhảy thời gian | Cùng một nơi, cùng một việc, ở hai thời điểm thì thấy gì? |
+
 Luật phân kỳ:
 
 - **Chưa chấm, chưa loại** trong pha này. Ý nghe ngớ ngẩn vẫn ghi.
-- Mỗi lăng kính ít nhất 2 ý. Tổng ít nhất 15 ý thô.
-- Ghi vào `01-concepts.md` mục "Ý thô" dạng `| # | Insight | Lăng kính | Ý (1 dòng) |`.
+- Mỗi lăng kính đang dùng ít nhất 2 ý (khi dùng cả hai nhóm thì ít nhất 1). Tổng ít nhất 15 ý thô.
+- Ghi vào `01-concepts.md` mục "Ý thô" dạng `| # | Insight | Lăng kính | Cảm xúc | Ý (1 dòng) |`.
 
 ## Pha 3: Hội tụ
 
@@ -85,9 +110,9 @@ Chấm mọi ý thô theo ma trận dưới (1–5 điểm mỗi tiêu chí), gh
 | Tiêu chí | 1 điểm | 5 điểm |
 |---|---|---|
 | **Relatable** | Chỉ vài người hiểu | Ai trong nhóm khán giả chính cũng "y hệt mình" |
-| **Ẩn dụ rõ** | Phải giải thích | Hiểu trong một nhịp, điểm khớp nói được trong một câu |
+| **Khớp tông** | Không rõ gây cảm xúc gì, hoặc lệch tông đã chọn | Thấy rõ khoảnh khắc gây đúng cảm xúc, theo đúng cơ chế ở `tong-cam-xuc.md` mục 3 |
 | **Sức hook** | Không nghĩ ra khung đầu nào lạ | Đã thấy rõ khung hình đầu tiên |
-| **Tiềm năng hài** | Khó cười | Có ít nhất hai cơ chế hài dùng được |
+| **Độ mới** | Đã thấy nhiều trên nền tảng | Góc nhìn, tình huống hoặc hình ảnh chưa ai làm |
 | **Chất điện ảnh** | Chỉ kể được bằng thoại | Kể được bằng hình, có đặc tả, có khoảnh khắc lặng |
 | **Quay được** | Cần nhiều bối cảnh, người, thiết bị | 1–2 bối cảnh, ≤ 4 người, đồ có sẵn |
 
@@ -96,6 +121,9 @@ Chọn ra 5–8 ý để phát triển:
 - Lấy theo tổng điểm từ cao xuống.
 - **Loại ngay** ý có "Quay được" = 1 hoặc chạm vùng cấm, bất kể tổng điểm.
 - **Bảo đảm đa dạng**: các concept cuối cùng không trùng ẩn dụ, và trải ít nhất 3 lăng kính và 3 dạng hook khác nhau.
+  Tông do skill đề xuất thì thêm luật đa dạng ở `tong-cam-xuc.md` mục 2.
+- **Đa dạng khuôn truyện**: không quá một nửa concept cùng một cấu trúc hoặc cùng một kiểu kết (chế độ nhanh: ít nhất 2
+  kiểu). Cấu trúc chọn theo cảm xúc ở `tong-cam-xuc.md` mục 6, không mặc định có lật và miếng thoát.
 - Giữ **một concept "liều"**: điểm không cao nhất nhưng lạ nhất. Đánh dấu `(liều)`.
 - Brief không giới hạn nhóm chủ đề: các concept trải ít nhất 2 nhóm chủ đề.
 
@@ -106,17 +134,19 @@ Mỗi concept một thẻ:
 ```markdown
 ### C<n>. <Tên concept> — Title: <TITLE IN HOA>
 - **Nhóm chủ đề:** <nhóm> (+ <nhóm ghép> nếu có) · Chủ đề con: <…>
+- **Tông:** <cảm xúc> · <cách kể> · <độ hài> · Đường cảm xúc: <nếu có>
 - **Insight:** <một câu>
 - **Câu chuyện bề mặt:** <tình huống cụ thể, một câu>
-- **Thông điệp (kiểu <phát hiện / nghịch lý / đánh đổi / nhìn lại / cho phép / đảo góc nhìn>):** <một câu dưới 15 từ>
+- **Thông điệp** (bỏ dòng này nếu Không) **(kiểu <phát hiện / nghịch lý / đánh đổi / nhìn lại / cho phép / đảo góc nhìn>):** <một câu dưới 15 từ>
 - **Logline:** <Nhân vật> muốn <…> nhưng <…>, cho tới khi <…>.
 - **Câu hỏi kịch tính:** <người xem chờ câu trả lời gì>
-- **Ẩn dụ:** <hình ảnh> = <vấn đề>. Điểm khớp: <thuộc tính chung>. Diễn biến của đồ vật: <từ … tới …>
+- **Cơ chế cảm xúc:** <cơ chế theo `tong-cam-xuc.md` mục 3, gắn với khoảnh khắc cụ thể trong concept>
+- **Ẩn dụ** (bỏ dòng này nếu không dùng ẩn dụ): <hình ảnh> = <vấn đề>. Điểm khớp: <thuộc tính chung>. Diễn biến của đồ vật: <từ … tới …>
 - **Hook (HK-Dxx – <tên dạng>):** <khung hình đầu + âm thanh + chữ nổi nếu có>
 - **Cấu trúc:** <khung mặc định | kết quả trước | lặp ba lần | …>
-- **Diễn biến chính:** leo thang <…> → lật <…> → khoảnh khắc lặng <…>
+- **Diễn biến chính:** <các chặng theo cấu trúc đã chọn; có lật thì ghi lật>
 - **Kết (<dạng kết>):** <…>. Câu đọng: "<…>"
-- **Cơ chế hài:** <2 cơ chế, mỗi cơ chế một ví dụ cụ thể trong concept>
+- **Cơ chế hài** (bỏ dòng này nếu Độ hài là Không): <cơ chế, kèm ví dụ cụ thể trong concept>
 - **Khoảnh khắc điện ảnh:** <đặc tả / ánh sáng / âm thanh đắt nhất>
 - **Khán giả chính:** <nhóm tuổi> · Người xem sẽ gửi cho ai, kèm câu gì: <…>
 - **Nhân vật:** <số người, vai, tính cách một dòng>
@@ -132,7 +162,9 @@ Với mỗi concept, đóng vai người phản biện và ghi 2–3 dòng dư�
 - **Ba giây:** khung đầu có đủ để dừng lướt không?
 - **Đoán kết:** người xem có đoán được kết từ hook không?
 - **Đã thấy chưa:** ý này có quá quen trên nền tảng không?
-- **Lồng ghép:** bỏ thông điệp đi thì câu chuyện bề mặt còn xem được không? Thông điệp có thành mệnh lệnh không?
+- **Tông:** concept có thật sự gây đúng cảm xúc không, hay đang trôi về hài và ẩn dụ theo quán tính? Có rơi vào bẫy của cảm
+  xúc đó không?
+- **Lồng ghép** (chỉ khi có thông điệp)**:** bỏ thông điệp đi thì câu chuyện bề mặt còn xem được không? Thông điệp có thành mệnh lệnh không?
 - **Bẫy của nhóm chủ đề:** concept có rơi vào bẫy ghi ở nhóm đó không?
 - **Điểm yếu nhất** của concept là gì, và sửa được bằng cách nào?
 
@@ -170,7 +202,7 @@ chạy `vid-phan-tich-mau` trước.
 # Concept: <tên brief>
 
 ## Tóm tắt (để người dùng chọn)
-| # | Tên / Title | Chủ đề | Thông điệp | Ẩn dụ | Hook | Nhân vật · Bối cảnh | Độ khó quay | Điểm mạnh nhất |
+| # | Tên / Title | Tông | Chủ đề | Thông điệp (nếu có) | Hook | Nhân vật · Bối cảnh | Độ khó quay | Điểm mạnh nhất |
 (xếp theo tổng điểm pha 3 từ cao xuống)
 
 ## Thẻ xem trước
@@ -178,7 +210,7 @@ Mỗi concept đúng 6 dòng, mỗi dòng dưới khoảng 70 ký tự, để `/
 ### C<n>
 Logline: <…>
 Hook: <HK-Dxx> <khung đầu>
-Ẩn dụ: <hình ảnh> = <vấn đề>
+Tông: <cảm xúc> · <cách kể> · <độ hài>
 Kết: <câu đọng>
 Vai · nơi: <số người, nam / nữ> · <bối cảnh>
 Độ khó quay: <Dễ | Vừa | Khó> · <điểm mạnh nhất>
@@ -197,6 +229,7 @@ ghép / quay một lần).
 ## Không làm
 
 - Không viết kịch bản đầy đủ ở bước này.
+- Không thêm hài hay ẩn dụ vào concept khi tông không có.
 - Không tự chọn concept thay người dùng.
 - Không chép thoại, cảnh hay chuỗi hành động của mẫu.
 - Không tự phân tích video mẫu (việc của `vid-phan-tich-mau`).

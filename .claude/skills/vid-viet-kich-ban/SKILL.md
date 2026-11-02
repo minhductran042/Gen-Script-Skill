@@ -13,8 +13,9 @@ Luôn đọc:
 - `shared/luat/dieu-kien-san-xuat.md`: sáu diễn viên (1 nữ, 5 nam), một máy quay, hai người dựng.
 - `shared/luat/vung-cam.md`.
 - `shared/luat/loi-kich-ban.md`: biết trước lỗi để tránh.
-- `shared/nghe/cau-truc-va-nhip.md`, `hook-va-giu-chan.md`, `an-du-va-hai.md`, `ngon-ngu-dien-anh.md`,
-  `chu-de-va-thong-diep.md`.
+- `shared/nghe/tong-cam-xuc.md`: ba trục tông, cơ chế và bẫy của cảm xúc đã chọn, luật nào áp theo tông (mục 7).
+- `shared/nghe/cau-truc-va-nhip.md`, `hook-va-giu-chan.md`, `ngon-ngu-dien-anh.md`, `chu-de-va-thong-diep.md`.
+- `shared/nghe/an-du-va-hai.md`: chỉ khi tông có ẩn dụ hoặc hài.
 
 Tham khảo: **chỉ khi brief ghi ở mục "Tham khảo"**, và chỉ đúng thứ được nêu. Không lấy nội dung trong
 `shared/mau-format/`.
@@ -28,7 +29,7 @@ Không đọc dòng thời gian của mẫu khi viết, để khỏi bị kéo t
 ## Chế độ 1: Viết mới
 
 Đầu vào: brief + một thẻ concept (từ `01-concepts.md` hoặc người dùng mô tả). Concept người dùng đưa thiếu logline,
-ẩn dụ hay hook thì tự đề xuất phần thiếu, ghi rõ "đề xuất" ở đầu ra.
+tông hay hook thì tự đề xuất phần thiếu, ghi rõ "đề xuất" ở đầu ra.
 
 Viết qua tám lượt theo thứ tự. **Mỗi lượt chỉ tập trung một lớp**, không viết tất cả cùng lúc.
 
@@ -36,17 +37,21 @@ Viết qua tám lượt theo thứ tự. **Mỗi lượt chỉ tập trung một
 
 Ghi vào đầu `ghi-chu-viet.md` của dự án (file nháp, không xuất Excel):
 
+- **Tông**: chép ba trục và lựa chọn Thông điệp từ dòng "Tông đã chốt" của brief, không có thì từ thẻ concept. Mọi lượt
+  sau viết theo tông này.
 - **Logline** và **câu hỏi kịch tính chính** (xem `cau-truc-va-nhip.md` mục 1).
 - **Cài – trả**: chi tiết nào cài ở đầu, trả lại ở cuối với nghĩa gì.
-- **Khoảnh khắc mở khoá ẩn dụ**: ở beat nào, bằng hình gì.
-- **Thông điệp** (một câu, dạng phát hiện) và **câu chuyện bề mặt** chứa nó, theo luật lồng ghép ở
+- **Đỉnh cảm xúc**: ở beat nào, bằng hình gì, theo cơ chế nào (`tong-cam-xuc.md` mục 3).
+- **Khoảnh khắc mở khoá ẩn dụ** (chỉ khi dùng ẩn dụ): ở beat nào, bằng hình gì.
+- **Thông điệp** (chỉ khi tông có; một câu, dạng phát hiện) và **câu chuyện bề mặt** chứa nó, theo luật lồng ghép ở
   `shared/nghe/chu-de-va-thong-diep.md` mục 1. Kiểm bẫy của nhóm chủ đề ở mục 2.
 - **Câu đọng** ở beat chốt.
-- **Đường cảm xúc**: nhân vật chính đi từ trạng thái nào tới trạng thái nào.
+- **Đường cảm xúc**: nhân vật chính đi từ trạng thái nào tới trạng thái nào, và người xem cảm thấy gì ở mỗi chặng.
 
 ### Lượt 2: Dàn beat
 
-- Chọn cấu trúc theo concept (khung mặc định hoặc cấu trúc khác ở `cau-truc-va-nhip.md` mục 4).
+- Chọn cấu trúc theo concept và cảm xúc (`tong-cam-xuc.md` mục 6, `cau-truc-va-nhip.md` mục 4). Số beat theo chuyện, không
+  mặc định 8; không có lật thì không tạo lật.
 - Lập danh sách beat: mỗi beat có **Mục đích** (chức năng) và **mốc giây**, theo bảng phân bổ ở mục 3 của file đó.
 - Kiểm: mỗi beat chỉ một chức năng; không có hai beat liền nhau cùng ý; tổng giây khớp mục tiêu.
 
@@ -56,8 +61,10 @@ Với từng beat, viết phần **hành động** của cột Nội dung, cột
 
 - Mỗi beat có **một hình ảnh chủ đạo**: cái người xem nhớ nếu chỉ thấy một khung của beat đó.
 - Viết hành động máy quay thấy được, động từ cụ thể.
-- Chọn cỡ cảnh theo cảm xúc: xa khi lạc lõng, gần khi nhận ra, đặc tả cho đồ vật ẩn dụ.
-- Ít nhất **một đặc tả đồ vật ẩn dụ** và **một khoảnh khắc không thoại** trong cả kịch bản.
+- Chọn cỡ cảnh theo cảm xúc: xa khi lạc lõng, gần khi nhận ra, đặc tả cho chi tiết mang nghĩa.
+- Ít nhất **một đặc tả mang nghĩa** (đồ vật ẩn dụ nếu có, hoặc chi tiết nói hộ cảm xúc) và **một khoảnh khắc không
+  thoại** trong cả kịch bản.
+- Hình, âm, nhịp dựng theo cảm xúc đã chọn (`tong-cam-xuc.md` mục 3).
 - Cột **Biểu cảm**: trạng thái + biểu hiện nhìn thấy được.
 
 Kiểm bằng bài tắt tiếng (`hook-va-giu-chan.md` mục 7): chỉ đọc hành động, có hiểu câu chuyện không?
@@ -71,8 +78,10 @@ Thêm thoại vào cột Nội dung, sau hành động:
   hệ nhân vật.
 - **Mỗi nhân vật một giọng**: một người nói ngắn và thẳng, người kia vòng vo; một người hay hỏi lại, người kia hay
   đùa. Che tên nhân vật đi mà vẫn đoán được ai nói thì đạt.
-- **Câu đùa đặt từ gây cười ở cuối câu.** Trước câu đùa có một nhịp ngừng (ghi ở chỉ dẫn diễn).
-- **Không có câu giải thích ẩn dụ.** Không có câu nói thẳng thông điệp trước beat lật.
+- **Có hài thì** câu đùa đặt từ gây cười ở cuối câu, trước câu đùa có một nhịp ngừng (ghi ở chỉ dẫn diễn). Độ hài là
+  Không thì không có câu đùa nào.
+- **Không có câu giải thích ẩn dụ**, không có câu gọi tên cảm xúc thay cho tình huống, không có câu nói thẳng thông điệp
+  trước beat lật.
 - Chỉ dẫn diễn ngắn đặt trước câu thoại: `A (nói nhỏ): "…"`.
 
 ### Lượt 5: Âm thanh
@@ -108,12 +117,14 @@ Cột Text nổi bật:
 - Ước thời lượng từng beat theo `cau-truc-va-nhip.md` mục 5 (thoại + hành động + khoảng lặng). Ghi vào `giay`.
 - Tổng lệch mục tiêu trên 10% thì cắt theo thứ tự ở mục đó.
 - Đọc lại cả kịch bản một mạch, như người xem. Chỗ nào thấy chán thì sửa.
+- Kiểm tông: đọc xong có đúng cảm xúc đã chọn không, có rơi vào bẫy của cảm xúc đó không, có chỗ nào tự trôi về hài không?
 - Chạy ba bài kiểm ở `hook-va-giu-chan.md` mục 7.
 
 ### Soát và xuất
 
 Ghi `du-an/<dự án>/kich-ban-v1.json` theo cấu trúc ở `format-kich-ban.md` mục 3. Điền đủ phần tổng quan (`overview`,
-mục 1a): lấy nhóm chủ đề, thông điệp, khán giả, tông từ brief; hook, diễn biến, kết, nhân vật từ thẻ concept và từ chính
+mục 1a): lấy nhóm chủ đề, thông điệp, khán giả từ brief; tông từ dòng "Tông đã chốt" (ghi tông cụ thể, thông điệp Không thì để
+trống `thong_diep`); hook, diễn biến, kết, nhân vật từ thẻ concept và từ chính
 kịch bản vừa viết (kịch bản đã khác concept thì ghi theo kịch bản); lưu ý sản xuất từ lượt 7. Rồi:
 
 ```
@@ -142,6 +153,7 @@ Báo lại: đường dẫn hai file, tổng giây ước tính, số nhân vậ
      quay lại lượt 1–2 cho phần liên quan, không vá từng câu.
 3. Sửa **mọi lỗi Nặng và Vừa**. Lỗi Nhẹ sửa khi không làm hỏng chỗ khác.
 4. **Giữ nguyên** những gì review ghi ở "Điểm mạnh nên giữ". Sửa mà phải đụng vào điểm mạnh thì ghi lý do.
+   **Giữ nguyên tông**: không thêm hài hay ẩn dụ để gỡ điểm, kể cả khi gợi ý sửa có nói vậy.
 5. Sửa xong một lỗi cấu trúc thì chạy lại lượt 8 (bấm giờ) cho toàn kịch bản.
 6. Ghi bản mới `kich-ban-v(N+1).json`, **không ghi đè** bản cũ.
 7. Ghi `sua-vN.md`:
@@ -174,5 +186,6 @@ Gợi ý sửa trong review là gợi ý, không bắt buộc chép nguyên văn
 
 - Không sửa tay file `.xlsx`.
 - Không vượt 6 nhân vật hoặc 2 bối cảnh khi brief không cho phép.
+- Không tự đổi tông đã chốt.
 - Không tự đổi concept đã được chọn. Thấy concept có vấn đề thì ghi một dòng cho người dùng.
 - Không ghi đè phiên bản cũ.

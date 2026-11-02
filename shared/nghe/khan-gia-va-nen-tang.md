@@ -8,7 +8,7 @@ team**. Khi team có số liệu thật (tỉ lệ xem hết, điểm rơi ngư�
 ## 1. Chân dung khán giả 17–30
 
 Dải tuổi này không đồng nhất. Một video nên chọn **một nhóm chính** để viết cho trúng, rồi kiểm xem hai nhóm còn lại có
-hiểu và cười được không.
+hiểu và cảm được không.
 
 | Nhóm | Đời sống | Nỗi đau đời thường hay gặp | Kiểu hài dễ ăn | Lý do họ chia sẻ |
 |---|---|---|---|---|
@@ -25,7 +25,8 @@ Người xem không mở app để được dạy. Họ mở app để:
 
 1. **Thấy mình trong đó** (relatable). Đây là động cơ mạnh nhất với dòng nội dung đời thường. Tình huống càng cụ thể thì
    càng dễ thấy mình: "tin nhắn đã xem nhưng không trả lời lúc 2 giờ sáng" mạnh hơn "chuyện tình cảm".
-2. **Cười, hoặc bị chạm nhẹ.** Hai thứ đi được cùng nhau: cười trước, chạm sau, rồi một miếng nhẹ để thoát.
+2. **Cảm thấy một điều gì đó rõ rệt:** cười, xúc động, hồi hộp, rùng mình, rung động. Cười rồi chạm là một đường hay,
+   không phải đường duy nhất (xem `tong-cam-xuc.md`).
 3. **Có chuyện để nói với bạn.** Video tốt là video người ta muốn gửi cho ai đó.
 
 Hệ quả:

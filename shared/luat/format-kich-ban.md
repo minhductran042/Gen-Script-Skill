@@ -37,19 +37,19 @@ Title của file. Trong mỗi sheet:
 | Tóm tắt | `tom_tat` | Logline 1–2 câu (cũng in ở cột B beat đầu) |
 | Title | `title` | Tiêu đề IN HOA |
 | Nhóm chủ đề | `overview.chu_de` | Nhóm (+ nhóm ghép) · chủ đề con |
-| Thông điệp | `overview.thong_diep` | Một câu dưới 15 từ, dạng phát hiện |
+| Thông điệp | `overview.thong_diep` | Một câu dưới 15 từ, dạng phát hiện; để trống nếu tông không có thông điệp |
 | Khán giả chính | `overview.khan_gia` | Nhóm tuổi · người xem sẽ gửi cho ai |
-| Tông | `overview.tong` | Ẩn dụ hài đời thường / chạm nhiều hơn hài / … |
+| Tông | `overview.tong` | `<cảm xúc> · <cách kể> · <độ hài>`, ví dụ `Day dứt · Kể thẳng · Không` (xem `tong-cam-xuc.md`) |
 | Hook | `overview.hook` | Mã `HK-Dxx` + khung đầu tiên (hình, âm, chữ) |
 | Diễn biến chính | `overview.dien_bien` | Leo thang → lật → khoảnh khắc lặng, mỗi ý một dòng |
 | Kết | `overview.ket` | Kiểu kết + câu đọng |
-| Nhân vật | `overview.nhan_vat` | Mỗi vai: tên, nam / nữ, tính cách một dòng |
+| Nhân vật | `overview.nhan_vat` | Mỗi vai một dòng: `Tên (nam | nữ): tính cách`. Vai không lộ mặt ghi `(nữ, chỉ giọng)` để `kiem` không đếm |
 | Địa điểm | `dia_diem` | Bối cảnh chính |
 | Thời điểm | `boi_canh` | `<SÁNG / TRƯA / CHIỀU / ĐÊM> - <Nội / Ngoại>` |
 | Đạo cụ | `dao_cu` | Liệt kê đủ, kèm số lượng |
 | Lưu ý sản xuất | `overview.luu_y_san_xuat` | Cảnh quay một lần, cảnh ghép, đạo cụ dự phòng, rủi ro quay |
 
-`kiem` báo Nhẹ khi thiếu `chu_de`, `thong_diep`, `hook` hoặc `nhan_vat`.
+`kiem` báo Nhẹ khi thiếu `chu_de`, `tong`, `hook` hoặc `nhan_vat`, và báo Vừa khi `tong` còn là "để skill đề xuất".
 
 ## 2. Cách viết từng cột
 

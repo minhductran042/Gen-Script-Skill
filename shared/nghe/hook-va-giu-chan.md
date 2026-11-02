@@ -7,8 +7,8 @@ của team. Mốc giây là kinh nghiệm nghề, chưa đo trên kênh của te
 
 ## 1. Hook là một lời hứa
 
-Hook là **1–3 giây đầu**, và nó hứa với người xem: "ở lại thì sẽ được X". X có thể là: biết chuyện gì xảy ra, được cười,
-thấy một điều lạ được giải thích, thấy mình trong đó.
+Hook là **1–3 giây đầu**, và nó hứa với người xem: "ở lại thì sẽ được X". X có thể là: biết chuyện gì xảy ra, được cười, được
+xúc động, được rùng mình, thấy một điều lạ được giải thích, thấy mình trong đó.
 
 Hook có ba lớp. Hook mạnh dùng **ít nhất hai lớp cùng lúc**:
 
@@ -40,7 +40,7 @@ Mã `HK-Dxx` dùng trong concept và review. Một kịch bản ghi rõ mình d�
 ## 3. Luật hook
 
 1. **Khung hình đầu tiên đã có câu chuyện.** Không có khoảng "khởi động" nào cả.
-2. **Ẩn dụ hoặc vấn đề chính xuất hiện trong hook.** Để đến giây 15 mới đưa đồ vật ẩn dụ vào là quá muộn.
+2. **Vấn đề chính (hoặc đồ vật ẩn dụ nếu có) xuất hiện trong hook.** Để đến giây 15 mới đưa vào là quá muộn.
 3. **Hứa gì thì trả nấy.** Hook hứa một cuộc cãi nhau thì phải có cãi nhau; hứa một bí mật thì phải lộ bí mật.
 4. **Chữ hook ngắn**, khoảng 4–8 từ, đọc xong trong một nhịp. Không đặt chữ ở vùng bị giao diện che.
 5. **Không mở bằng lời chào, logo, giới thiệu nhân vật** hay "Hôm nay mình sẽ…".
@@ -62,7 +62,7 @@ Mã `HK-Dxx` dùng trong concept và review. Một kịch bản ghi rõ mình d�
 | **Câu hỏi kịch tính chính** | Trong 5 giây đầu, người xem phải biết họ đang chờ câu trả lời cho câu hỏi gì: "Anh ta có nhận ra không?", "Ai thắng?" |
 | **Vòng mở (open loop)** | Mở một thắc mắc nhỏ và để nó treo vài beat rồi mới trả lời. Có thể chồng vòng: mở vòng 2 trước khi đóng vòng 1 |
 | **Leo thang** | Mỗi beat làm tình huống tệ hơn, hài hơn hoặc căng hơn beat trước. Không đi ngang |
-| **Ngắt nhịp** | Khoảng mỗi 3–5 giây đổi một thứ: góc máy, hành động, âm thanh, chữ nổi, nhân vật nói |
+| **Ngắt nhịp** | Khoảng mỗi 3–5 giây đổi một thứ: góc máy, hành động, âm thanh, chữ nổi, nhân vật nói. Tông chậm được giữ cảnh lâu hơn (`tong-cam-xuc.md` mục 6) |
 | **Cài – trả (setup / payoff)** | Cài một chi tiết ở đầu (đồ vật, câu nói), trả lại ở cuối theo nghĩa mới. Người xem thấy "đã" và muốn xem lại |
 | **Lật (twist)** | Đổi nghĩa của những gì đã xem. Twist tốt khiến người xem muốn tua lại để kiểm |
 | **Khoảng lặng có chủ đích** | Im lặng 1–2 giây trước khoảnh khắc quan trọng. Phải là im lặng có ý nghĩa, không phải đoạn chết |
@@ -76,7 +76,8 @@ Mã `HK-Dxx` dùng trong concept và review. Một kịch bản ghi rõ mình d�
 | **Lật cuối** | Chi tiết cuối đổi nghĩa toàn bộ câu chuyện | Xem lại, comment |
 | **Gọi lại hook** | Khung / câu cuối lặp lại hook nhưng nghĩa đã khác | Thấy trọn vẹn, xem lại |
 | **Vòng lặp** | Khung cuối nối liền khung đầu | Video tự phát lại liền mạch |
-| **Miếng hài thoát** | Sau khoảnh khắc chạm, một câu hoặc hành động hài để thoát | Tránh thành bài giảng |
+| **Miếng hài thoát** | Sau khoảnh khắc chạm, một câu hoặc hành động hài để thoát | Tránh thành bài giảng (chỉ khi tông có hài) |
+| **Dư âm** | Dừng ở một hình hoặc khoảng lặng, không giải thích, không thoát | Người xem ngồi lại với cảm xúc, xem lại, lưu |
 | **Câu hỏi mở** | Để nhân vật hoặc chữ nổi hỏi người xem một câu dễ trả lời | Comment |
 | **Móc tập sau** (series) | Một chi tiết treo lại cho tập sau, nhưng tập này vẫn trọn | Theo dõi kênh |
 
@@ -89,4 +90,4 @@ Hai luật cho phần kết:
 
 1. **Bài 3 giây:** chỉ đọc beat đầu. Bạn có lướt qua không?
 2. **Bài tắt tiếng:** chỉ đọc cột Nội dung (phần hành động) và Text nổi bật. Bạn có hiểu chuyện gì xảy ra không?
-3. **Bài đoán kết:** đọc tới giữa kịch bản rồi dừng, đoán kết. Đoán trúng thì phải thêm lệch hướng.
+3. **Bài đoán kết** (chỉ với chuyện dựa vào bất ngờ)**:** đọc tới giữa kịch bản rồi dừng, đoán kết. Đoán trúng thì phải thêm lệch hướng.

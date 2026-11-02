@@ -9,7 +9,8 @@ Insight và hình ảnh trong file là **minh hoạ để kích ý**, không đ�
 
 ## 1. Lồng câu chuyện và thông điệp
 
-Mỗi video có hai tầng:
+Video có thông điệp có hai tầng. Thông điệp là lựa chọn (`tong-cam-xuc.md` mục 1): video thuần giải trí hay thuần cảm xúc chỉ
+cần tầng câu chuyện, và mục này không áp.
 
 | Tầng | Là gì | Người xem cảm nhận |
 |---|---|---|
@@ -25,7 +26,8 @@ Luật lồng ghép:
 3. **Một video, một thông điệp.** Viết được thành một câu dưới 15 từ.
 4. **Thông điệp lộ ra qua hành động hoặc hình ảnh** ở beat lật, không qua lời nhân vật giảng giải (xem
    `an-du-va-hai.md` mục 5).
-5. **Ẩn dụ là cầu nối giữa hai tầng**: đồ vật / tình huống ở tầng bề mặt mang nghĩa của tầng thông điệp.
+5. **Hai tầng cần một cầu nối**: ẩn dụ (đồ vật / tình huống mang nghĩa của tầng thông điệp), hoặc khi kể thẳng là chính
+   chi tiết thật và hành động của nhân vật.
 
 ### Kiểu thông điệp
 

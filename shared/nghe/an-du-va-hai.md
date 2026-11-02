@@ -1,6 +1,7 @@
 # Ẩn dụ và hài
 
-Tài liệu nghề, mọi skill đều dùng. Ví dụ là minh hoạ do người viết skill nghĩ ra, không phải kịch bản của team.
+Tài liệu nghề, chỉ dùng khi tông có ẩn dụ hoặc hài (xem `tong-cam-xuc.md`). Ẩn dụ và hài không bắt buộc cho mọi video, và
+ẩn dụ không nhất thiết đi cùng hài. Ví dụ là minh hoạ do người viết skill nghĩ ra, không phải kịch bản của team.
 
 ---
 
@@ -37,7 +38,7 @@ tiếng. Khoảnh khắc đó là phần thưởng chính của dòng nội dung
 | **Điểm khớp rõ** | Nêu được điểm khớp trong một câu không? |
 | **Chưa nhàm** | Ẩn dụ này đã bị dùng nhiều chưa? (ví dụ "cuộc đời như một ly cà phê" là đã nhàm) |
 | **Quay được rẻ** | Đồ vật có sẵn, bối cảnh dễ tìm |
-| **Hai mặt** | Vừa gây cười được, vừa chạm được không? Ẩn dụ chỉ có một mặt thì video chỉ có một tầng |
+| **Hai mặt** | Với video vừa cười vừa chạm: ẩn dụ có làm được cả hai không? Video một cảm xúc thì bỏ tiêu chí này |
 | **Có diễn biến** | Đồ vật có thay đổi trong video không (đầy → cạn, mới → hỏng, tắt → bật)? Ẩn dụ có diễn biến thì kể được chuyện |
 
 ## 4. Cách tìm ẩn dụ (dùng ở vid-brainstorm)
@@ -87,7 +88,7 @@ tiếng. Khoảnh khắc đó là phần thưởng chính của dòng nội dung
 - **Ngừng một nhịp trước câu đùa**, rồi để câu đùa ở **cuối câu**: từ gây cười là từ cuối cùng người xem nghe.
 - **Cắt ngay sau câu đùa** hoặc sang phản ứng. Không để nhân vật cười theo câu đùa của chính mình.
 - **Hài từ nhân vật hơn hài từ câu đùa**: người xem cười vì biết nhân vật này sẽ phản ứng thế nào.
-- Video có phần chạm: **cười → chạm → thoát**. Thiếu bước thoát thì video thành bài giảng.
+- Video hài có phần chạm: **cười → chạm → thoát**. Video tông nặng không cần thoát, kết bằng dư âm.
 
 ## 7. Tránh
 

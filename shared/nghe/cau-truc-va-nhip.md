@@ -9,24 +9,26 @@ tham khảo khung khác thì theo tham khảo.
 
 Trước khi chia beat, phải viết được hai câu:
 
-- **Logline**: `<Nhân vật> muốn <điều gì> nhưng <trở ngại>, cho tới khi <khoảnh khắc lật>.`
+- **Logline**: `<Nhân vật> muốn <điều gì> nhưng <trở ngại>, cho tới khi <khoảnh khắc đổi>.`
 - **Câu hỏi kịch tính chính**: câu hỏi người xem chờ được trả lời, ví dụ "Cậu ta có dám gửi tin nhắn đó không?"
 
 Không viết được hai câu này thì concept chưa đủ rõ để viết kịch bản.
 
 ## 2. Khung beat mặc định
 
+Khung này hợp với chuyện có lật. Cảm xúc khác dùng khung ở `tong-cam-xuc.md` mục 6; số beat theo chuyện, không mặc định 8.
+
 Bảy chức năng. Video ngắn gộp bớt, video dài tách ra. Mỗi beat chỉ làm **một** chức năng chính.
 
 | # | Chức năng | Việc phải làm | Câu hỏi kiểm |
 |---|---|---|---|
-| 1 | **Hook** | Lời hứa + đưa ẩn dụ / vấn đề vào khung | Có lướt qua không? |
+| 1 | **Hook** | Lời hứa + đưa vấn đề (hoặc ẩn dụ nếu có) vào khung | Có lướt qua không? |
 | 2 | **Thiết lập** | Ai, ở đâu, muốn gì, câu hỏi kịch tính chính | Người xem đã biết mình đang chờ gì chưa? |
 | 3 | **Leo thang** | Mâu thuẫn tăng lên, có thể 1–3 lần | Mỗi lần có tệ / hài / căng hơn lần trước không? |
-| 4 | **Lật** | Một chi tiết đổi hướng câu chuyện hoặc mở khoá ẩn dụ | Có bất ngờ mà vẫn hợp lý không? |
+| 4 | **Lật** (không bắt buộc) | Một chi tiết đổi hướng câu chuyện hoặc mở khoá ẩn dụ | Có bất ngờ mà vẫn hợp lý không? |
 | 5 | **Khoảng lặng** | Nhân vật (và người xem) nhận ra | Có đủ thời gian để nghĩa ngấm không? |
 | 6 | **Chốt** | Câu / hình ảnh đọng lại | Bỏ câu này đi người xem có còn hiểu không? (nếu có thì có thể bỏ) |
-| 7 | **Thoát** | Miếng hài hoặc hình ảnh nhẹ để kết | Có thành bài giảng không? |
+| 7 | **Thoát** | Miếng hài hoặc hình ảnh nhẹ để kết; tông nặng thì bỏ, dừng ở dư âm | Có thành bài giảng không? |
 
 ## 3. Phân bổ giây theo độ dài
 

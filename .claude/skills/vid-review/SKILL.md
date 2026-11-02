@@ -1,6 +1,6 @@
 ---
 name: vid-review
-description: "Review một kịch bản video ngắn dọc qua năm lượt đọc với năm vai: người lướt (3 giây đầu, tắt tiếng), người xem hết (nhịp, đoán kết, ẩn dụ, hài), đạo diễn (chất điện ảnh), đội sản xuất (một máy quay, sáu diễn viên, bối cảnh, đạo cụ, dựng), và nền tảng (vùng cấm, bản quyền). Mỗi lỗi có mã từ danh mục (HK, GC, AD, DA, KT, SX, AT, NH, SR), mức Nặng / Vừa / Nhẹ, vị trí beat và giây, trích nguyên văn, và gợi ý sửa viết sẵn. Chấm điểm theo bảng tiêu chí có mốc, kết luận ĐẠT / CHƯA ĐẠT, ghi điểm mạnh nên giữ. Nhận JSON hoặc file Excel đúng format team. Dùng khi user nói 'review kịch bản', 'kịch bản này ổn chưa', 'chấm kịch bản', 'chỗ nào chưa ổn', 'cải tiến kịch bản này', 'góp ý kịch bản'. Không sửa kịch bản (sửa thì dùng vid-viet-kich-ban chế độ sửa)."
+description: "Review một kịch bản video ngắn dọc qua năm lượt đọc với năm vai: người lướt (3 giây đầu, tắt tiếng), người xem hết (nhịp, đoán kết, đúng tông cảm xúc, cách kể), đạo diễn (chất điện ảnh), đội sản xuất (một máy quay, sáu diễn viên, bối cảnh, đạo cụ, dựng), và nền tảng (vùng cấm, bản quyền). Mỗi lỗi có mã từ danh mục (HK, GC, AD, CX, DA, KT, SX, AT, NH, SR), mức Nặng / Vừa / Nhẹ, vị trí beat và giây, trích nguyên văn, và gợi ý sửa viết sẵn. Chấm điểm theo bảng tiêu chí có mốc, kết luận ĐẠT / CHƯA ĐẠT, ghi điểm mạnh nên giữ. Nhận JSON hoặc file Excel đúng format team. Dùng khi user nói 'review kịch bản', 'kịch bản này ổn chưa', 'chấm kịch bản', 'chỗ nào chưa ổn', 'cải tiến kịch bản này', 'góp ý kịch bản'. Không sửa kịch bản (sửa thì dùng vid-viet-kich-ban chế độ sửa)."
 argument-hint: <kich-ban-vN.json | file .xlsx>
 ---
 
@@ -14,8 +14,13 @@ về một chỗ cụ thể trong kịch bản.
 Luôn đọc:
 - `shared/luat/loi-kich-ban.md`: danh mục lỗi, mức, bảng chấm.
 - `shared/luat/dieu-kien-san-xuat.md`, `vung-cam.md`, `format-kich-ban.md`.
-- `shared/nghe/` (cả sáu file): làm thước đo.
-- `00-brief.md` của dự án nếu có: mục tiêu, nhóm khán giả, thời lượng. Series thì đọc thêm `series.md`.
+- `shared/nghe/` (cả bảy file): làm thước đo.
+- `00-brief.md` của dự án nếu có: mục tiêu, nhóm khán giả, thời lượng, **tông**. Series thì đọc thêm `series.md`.
+
+**Chấm theo tông đã chọn, không theo sở thích hài.** Lấy tông từng kịch bản theo thứ tự: `overview.tong`, dòng "Tông đã
+chốt" của brief, các trục đã khoá trong brief; không có thì suy từ kịch bản và ghi `(suy ra)` ở đầu báo cáo. Luật nào áp
+theo tông nào: `tong-cam-xuc.md` mục 7. Thiếu hài ở kịch bản Độ hài Không, thiếu ẩn dụ ở kịch bản kể thẳng, thiếu thông
+điệp ở kịch bản không chọn thông điệp đều không phải lỗi, và không được gợi ý thêm vào.
 
 Tham khảo: chỉ khi brief ghi. Có tham khảo thì thêm một câu hỏi: kịch bản có đúng tinh thần tham khảo người dùng chọn
 không. Không có tham khảo thì **không chấm theo bất kỳ phong cách riêng nào**, chỉ chấm theo luật và nghề.
@@ -45,23 +50,26 @@ brief) có mặt không; đếm số biến số đã đổi theo mức bám. M�
 
 - Ba giây đầu có lý do để dừng không? (HK-01)
 - Hook dùng mấy lớp (hình / âm / chữ)? Hiểu được khi tắt tiếng không? (HK-05)
-- Ẩn dụ hoặc vấn đề đã có trong khung đầu chưa? (HK-04)
+- Vấn đề chính (hoặc đồ vật ẩn dụ nếu có) đã có trong khung đầu chưa? (HK-04)
 - Hook thuộc dạng nào (`HK-Dxx`)? Dạng đó có được làm đúng cách chưa?
 
 ## Bước 2: Lượt người xem hết
 
-Đọc tuần tự, **dừng ở giữa kịch bản** và ghi lại kết bạn đoán. Rồi đọc tiếp.
+Đọc tuần tự, **dừng ở giữa kịch bản** và ghi lại kết bạn đoán. Rồi đọc tiếp. Đoán trúng chỉ là lỗi khi chuyện dựa vào bất
+ngờ (`tong-cam-xuc.md` mục 6).
 
 - Câu hỏi kịch tính chính rõ trong 5 giây đầu chưa? (GC-01)
 - Đánh dấu chỗ nào thấy chán, chậm, trùng ý. (GC-02, GC-05)
 - Kết có trùng điều bạn đoán ở giữa không? (GC-04)
-- Thông điệp lộ ra ở beat nào? Có trước beat lật không? (GC-03)
-- Ẩn dụ: hiểu ngay không, mở khoá bằng hình hay bằng lời, có nhàm không? (AD-01, AD-02, AD-04)
-- Hài: cười ở đâu, cơ chế gì, nhịp đúng chưa? Có miếng thoát sau phần chạm không? (AD-03, AD-05, AD-06)
+- Có thông điệp: lộ ra ở beat nào, có trước beat lật không? Câu chốt có lộ sớm không? (GC-03)
+- Tông: đọc xong thấy cảm xúc gì, có đúng tông đã chọn không? Cảm xúc có leo thang tới đỉnh không? Có sến, ép cảm xúc không? Có chỗ hài phá cảnh lặng không? (CX-01, CX-02, CX-03, CX-04, CX-05)
+- Có giảng đạo lý ở cuối không? (AD-03)
+- Chỉ khi dùng ẩn dụ: hiểu ngay không, mở khoá bằng hình hay bằng lời, có nhàm không? (AD-01, AD-02, AD-04)
+- Chỉ khi có hài: cười ở đâu, cơ chế gì, nhịp đúng chưa? (AD-05, AD-06)
 - Kết khiến người xem làm gì (xem lại, comment, tag, lưu)? (KT-01, KT-03)
 - Sau payoff còn kéo dài không? (GC-07)
 - Hook hứa gì, kết có trả đúng không? (HK-02)
-- Lồng ghép (`chu-de-va-thong-diep.md` mục 1): bỏ thông điệp đi câu chuyện còn xem được không? Thông điệp là phát hiện
+- Chỉ khi có thông điệp, lồng ghép (`chu-de-va-thong-diep.md` mục 1): bỏ thông điệp đi câu chuyện còn xem được không? Thông điệp là phát hiện
   hay mệnh lệnh? Có nhiều hơn một thông điệp không? Có rơi vào bẫy của nhóm chủ đề không? (AD-08, AD-09, AD-10)
 
 ## Bước 3: Lượt đạo diễn
@@ -72,7 +80,7 @@ brief) có mặt không; đếm số biến số đã đổi theo mức bám. M�
 - Câu thoại nào kể điều hình kể được? (DA-02)
 - Cỡ cảnh có thay đổi theo cảm xúc không? (DA-03)
 - Âm thanh, ánh sáng có cụ thể và mang nghĩa không? (DA-04)
-- Có khoảnh khắc lặng, có đặc tả đồ vật ẩn dụ không? (DA-05, DA-06)
+- Có khoảnh khắc lặng không? Dùng ẩn dụ thì có đặc tả đồ vật ẩn dụ không? (DA-05, DA-06)
 - Biểu cảm có quay được không? (DA-07)
 
 ## Bước 4: Lượt đội sản xuất
@@ -85,6 +93,7 @@ brief) có mặt không; đếm số biến số đã đổi theo mức bám. M�
 - Hiệu ứng dựng có được viết ra không? (SX-06)
 - Số người, số bối cảnh có hợp lý không? (SX-01, SX-03, SX-07)
 - Có quá 1 nhân vật nữ lộ mặt hoặc quá 5 nhân vật nam không? (SX-09)
+- Có vai lộ mặt lệch xa độ tuổi diễn viên 21–22 không? (SX-10)
 - Cộng giây các beat (hoặc ước theo thoại): có lệch mục tiêu trên 10% không? (SX-08)
 
 ## Bước 5: Lượt nền tảng
@@ -98,7 +107,7 @@ Mỗi lỗi một dòng, đủ sáu phần:
 
 | Phần | Cách viết |
 |---|---|
-| **Mã** | Mã trong danh mục. Không có mã phù hợp thì `MOI-<n>` |
+| **Mã** | Mã trong danh mục. Không có mã phù hợp thì `MOI-<n>`, và ghi vào mục "Mã lỗi mới đề xuất". Trong một dự án, một số MOI chỉ mang một nghĩa |
 | **Mức** | Mức mặc định; nâng / hạ một bậc phải ghi lý do |
 | **Vị trí** | `KB<số> beat <n>` + giây nếu có |
 | **Trích** | Nguyên văn đoạn có vấn đề, ngắn |
@@ -118,9 +127,12 @@ Theo bảng ở `loi-kich-ban.md` mục 3. Mỗi tiêu chí:
 
 - Chấm 1–10, so với ba mốc (2 / 6 / 10) của bảng.
 - Ghi **một câu lý do** có dẫn tới beat cụ thể.
-- Điểm phải nhất quán với bảng lỗi: còn HK-01 thì tiêu chí Hook không quá 4; còn SX-02 thì "Quay được" không quá 4.
+- Điểm phải nhất quán với bảng lỗi: còn HK-01 thì tiêu chí Hook không quá 4; còn SX-02 thì "Quay được" không quá 4; còn CX-01 thì
+  "Sức mạnh cảm xúc" không quá 4.
+- Hai tiêu chí "Sức mạnh cảm xúc" và "Cách kể" chấm theo tông đã chọn, không trừ điểm vì thiếu hài hay ẩn dụ.
 
-Kết luận **ĐẠT** khi không còn lỗi Nặng **và** điểm tổng ≥ 8. Ngược lại là **CHƯA ĐẠT**.
+Kết luận **ĐẠT** khi không còn lỗi Nặng **và** điểm tổng ≥ 8. Ngược lại là **CHƯA ĐẠT**. Ghi điểm hai chữ số thập phân và so
+ngưỡng bằng số chưa làm tròn. Điểm từ 7.8 đến 8.2: ghi thêm "sát ngưỡng" và nêu tiêu chí quyết định kết luận.
 
 ## Bước 8: Điểm mạnh nên giữ
 
@@ -134,6 +146,7 @@ Ghi 2–4 điều làm tốt, có vị trí cụ thể. Mục này để ngườ
 # Review kich-ban-vN: <tên>
 
 **Kết luận: ĐẠT | CHƯA ĐẠT** · Điểm <x.x>/10 · <n> Nặng · <n> Vừa · <n> Nhẹ
+**Tông chấm theo:** <cảm xúc> · <cách kể> · <độ hài> (brief | overview | suy ra)
 **Vấn đề lớn nhất (một câu):** <…>
 
 ## Soát cấu trúc (kich_ban.py kiem)
@@ -168,5 +181,6 @@ Một file JSON có nhiều kịch bản thì mỗi kịch bản một mục k�
 - Không sửa file kịch bản.
 - Không viết lại toàn bộ kịch bản. Mọi gợi ý gắn với một lỗi cụ thể.
 - Không chấm ĐẠT khi còn lỗi Nặng.
+- Không gợi ý thêm hài hay ẩn dụ khi tông không có.
 - Không đề xuất concept khác, không thêm việc ngoài bảng lỗi.
 - Không chấm theo phong cách tham khảo khi brief không ghi tham khảo.

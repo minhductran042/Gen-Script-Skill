@@ -39,8 +39,13 @@ diễn). Ai kiêm gì: **CHƯA CHỐT**.
   - Lịch của diễn viên nữ là nút thắt: ưu tiên gom các cảnh có nhân vật nữ vào cùng một buổi.
   - Cột Nhân vật ghi rõ giới tính của từng vai khi chưa hiện qua tên (ví dụ "Nữ", "Nam 1", "Mẹ"), để kiểm được ràng
     buộc này.
-- **Độ tuổi, ngoại hình** của diễn viên: CHƯA CHỐT. Trong lúc chờ, không giả định độ tuổi. Concept cần độ tuổi cụ thể
-  (bố mẹ, ông bà, học sinh) thì ghi rõ để team kiểm có ai đóng được không.
+- **Độ tuổi: 21–22** (người dùng cung cấp 2026-11-02). Hệ quả:
+  - Vai tự nhiên: sinh viên, người mới đi làm, nhóm bạn, người yêu, anh chị em cùng lứa. Vai học sinh cuối cấp hoặc
+    người 25–26 tuổi đóng được khi tạo hình hợp (đồng phục, trang phục đi làm); vai học sinh không có tình huống lãng mạn.
+  - Vai **rõ lớn tuổi hơn hẳn** (bố mẹ, ông bà, sếp trung niên) **không lộ mặt**: chỉ nghe giọng, chỉ thấy qua tin nhắn
+    / màn hình, hoặc chỉ quay tay, lưng, bóng. Giọng của vai đó cần người lồng tiếng, ghi ở Ghi chú. Concept cố tình
+    cho người trẻ đóng vai già để gây hài thì được, miễn người xem hiểu đó là chủ ý.
+- **Ngoại hình, thế mạnh diễn** của diễn viên: CHƯA CHỐT. Trong lúc chờ, không giả định.
 
 ### 2.2. Một người quay, một máy quay
 
@@ -98,6 +103,7 @@ Dùng ở vid-brainstorm, vid-viet-kich-ban và vid-review.
 
 - [ ] Số nhân vật khác nhau ≤ 6, ưu tiên ≤ 4?
 - [ ] Nhân vật nữ lộ mặt ≤ 1, nhân vật nam ≤ 5?
+- [ ] Vai lộ mặt hợp độ tuổi diễn viên 21–22? Vai học sinh không có tình huống lãng mạn?
 - [ ] Bối cảnh ≤ 2?
 - [ ] Mọi đạo cụ trong cột Nội dung đã có ở dòng Đạo cụ?
 - [ ] Hành động không lặp lại được đã ghi "chỉ quay một lần" hoặc số đạo cụ dự phòng?
@@ -109,7 +115,7 @@ Dùng ở vid-brainstorm, vid-viet-kich-ban và vid-review.
 
 | Mục | Đang dùng tạm |
 |---|---|
-| Độ tuổi, ngoại hình, thế mạnh diễn của 6 diễn viên (giới tính đã chốt: 1 nữ, 5 nam) | Không giả định |
+| Ngoại hình, thế mạnh diễn của 6 diễn viên (đã chốt: 1 nữ, 5 nam, 21–22 tuổi) | Không giả định |
 | Bảng kiêm nhiệm | Không giả định |
 | Thiết bị: máy quay, đèn, mic, chân máy, gimbal | Mục 4 |
 | Bối cảnh có sẵn | Không giả định |

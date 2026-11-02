@@ -11,7 +11,7 @@ Chỉ ghi **sở thích**. Dữ kiện sản xuất (diễn viên, máy quay, b�
 | Thời lượng mặc định | | 30s / 60s / 90s; trống thì hỏi |
 | Nền tảng | TikTok + YouTube Shorts | |
 | Nhóm khán giả chính | | 17–21 / 22–25 / 26–30 / cả ba; trống thì hỏi khi không suy ra được |
-| Tông | ẩn dụ hài đời thường | |
+| Tông | | Trống thì `/vid` hỏi một câu và có lựa chọn "Để skill đề xuất". Ghi `<cảm xúc> · <cách kể> · <độ hài>` (xem `shared/nghe/tong-cam-xuc.md`) thì mọi video theo tông này |
 | Số concept mỗi lần brainstorm | 6 | Chế độ nhanh luôn là 3 |
 | Nhóm chủ đề hay làm | | Chỉ dùng để gợi ý khi người dùng nói "tuỳ"; không giới hạn brainstorm |
 | Người phụ trách mặc định | | Ghi vào `trang-thai.md` |

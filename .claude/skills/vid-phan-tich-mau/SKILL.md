@@ -1,6 +1,6 @@
 ---
 name: vid-phan-tich-mau
-description: "Phân tích video mẫu (link TikTok / YouTube / Reels, file .mp4, hoặc ảnh chụp + mô tả) để chỉ ra vì sao video thu hút: hook ba lớp, điểm giữ chân, cấu trúc beat, ẩn dụ và thông điệp, cơ chế hài, ngôn ngữ điện ảnh, nhịp dựng đo được (số cut, độ dài shot, khoảng lặng), lời thoại chép tự động có mốc giây, bình luận nổi bật. Mỗi nhận định kèm bằng chứng và tách đo được / suy đoán; có phần làm lại được với đội mình, công thức rút gọn để brainstorm, và danh sách không được chép. Lần đầu dùng tự cài công cụ (yt-dlp, ffmpeg, whisper), người dùng không phải cài gì. Dùng khi user dán link video, nói 'phân tích video này', 'video này hay ở đâu', 'mổ video mẫu', 'vì sao video này viral', 'video này flop vì sao'; /vid tự gọi khi brief có video mẫu. Viết kịch bản từ mẫu thì dùng /vid (nó gọi skill này rồi đi tiếp)."
+description: "Phân tích video mẫu (link TikTok / YouTube / Reels, file .mp4, hoặc ảnh chụp + mô tả) để chỉ ra vì sao video thu hút: hook ba lớp, điểm giữ chân, cấu trúc beat, tông cảm xúc, ẩn dụ và thông điệp, cơ chế hài, ngôn ngữ điện ảnh, nhịp dựng đo được (số cut, độ dài shot, khoảng lặng), lời thoại chép tự động có mốc giây, bình luận nổi bật. Mỗi nhận định kèm bằng chứng và tách đo được / suy đoán; có phần làm lại được với đội mình, công thức rút gọn để brainstorm, và danh sách không được chép. Lần đầu dùng tự cài công cụ (yt-dlp, ffmpeg, whisper), người dùng không phải cài gì. Dùng khi user dán link video, nói 'phân tích video này', 'video này hay ở đâu', 'mổ video mẫu', 'vì sao video này viral', 'video này flop vì sao'; /vid tự gọi khi brief có video mẫu. Viết kịch bản từ mẫu thì dùng /vid (nó gọi skill này rồi đi tiếp)."
 argument-hint: <link | file.mp4 | ảnh chụp + mô tả> [flop] [lưu]
 ---
 
@@ -27,6 +27,7 @@ Luôn đọc, vì đây là thước đo để gọi tên những gì thấy tro
 
 - `shared/nghe/hook-va-giu-chan.md`: dạng hook `HK-D01..D12`, điểm rơi, kỹ thuật giữ chân, kiểu kết.
 - `shared/nghe/cau-truc-va-nhip.md`: khung beat, cấu trúc khác, phân bổ giây.
+- `shared/nghe/tong-cam-xuc.md`: ba trục tông, cơ chế của từng cảm xúc, đường cảm xúc.
 - `shared/nghe/an-du-va-hai.md`: kiểu ẩn dụ, lúc lộ ẩn dụ, cơ chế hài, nhịp hài.
 - `shared/nghe/ngon-ngu-dien-anh.md`: cỡ cảnh, chuyển động, ánh sáng, âm thanh, nhịp dựng.
 - `shared/nghe/chu-de-va-thong-diep.md`: nhóm chủ đề, câu chuyện bề mặt và thông điệp.
@@ -145,9 +146,9 @@ Hình / âm / chữ (ba lớp) · dạng `HK-Dxx` · lời hứa với người 
 ### 4.3. Cấu trúc và nhịp
 Khung beat (đối chiếu cau-truc-va-nhip.md) · vị trí lật · phân bổ giây
 ### 4.4. Câu chuyện, thông điệp, chủ đề
-Nhóm chủ đề · câu chuyện bề mặt · thông điệp · kiểu ẩn dụ · lúc lộ ẩn dụ
-### 4.5. Hài
-Cơ chế · nhịp (cài – chờ – bung)
+Nhóm chủ đề · câu chuyện bề mặt · thông điệp · kiểu ẩn dụ, lúc lộ ẩn dụ (nếu có)
+### 4.5. Tông cảm xúc và hài
+Cảm xúc chủ đạo · cách kể · độ hài · đường cảm xúc · cơ chế tạo cảm xúc · nhịp hài nếu có (cài – chờ – bung)
 ### 4.6. Điện ảnh
 Cỡ cảnh chủ đạo · chuyển động máy · ánh sáng · màu · âm thanh (tiếng động, nhạc, im lặng)
 ### 4.7. Kết

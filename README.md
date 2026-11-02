@@ -6,7 +6,8 @@ Chỉ cần nhớ một lệnh: **`/vid`** (Claude Code) hoặc **`$vid`** (Code
 ## Lần đầu trên máy mới
 
 Cần có sẵn: [Claude Code](https://docs.claude.com/en/docs/claude-code) đã đăng nhập, Git, Python 3 (Windows: `py --version`;
-macOS / Linux: `python3 --version`).
+macOS / Linux: `python3 --version`). Trên macOS, Python 3.9 đi kèm Xcode vẫn chạy được nhưng nên `brew install python` để
+tải link video ổn định. Máy chưa có Python hiện hộp thoại cài Xcode thì bấm Install.
 
 ```
 git clone https://github.com/minhductran042/Gen-Script-Skill.git
@@ -16,7 +17,7 @@ claude
 
 1. Claude Code hỏi có tin thư mục này không: chọn đồng ý. Skill chỉ được nạp khi mở Claude Code **đúng thư mục repo**.
 2. Gõ `/vid`. Thấy menu (làm video mới, mổ video mẫu, review kịch bản…) là chạy được.
-3. Khi skill chạy lệnh `py …` / `python3 …`, Claude Code hỏi quyền: cho phép.
+3. Khi skill chạy lệnh `py …` (Windows) / `python3 …` (macOS, Linux), Claude Code hỏi quyền: cho phép.
 4. (Tuỳ chọn) điền `shared/cau-hinh.md` để đỡ bị hỏi lại thời lượng, khán giả.
 
 Không phải tự cài thư viện nào. Lần đầu dùng tới, script tự tạo `.cong-cu/venv` (không đưa lên git, máy nào tự cài
@@ -141,12 +142,14 @@ shared/
     khan-gia-va-nen-tang.md  ba nhóm tuổi, hành vi lướt, TikTok vs Shorts, độc lập vs series
     hook-va-giu-chan.md      12 dạng hook, điểm rơi người xem, kỹ thuật giữ chân, kiểu kết
     an-du-va-hai.md          ẩn dụ và hài, chỉ dùng khi tông có: cách tìm, kho đồ vật, cơ chế và nhịp hài
-    ngon-ngu-dien-anh.md     từ vựng góc máy, bố cục dọc, ánh sáng, âm thanh, dựng
+    ngon-ngu-dien-anh.md     từ vựng góc máy, bố cục dọc, ánh sáng, âm thanh, dựng, quay đối thoại một máy
+    thoai-va-do-gan.md       độ gần gũi, thoại có việc để làm, thời lượng có lý do; áp mọi chủ đề và tông
     cau-truc-va-nhip.md      logline, khung beat, phân bổ giây, cấu trúc khác, ước thời lượng
   tham-khao/               THAM KHẢO TUỲ CHỌN, chỉ đọc khi brief ghi
     mau/                     thư viện bản phân tích video mẫu (INDEX.md), chỉ lưu khi người dùng đồng ý
   scripts/kich_ban.py      doc (xlsx→json) · kiem (soát) · xuat (json→xlsx)
   scripts/dong_bo_codex.py sinh .agents/skills/ cho Codex từ .claude/skills/
+  scripts/moi_truong.py    tạo và tự sửa .cong-cu/venv, hai script trên dùng chung
   scripts/phan_tich_mau.py cai · chay (tải → tách khung, đo cut → chép lời) · tai · tach · chep
   mau-format/              file Excel mẫu ĐỊNH DẠNG (không dùng nội dung)
 .cong-cu/                  công cụ tự cài lần đầu (venv, mô hình chép lời); không commit

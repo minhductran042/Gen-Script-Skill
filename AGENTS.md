@@ -10,7 +10,7 @@ của team ở `shared/cau-hinh.md`.
 - Ba lớp kiến thức trong `shared/`:
   - `luat/`: **ràng buộc cứng** (format, điều kiện sản xuất, vùng cấm, danh mục lỗi). Luôn áp. Mục ghi **CHƯA CHỐT**
     thì dùng giá trị tạm và ghi rõ trong đầu ra.
-  - `nghe/`: **kiến thức nghề** (khán giả, tông cảm xúc, hook, ẩn dụ, điện ảnh, cấu trúc). Luôn dùng làm thước đo, nhưng là nguyên
+  - `nghe/`: **kiến thức nghề** (khán giả, tông cảm xúc, hook, ẩn dụ, thoại, điện ảnh, cấu trúc). Luôn dùng làm thước đo, nhưng là nguyên
     tắc, không phải công thức bắt buộc. Brief của lần làm được ghi đè.
   - `tham-khao/`: **tham khảo tuỳ chọn** do team cung cấp. Chỉ đọc khi brief của lần đó ghi ở mục "Tham khảo". Không
     tự ghi vào thư mục này, trừ `tham-khao/mau/` khi người dùng đồng ý lưu bản phân tích video mẫu.

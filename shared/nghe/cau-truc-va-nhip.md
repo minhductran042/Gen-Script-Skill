@@ -24,7 +24,7 @@ Bảy chức năng. Video ngắn gộp bớt, video dài tách ra. Mỗi beat ch
 |---|---|---|---|
 | 1 | **Hook** | Lời hứa + đưa vấn đề (hoặc ẩn dụ nếu có) vào khung | Có lướt qua không? |
 | 2 | **Thiết lập** | Ai, ở đâu, muốn gì, câu hỏi kịch tính chính | Người xem đã biết mình đang chờ gì chưa? |
-| 3 | **Leo thang** | Mâu thuẫn tăng lên, có thể 1–3 lần | Mỗi lần có tệ / hài / căng hơn lần trước không? |
+| 3 | **Leo thang** | Mâu thuẫn tăng lên, số đợt theo độ dài chuyện (video 30s một đợt, video trên 90s có thể 3–5 đợt) | Mỗi lần có tệ / hài / căng hơn lần trước không? |
 | 4 | **Lật** (không bắt buộc) | Một chi tiết đổi hướng câu chuyện hoặc mở khoá ẩn dụ | Có bất ngờ mà vẫn hợp lý không? |
 | 5 | **Khoảng lặng** | Nhân vật (và người xem) nhận ra | Có đủ thời gian để nghĩa ngấm không? |
 | 6 | **Chốt** | Câu / hình ảnh đọng lại | Bỏ câu này đi người xem có còn hiểu không? (nếu có thì có thể bỏ) |
@@ -46,6 +46,10 @@ Gợi ý khởi điểm, chỉnh theo concept:
 
 Video 30s thường gộp Khoảng lặng + Chốt, và Leo thang chỉ một lần.
 
+Video trên 90s: không có bảng cố định. Giữ tỉ lệ của cột 90s, phần tăng thêm chủ yếu vào Leo thang, và mỗi đợt phải có
+điều mới (`thoai-va-do-gan.md` mục 4). Bảng trên là điểm khởi đầu, không phải giới hạn: thời lượng do chuyện quyết định,
+trừ khi brief ghi số cố định.
+
 ## 4. Các cấu trúc khác (khi khung mặc định không hợp)
 
 | Cấu trúc | Cách chạy | Hợp với |
@@ -59,10 +63,12 @@ Video 30s thường gộp Khoảng lặng + Chốt, và Leo thang chỉ một l�
 
 ## 5. Ước lượng thời lượng
 
-- Thoại nói tự nhiên: ước khoảng 3–4 tiếng (âm tiết) mỗi giây. Đây là **ước lượng**, phải đọc thử bấm giờ để chốt.
+- Thoại nói tự nhiên: ước khoảng 3–4 tiếng (âm tiết) mỗi giây; đoạn nói nhanh, căng tới khoảng 5 tiếng mỗi giây. Đây là
+  **ước lượng**, phải đọc thử bấm giờ để chốt.
 - Hành động không thoại: ước theo thời gian thực của hành động, cộng 0,5–1 giây cho phản ứng.
 - Khoảng lặng: ghi rõ số giây ở Ghi chú.
-- Cộng tất cả các beat. Tổng vượt mục tiêu trên 10% thì cắt, không nén thoại cho nhanh.
+- Cộng tất cả các beat. Brief có mục tiêu cố định mà tổng vượt trên 10% thì cắt, không nén thoại cho nhanh. Brief ghi
+  "Theo chuyện" thì chỉ cắt đoạn không có gì mới.
 
 **Thứ tự cắt khi quá dài:** thoại giải thích → beat leo thang trùng ý → phần thiết lập → phần thoát. Không cắt hook,
 lật và khoảng lặng.

@@ -55,7 +55,7 @@ Chính sách và giới hạn của nền tảng thay đổi thường xuyên. *
 | | TikTok | YouTube Shorts |
 |---|---|---|
 | Khung | Dọc 9:16 (1080×1920) | Dọc 9:16 (1080×1920) |
-| Độ dài phù hợp video giải trí kể chuyện | Kinh nghiệm phổ biến: 30–90s | Kinh nghiệm phổ biến: 30–60s; Shorts đã cho dài hơn nhưng ngắn gọn vẫn an toàn |
+| Độ dài phù hợp video giải trí kể chuyện | Không có độ dài chuẩn: video trên 90s vẫn giữ được người xem nếu liên tục có điều mới | Tương tự; kiểm giới hạn độ dài của Shorts lúc đăng |
 | Tín hiệu được coi trọng (theo kinh nghiệm cộng đồng) | Xem hết, xem lại, comment, share | Xem hết, tỉ lệ không lướt qua, đăng ký kênh |
 | Vùng che giao diện | Đáy (caption, tên kênh) và cạnh phải (nút tim, comment, share) | Tương tự, đáy che nhiều hơn |
 | Âm nhạc | Kho nhạc trong app; tài khoản doanh nghiệp bị giới hạn nhạc thương mại | Content ID quét bản quyền, nhạc không có quyền có thể bị chặn hoặc mất kiếm tiền |

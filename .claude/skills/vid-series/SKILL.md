@@ -15,7 +15,7 @@ Luôn đọc:
 - `shared/nghe/khan-gia-va-nen-tang.md` mục 5 (độc lập và series).
 - `shared/nghe/chu-de-va-thong-diep.md`: chọn nhóm chủ đề cho series; danh sách tập nên xoay quanh một nhóm chính và
   thỉnh thoảng ghép với nhóm khác để đổi góc.
-- `shared/nghe/tong-cam-xuc.md`, `hook-va-giu-chan.md`; `an-du-va-hai.md` khi tông series có ẩn dụ hoặc hài.
+- `shared/nghe/tong-cam-xuc.md`, `hook-va-giu-chan.md`, `thoai-va-do-gan.md`; `an-du-va-hai.md` khi tông series có ẩn dụ hoặc hài.
 - `shared/luat/dieu-kien-san-xuat.md`: nhân vật cố định phải nằm trong 6 diễn viên (1 nữ, 5 nam): series có tối đa một nhân vật nữ cố định lộ mặt.
 - `shared/luat/vung-cam.md`.
 

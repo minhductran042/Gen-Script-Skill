@@ -67,6 +67,7 @@ Không đọc `shared/tham-khao/`, trừ khi brief ghi ở mục "Tham khảo". 
 
 Không bắt người dùng cài gì. Các script tự cài thứ còn thiếu vào `.cong-cu/venv` ở lần đầu (`kich_ban.py`: openpyxl;
 `phan_tich_mau.py`: công cụ video). Lần đầu thấy dòng "Lần đầu: …" thì báo người dùng một dòng là đang tự cài.
+Lệnh trong các skill viết dạng `py -I …` cho Windows; macOS và Linux không có `py`, thay bằng `python3 -I …`.
 Máy không có cả `py` lẫn `python3`: cài Python theo bước 0 của `vid-phan-tich-mau` rồi chạy lại lệnh vừa lỗi.
 
 ---
@@ -172,7 +173,7 @@ JSON và một sheet trong cùng file Excel.
   - Đường cảm xúc (nếu có): <ví dụ cười → đau>
 - Tông đã chốt (điền ở điểm dừng 1, mỗi kịch bản một dòng): KB<số>: <cảm xúc> · <cách kể> · <độ hài> · Thông điệp <Có | Không>
 - Dạng: độc lập (mặc định) | tập <n> của series <tên>
-- Thời lượng mục tiêu: <30s | 60s | 90s>
+- Thời lượng mục tiêu: <Theo chuyện | ~60s | ~90s | ~120s | số người dùng nói>
 - Nền tảng: TikTok + YouTube Shorts (mặc định)
 
 ## Ràng buộc của lần này
@@ -204,7 +205,7 @@ cấu hình, hoặc người dùng đã nói sẵn thì bỏ qua.
 
 | Ưu tiên | Câu | Khi nào cần |
 |---|---|---|
-| 1 | Thời lượng: 30s · 60s · 90s | Không suy ra được, không có trong cấu hình, không có mẫu để theo |
+| 1 | Thời lượng: Theo chuyện (khuyên dùng) · ~60s · ~90s · ~120s | Không suy ra được, không có trong cấu hình, không có mẫu để theo |
 | 2 | Tông: Để skill đề xuất (khuyên dùng) · Vui, nhẹ · Chạm, day dứt · Căng, rợn (gõ "Khác" để tả tông khác) | Người dùng chưa nói, cấu hình trống, không có mẫu để theo, không phải tập series |
 | 3 | Nhóm chủ đề: 8 nhóm chia hai câu chọn nhiều, mỗi câu 4 nhóm (tính là 2 câu) | Hoàn toàn không có chủ đề (xem `chu-de-va-thong-diep.md` mục 3; các trường hợp khác tự đề xuất, ghi `(đề xuất)`) |
 | 4 | Mức bám mẫu: Cùng công thức (khuyên dùng) · Cảm hứng · Bắt trend, mỗi lựa chọn một dòng giải thích từ `bam-mau.md` mục 1 | Có video mẫu |

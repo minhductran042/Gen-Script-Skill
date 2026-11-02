@@ -20,9 +20,6 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding="utf-8")
 sys.stderr.reconfigure(encoding="utf-8")
 
-VENV = Path(__file__).resolve().parents[2] / ".cong-cu" / "venv"
-VENV_PY = VENV / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
-
 
 def _ensure_openpyxl():
     try:
@@ -30,17 +27,18 @@ def _ensure_openpyxl():
         return
     except ImportError:
         pass
-    pip = ["-m", "pip", "install", "--disable-pip-version-check", "-q", "openpyxl"]
-    if Path(sys.prefix).resolve() == VENV.resolve():
-        subprocess.run([sys.executable, *pip], check=True)
+    sys.path.insert(0, str(Path(__file__).resolve().parent))   # -I leaves the script's folder off sys.path
+    import moi_truong
+    if moi_truong.in_venv():
+        if not moi_truong.pip_install("openpyxl"):
+            sys.exit("LỖI: không cài được openpyxl. Kiểm tra mạng rồi chạy lại.")
         return
-    if not VENV_PY.exists():
-        print("Lần đầu: tạo môi trường riêng ở .cong-cu/venv ...")
-        subprocess.run([sys.executable, "-m", "venv", str(VENV)], check=True)
-    if subprocess.run([str(VENV_PY), "-I", "-c", "import openpyxl"], capture_output=True).returncode:
+    moi_truong.ensure_venv()
+    if subprocess.run([str(moi_truong.VENV_PY), "-I", "-c", "import openpyxl"], capture_output=True).returncode:
         print("Lần đầu: cài openpyxl (đọc / ghi Excel) ...")
-        subprocess.run([str(VENV_PY), *pip], check=True)
-    sys.exit(subprocess.run([str(VENV_PY), "-I", str(Path(__file__).resolve()), *sys.argv[1:]]).returncode)
+        if not moi_truong.pip_install("openpyxl"):
+            sys.exit("LỖI: không cài được openpyxl. Kiểm tra mạng rồi chạy lại.")
+    sys.exit(subprocess.run([str(moi_truong.VENV_PY), "-I", str(Path(__file__).resolve()), *sys.argv[1:]]).returncode)
 
 
 _ensure_openpyxl()

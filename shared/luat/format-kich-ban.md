@@ -39,7 +39,8 @@ Title của file. Trong mỗi sheet:
 | Nhóm chủ đề | `overview.chu_de` | Nhóm (+ nhóm ghép) · chủ đề con |
 | Thông điệp | `overview.thong_diep` | Một câu dưới 15 từ, dạng phát hiện; để trống nếu tông không có thông điệp |
 | Khán giả chính | `overview.khan_gia` | Nhóm tuổi · người xem sẽ gửi cho ai |
-| Tông | `overview.tong` | `<cảm xúc> · <cách kể> · <độ hài>`, ví dụ `Day dứt · Kể thẳng · Không` (xem `tong-cam-xuc.md`) |
+| Tông | `overview.tong` | Cảm xúc chủ đạo, thêm đường cảm xúc nếu có, ví dụ `Day dứt` hoặc `Day dứt · cười → đau` (xem `tong-cam-xuc.md` mục 1) |
+| Công cụ kể | `overview.cong_cu` | `Kể thẳng`, hoặc công cụ đã dùng, ví dụ `Ẩn dụ đồ vật`, `Hài · Đan xen`, `Mượn thể loại tài liệu` (mục 4, 5 của file đó) |
 | Hook | `overview.hook` | Mã `HK-Dxx` + khung đầu tiên (hình, âm, chữ) |
 | Diễn biến chính | `overview.dien_bien` | Leo thang → lật → khoảnh khắc lặng, mỗi ý một dòng |
 | Kết | `overview.ket` | Kiểu kết + câu đọng |
@@ -164,7 +165,8 @@ Mọi kịch bản lưu dạng JSON. Excel chỉ là bản xuất ra từ JSON.
         "chu_de": "<nhóm> · <chủ đề con>",
         "thong_diep": "<một câu>",
         "khan_gia": "<nhóm tuổi> · <gửi cho ai>",
-        "tong": "<tông>",
+        "tong": "<cảm xúc>",
+        "cong_cu": "<Kể thẳng | công cụ>",
         "hook": "HK-Dxx – <khung đầu>",
         "dien_bien": "<leo thang>\n<lật>\n<khoảnh khắc lặng>",
         "ket": "<kiểu kết> – \"<câu đọng>\"",

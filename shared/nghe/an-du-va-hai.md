@@ -1,6 +1,6 @@
 # Ẩn dụ và hài
 
-Tài liệu nghề, chỉ dùng khi tông có ẩn dụ hoặc hài (xem `tong-cam-xuc.md`). Ẩn dụ và hài không bắt buộc cho mọi video, và
+Tài liệu nghề, đọc khi concept dùng công cụ Ẩn dụ, Mượn thể loại hoặc Hài (xem `tong-cam-xuc.md` mục 4, 5). Ẩn dụ và hài không bắt buộc cho mọi video, và
 ẩn dụ không nhất thiết đi cùng hài. Ví dụ là minh hoạ do người viết skill nghĩ ra, không phải kịch bản của team.
 
 ---

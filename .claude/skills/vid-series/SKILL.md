@@ -15,7 +15,7 @@ Luôn đọc:
 - `shared/nghe/khan-gia-va-nen-tang.md` mục 5 (độc lập và series).
 - `shared/nghe/chu-de-va-thong-diep.md`: chọn nhóm chủ đề cho series; danh sách tập nên xoay quanh một nhóm chính và
   thỉnh thoảng ghép với nhóm khác để đổi góc.
-- `shared/nghe/tong-cam-xuc.md`, `hook-va-giu-chan.md`, `thoai-va-do-gan.md`; `an-du-va-hai.md` khi tông series có ẩn dụ hoặc hài.
+- `shared/nghe/tong-cam-xuc.md`, `hook-va-giu-chan.md`, `thoai-va-do-gan.md`; `an-du-va-hai.md` khi series dùng công cụ ẩn dụ, mượn thể loại hoặc hài.
 - `shared/luat/dieu-kien-san-xuat.md`: nhân vật cố định phải nằm trong 6 diễn viên (1 nữ, 5 nam): series có tối đa một nhân vật nữ cố định lộ mặt.
 - `shared/luat/vung-cam.md`.
 
@@ -52,7 +52,7 @@ Tối đa 6, ưu tiên 2–4. Mỗi nhân vật cần:
 |---|---|
 | **Một nét chính** (một tính từ) | Người xem nhớ được sau một tập |
 | **Mong muốn** | Tạo xung đột |
-| **Tật / điểm mù** | Nguồn xung đột (và nguồn hài nếu tông có hài) |
+| **Tật / điểm mù** | Nguồn xung đột (và nguồn hài nếu series dùng Hài) |
 | **Câu cửa miệng hoặc hành động quen** | Dấu hiệu nhận diện, người xem chờ nó |
 | **Vai trong động cơ tập** | Ai gây chuyện, ai chịu chuyện, ai nói câu chốt |
 | **Quan hệ với từng nhân vật khác** | Cặp đôi đối lập sinh ra thoại |
@@ -68,13 +68,13 @@ Kiểm: hai nhân vật có cùng nét chính thì gộp hoặc đổi một ng�
 
 ### Bước 5: Danh sách tập
 
-Trước tiên chốt **tông của series** theo `tong-cam-xuc.md` mục 2 (ba trục và Thông điệp, người dùng chưa nói thì đề xuất) và ghi vào
+Trước tiên chốt **tông của series** theo `tong-cam-xuc.md` mục 2 (cảm xúc, công cụ kể và Thông điệp; người dùng chưa nói thì đề xuất) và ghi vào
 đầu `series.md`. Các tập kế thừa tông này; tập nào đổi thì ghi trong brief tập đó.
 
 Lên 6–10 tập, mỗi tập một dòng. Thứ tự: **tập 1 là tập dễ hiểu nhất với người lạ**, không phải tập đầu theo thời gian
 truyện.
 
-| Tập | Tên / Title | Insight | Cảm xúc · cách kể | Hook (HK-Dxx) | Kết + móc sang tập sau | Nhân vật chính của tập | Trạng thái |
+| Tập | Tên / Title | Insight | Cảm xúc · công cụ | Hook (HK-Dxx) | Kết + móc sang tập sau | Nhân vật chính của tập | Trạng thái |
 
 Kiểm:
 

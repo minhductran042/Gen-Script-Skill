@@ -76,7 +76,7 @@ Mã `HK-Dxx` dùng trong concept và review. Một kịch bản ghi rõ mình d�
 | **Lật cuối** | Chi tiết cuối đổi nghĩa toàn bộ câu chuyện | Xem lại, comment |
 | **Gọi lại hook** | Khung / câu cuối lặp lại hook nhưng nghĩa đã khác | Thấy trọn vẹn, xem lại |
 | **Vòng lặp** | Khung cuối nối liền khung đầu | Video tự phát lại liền mạch |
-| **Miếng hài thoát** | Sau khoảnh khắc chạm, một câu hoặc hành động hài để thoát | Tránh thành bài giảng (chỉ khi tông có hài) |
+| **Miếng hài thoát** | Sau khoảnh khắc chạm, một câu hoặc hành động hài để thoát | Tránh thành bài giảng (chỉ khi dùng công cụ Hài) |
 | **Dư âm** | Dừng ở một hình hoặc khoảng lặng, không giải thích, không thoát | Người xem ngồi lại với cảm xúc, xem lại, lưu |
 | **Câu hỏi mở** | Để nhân vật hoặc chữ nổi hỏi người xem một câu dễ trả lời | Comment |
 | **Móc tập sau** (series) | Một chi tiết treo lại cho tập sau, nhưng tập này vẫn trọn | Theo dõi kênh |

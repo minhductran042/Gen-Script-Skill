@@ -67,6 +67,7 @@ OVERVIEW_FIELDS = [
     ("Thông điệp", "thong_diep", True),
     ("Khán giả chính", "khan_gia", True),
     ("Tông", "tong", True),
+    ("Công cụ kể", "cong_cu", True),
     ("Hook", "hook", True),
     ("Diễn biến chính", "dien_bien", True),
     ("Kết", "ket", True),

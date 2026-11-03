@@ -14,5 +14,6 @@ Chỉ ghi **sở thích**. Dữ kiện sản xuất (diễn viên, máy quay, b�
 | Tông | | Cảm xúc người xem còn lại. Trống thì `/vid` hỏi một câu mở, có lựa chọn "Để skill đề xuất". Ghi một cảm xúc (xem `shared/nghe/tong-cam-xuc.md` mục 1) thì mọi video theo cảm xúc này |
 | Công cụ không dùng | | Ví dụ "không hài", "không ẩn dụ". Trống thì brainstorm tự chọn công cụ hợp cảm xúc |
 | Số concept mỗi lần brainstorm | 6 | Chế độ nhanh luôn là 3 |
+| Phụ đề cháy chữ | Có | Có: người dựng làm phụ đề cả video, kịch bản chỉ ghi "Phụ đề nhấn". Không: chỉ có Text nổi bật |
 | Nhóm chủ đề hay làm | | Chỉ dùng để gợi ý khi người dùng nói "tuỳ"; không giới hạn brainstorm |
 | Người phụ trách mặc định | | Ghi vào `trang-thai.md` |

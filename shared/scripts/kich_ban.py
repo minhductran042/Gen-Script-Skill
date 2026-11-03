@@ -79,6 +79,12 @@ OVERVIEW_FIELDS = [
 ]
 OVERVIEW_BY_LABEL = {label: (key, nested) for label, key, nested in OVERVIEW_FIELDS}
 OVERVIEW_REQUIRED = ["chu_de", "tong", "hook", "nhan_vat"]
+# Optional post package (format-kich-ban.md section 4), stored under kb["dong_goi"]; exported to its own sheet,
+# one row per script, so the script sheets stay a shooting document
+POST_FIELDS = [("Caption", "caption"), ("Hashtag", "hashtag"), ("Ảnh bìa", "anh_bia"), ("Comment ghim", "comment_ghim")]
+POST_SHEET = "Gói đăng"
+POST_HEADERS = ["STT", "Kịch bản"] + [label for label, _ in POST_FIELDS]
+POST_WIDTHS = [6, 24, 50, 30, 30, 36]
 SEC_OVERVIEW, SEC_SCRIPT = "TỔNG QUAN", "KỊCH BẢN CHI TIẾT"
 
 TITLE_RE = re.compile(r"^Kịch bản\s*(\d+)\s*:\s*(.*?)\s*\((?:Thời lượng dự kiến:\s*)?([^()]*)\)\s*$")
@@ -95,7 +101,8 @@ def doc(path_in, path_out):
     """Read both layouts: one sheet per script (current) and several scripts stacked in one sheet (old)."""
     wb = openpyxl.load_workbook(path_in)
     scripts, cur, in_table = [], None, False
-    rows = [row for ws in wb.worksheets for row in ws.iter_rows(min_row=1, max_col=10, values_only=True)]
+    script_sheets = [ws for ws in wb.worksheets if ws.title != POST_SHEET]
+    rows = [row for ws in script_sheets for row in ws.iter_rows(min_row=1, max_col=10, values_only=True)]
     for row in rows:
         cells = [_s(v) for v in row]
         a = cells[0]
@@ -140,7 +147,16 @@ def doc(path_in, path_out):
         if cells[2] and cells[2] != cur["dia_diem"]:
             scene["dia_diem"] = cells[2]
         cur["canh"].append(scene)
-    data = {"du_an": wb.properties.title or wb.worksheets[0].title, "kich_ban": scripts}
+    if POST_SHEET in wb.sheetnames:
+        by_so = {k["so"]: k for k in scripts}
+        for row in wb[POST_SHEET].iter_rows(min_row=2, max_col=len(POST_HEADERS), values_only=True):
+            cells = [_s(v) for v in row]
+            if not cells[0].isdigit() or int(cells[0]) not in by_so:
+                continue
+            post = {key: v for (_, key), v in zip(POST_FIELDS, cells[2:]) if v}
+            if post:
+                by_so[int(cells[0])]["dong_goi"] = post
+    data = {"du_an": wb.properties.title or script_sheets[0].title, "kich_ban": scripts}
     with open(path_out, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"Đã đọc {len(scripts)} kịch bản, {sum(len(k['canh']) for k in scripts)} beat → {path_out}")
@@ -327,6 +343,17 @@ def xuat(path_in, path_out):
             c.font, c.fill = f_section, grey
             ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=10)
 
+        def label_row(row, label, value):
+            lc = ws.cell(row, 1, label)
+            lc.font, lc.alignment = f_label, wrap
+            vc = ws.cell(row, 3, value)
+            vc.font, vc.alignment = f_body, wrap
+            ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=2)
+            ws.merge_cells(start_row=row, start_column=3, end_row=row, end_column=10)
+            # Excel never auto-fits merged cells, so size the row from the text length
+            lines = sum(max(1, -(-len(p) // OVERVIEW_CHARS_PER_LINE)) for p in value.split("\n"))
+            ws.row_dimensions[row].height = 17 * lines
+
         r = 1
         ws.cell(r, 1, f"Kịch bản {kb['so']}: {kb['ten']} (Thời lượng dự kiến: {kb['thoi_luong']})").font = f_title
         ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=10)
@@ -338,15 +365,7 @@ def xuat(path_in, path_out):
             value = _s(overview.get(key) if nested else kb.get(key))
             if not value:
                 continue
-            lc = ws.cell(r, 1, label)
-            lc.font, lc.alignment = f_label, wrap
-            vc = ws.cell(r, 3, value)
-            vc.font, vc.alignment = f_body, wrap
-            ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=2)
-            ws.merge_cells(start_row=r, start_column=3, end_row=r, end_column=10)
-            # Excel never auto-fits merged cells, so size the row from the text length
-            lines = sum(max(1, -(-len(p) // OVERVIEW_CHARS_PER_LINE)) for p in value.split("\n"))
-            ws.row_dimensions[r].height = 17 * lines
+            label_row(r, label, value)
             r += 1
         r += 1
         section(r, SEC_SCRIPT)
@@ -372,6 +391,19 @@ def xuat(path_in, path_out):
                 c = ws.cell(r, col, v if v != "" else None)
                 c.font, c.alignment = f_body, wrap
             r += 1
+    posts = [kb for kb in data.get("kich_ban", []) if any(_s((kb.get("dong_goi") or {}).get(k)) for _, k in POST_FIELDS)]
+    if posts:
+        ws = wb.create_sheet(POST_SHEET)
+        for col, width in zip("ABCDEF", POST_WIDTHS):
+            ws.column_dimensions[col].width = width
+        for col, h in enumerate(POST_HEADERS, 1):
+            c = ws.cell(1, col, h)
+            c.font, c.fill, c.alignment = f_label, yellow, wrap
+        for r, kb in enumerate(posts, 2):
+            values = [kb["so"], _s(kb.get("ten"))] + [_s(kb["dong_goi"].get(key)) for _, key in POST_FIELDS]
+            for col, v in enumerate(values, 1):
+                c = ws.cell(r, col, v if v != "" else None)
+                c.font, c.alignment = f_body, wrap
     if not wb.worksheets:
         wb.create_sheet("Kịch bản")
     wb.save(path_out)

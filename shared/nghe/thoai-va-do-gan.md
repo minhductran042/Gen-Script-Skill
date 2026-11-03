@@ -14,7 +14,8 @@ tới đâu, cách nhân vật phản ứng và nói vẫn phải là cách mộ
 
 - **Cụ thể hơn chung chung:** "hai mươi cuộc gọi nhỡ" gần hơn "anh chẳng quan tâm em".
 - **Lý do trước, tính cách sau:** mỗi nhân vật có điều mình muốn và lý do riêng, kể cả vai phản diện hay vai gây cười.
-- **Nói như đang nói:** câu cụt, ngắt lời, nói lại, xưng hô đúng quan hệ. Đọc thành tiếng mà thấy giả thì viết lại.
+- **Nói như đang nói:** câu cụt, ngắt lời, nói lại, xưng hô đúng quan hệ. Đọc thành tiếng mà thấy giả thì viết lại
+  (cách làm ở mục 5).
 
 ## 2. Thoại phải làm đổi tình thế
 
@@ -39,6 +40,13 @@ Thoại hay không phải thoại ít, mà là thoại có việc để làm. M�
 - **Cài và trả bằng lời.** Một từ, một câu nói bâng quơ ở đầu quay lại ở cuối với nghĩa khác. Câu chốt mạnh thường sinh ra
   từ chính những lời đã nói, không phải một câu triết lý đem từ ngoài vào.
 - **Nhịp lên xuống.** Thoại dồn dập rồi một câu ngắn. Sau câu nặng nhất cho một nhịp không ai nói.
+- **Bằng chứng đếm được.** Mỗi lượt tấn công hay biện hộ mang một chi tiết cụ thể ("20 cuộc gọi nhỡ", "một tin nhắn 5 giây /
+  biến mất 5 tiếng"). Người xem đổi phe theo bằng chứng, không theo lời than.
+- **Câu lặp phải lớn dần.** Điệp khúc, câu cửa miệng (kể cả câu người dùng đưa) mỗi lần lặp phải gắt hơn, buồn cười hơn
+  hoặc đổi nghĩa; lần cuối thường trả lại với nghĩa khác.
+- **Người bị nói nói ít.** Trong đoạn mắng, kể tội, người bị nói trả lời rất ngắn; mỗi câu ngắn đó đẩy người kia leo thang.
+- **Một câu để trích.** Mỗi video có ít nhất một câu người xem muốn chép vào bình luận hay gửi cho bạn, sinh ra từ tình
+  huống, không phải câu triết lý.
 
 ## 4. Thời lượng phải có lý do
 
@@ -46,3 +54,22 @@ Video dài được khi người xem vẫn nhận được điều mới. Mỗi 
 điều mới thì kết. Không kéo cho đủ giây, không cắt cho vừa số khi chuyện đang có lực.
 
 Cách quay đoạn đối thoại bằng một máy ở `ngon-ngu-dien-anh.md` mục 11.
+
+## 5. Viết thoại nói, không viết thoại đọc
+
+Thoại trên giấy thường sạch hơn người thật nói. Viết xong, đọc to từng lượt và thêm chất nói vào chỗ hợp vai. Không cần đủ
+mọi thứ dưới đây; mỗi kịch bản có xung đột bằng lời nên có vài cái:
+
+| Chất nói | Ví dụ minh hoạ |
+|---|---|
+| Câu bỏ dở, rẽ ngang | "Nhưng mà lúc nào mẹ cũng phải là… thôi, kệ." Câu chạm nhất bỏ dở rồi rẽ sang chuyện thực tế thì chạm mà không sến |
+| Ngắt lời, nói chồng | B chen vào giữa câu của A; ghi `A: "Tao đã bảo là—"` / `B: "Rồi rồi."` |
+| Kéo âm, cảm thán | "Thìii…", "Giời ạ", "Ơ hay" |
+| Nhại giọng người vắng mặt | Nhại lại câu người yêu cũ, bố mẹ, sếp đã nói |
+| Tự rút lời | Nói câu quá đà rồi "thôi thôi, đùa đấy" |
+| Xưng hô đổi theo thế | Gắt thì "mày – tao", nhún thì "anh – em", trêu thì "ông – bà" |
+| Khẩu ngữ, thành ngữ đời | "bỏ bạn theo bồ", "vừa vừa phải phải", "có biến" |
+| Chửi nhẹ hợp vai | Bạn thân, anh em gắt với nhau thì có cảm thán thô nhẹ; giữ trong giới hạn VC-15 (`shared/luat/vung-cam.md`), không chửi thề nặng |
+
+Ngược lại, không nhét tiếng lóng hay chửi vào vai không hợp (người lớn tuổi lịch sự, cảnh trang trọng), và không để chất nói
+làm câu then chốt khó nghe: câu đỉnh, câu lật nói rõ.

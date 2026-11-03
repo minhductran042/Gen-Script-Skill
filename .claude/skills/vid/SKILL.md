@@ -1,7 +1,7 @@
 ---
 name: vid
-description: "Cửa vào duy nhất của bộ skill kịch bản video ngắn dọc (TikTok / YouTube Shorts) mang chất điện ảnh, tông là cảm xúc người xem còn lại, do người dùng tả bằng lời hoặc skill đề xuất; hài, ẩn dụ chỉ là công cụ kể skill tự chọn khi hợp, khán giả 17–30. Gọi trống thì hiện menu (làm video mới, làm tiếp dự án dở, mổ video mẫu, review kịch bản có sẵn, lên series); có đối số thì tự chọn hướng: câu ý tưởng hoặc câu chuyện có sẵn → làm video mới; link / file video → phân tích mẫu rồi làm theo; du-an/... hoặc 'tiếp' → làm tiếp; file .xlsx / .json → review; 'series' → lên series. Luồng làm video: chốt brief một lượt hỏi, brainstorm, chọn concept bằng thẻ xem trước, viết kịch bản theo format Excel của team (mỗi kịch bản một sheet có tổng quan), review bằng agent độc lập, sửa tối đa 2 vòng (chế độ nhanh 1 vòng), duyệt, xuất Excel kèm gói bàn giao. Làm được nhiều video một lượt. Giữ trạng thái để làm tiếp. Dùng khi user gõ /vid, nói 'làm kịch bản', 'có ý tưởng video', 'làm video từ mẫu này', 'làm theo video <link>', 'theo mẫu <tên>', 'làm 3 video về …', 'làm nhanh', 'tiếp tục kịch bản'."
-argument-hint: "[ý tưởng | link / file video mẫu | theo mẫu <tên> | du-an/<thư mục> | tiếp | file kịch bản | series …] [nhanh]"
+description: "Cửa vào duy nhất của bộ skill kịch bản video ngắn dọc (TikTok / YouTube Shorts) mang chất điện ảnh, tông là cảm xúc người xem còn lại, do người dùng tả bằng lời hoặc skill đề xuất; hài, ẩn dụ chỉ là công cụ kể skill tự chọn khi hợp, khán giả 17–30. Gọi trống thì hiện menu (làm video mới, làm tiếp dự án dở, mổ video mẫu, review kịch bản có sẵn, lên series); có đối số thì tự chọn hướng: câu ý tưởng hoặc câu chuyện có sẵn → làm video mới; link / file video → phân tích mẫu rồi làm theo; du-an/... hoặc 'tiếp' → làm tiếp; file .xlsx / .json → review; 'series' → lên series. Luồng làm video: chốt brief một lượt hỏi, brainstorm, chọn concept bằng thẻ xem trước, viết kịch bản theo format Excel của team (mỗi kịch bản một sheet có tổng quan), review bằng agent độc lập, sửa tối đa 2 vòng (chế độ nhanh 1 vòng), duyệt, xuất Excel kèm gói bàn giao và gói đăng (caption, hashtag, ảnh bìa, comment ghim). Làm được nhiều video một lượt. Có chế độ tự chạy: skill tự quyết ở hai điểm dừng, vẫn brainstorm đủ và mọi bản giao đều qua review. Giữ trạng thái để làm tiếp. Dùng khi user gõ /vid, nói 'làm kịch bản', 'có ý tưởng video', 'làm video từ mẫu này', 'làm theo video <link>', 'theo mẫu <tên>', 'làm 3 video về …', 'làm nhanh', 'tự chạy', 'tiếp tục kịch bản'."
+argument-hint: "[ý tưởng | link / file video mẫu | theo mẫu <tên> | du-an/<thư mục> | tiếp | file kịch bản | series …] [nhanh] [tự chạy]"
 ---
 
 # /vid: cửa vào và điều phối
@@ -35,7 +35,12 @@ cho người dùng quyết, và gói đầu ra cho đội quay. Các skill con (
 [5] Xuất ─ kich-ban-final.xlsx (mỗi kịch bản một sheet) + 05-ban-giao.md
 ```
 
-Ngoài hai điểm dừng, không chen câu hỏi nào khác. Mọi câu hỏi về đầu vào gom trong một lượt ở bước 0.3.
+Ngoài hai điểm dừng, không chen câu hỏi nào khác. Mọi câu hỏi về đầu vào gom trong một lượt ở bước 0.3. Chế độ tự chạy
+(0.6) bỏ cả lượt hỏi lẫn hai điểm dừng.
+
+**Ý người dùng là trục của cả luồng.** Câu chuyện, câu thoại, nhân vật, cảm giác, độ dài người dùng nói ra được ghi vào
+brief như yêu cầu và đi nguyên tới kịch bản. Kiến thức nghề trong `shared/nghe/` là mặc định để lấp chỗ trống và để làm ý
+người dùng mạnh hơn, không phải khuôn để ép ý đó vào.
 
 Mọi file của một dự án nằm trong `du-an/<YYYY-MM-DD>-<slug>/`. `slug` là tên ngắn không dấu, nối bằng gạch ngang.
 
@@ -89,7 +94,8 @@ Máy không có cả `py` lẫn `python3`: cài Python theo bước 0 của `vid
 | "số liệu", "kết quả đăng" kèm tên dự án | Ghi số liệu sau đăng (cuối bước 5), dừng |
 | Câu ý tưởng / chủ đề, câu chuyện người dùng đã có, hoặc "làm <n> video về …" | **Làm video mới** (0.2) |
 
-Thêm chữ **"nhanh"** ở bất kỳ hướng làm video nào thì bật chế độ nhanh (0.5).
+Thêm chữ **"nhanh"** ở bất kỳ hướng làm video nào thì bật chế độ nhanh (0.5). Người dùng nói **"tự chạy"**, "tự quyết",
+"không cần hỏi", "cứ làm đi" thì bật chế độ tự chạy (0.6). Hai chế độ dùng chung được.
 
 **Menu khi gọi trống.** Trong Claude Code dùng câu hỏi có nút bấm; nơi không có nút bấm thì in danh sách đánh số và chờ
 người dùng gõ số.
@@ -186,6 +192,8 @@ JSON và một sheet trong cùng file Excel.
 - Bối cảnh muốn dùng / phải tránh: <…>
 - Đạo cụ có sẵn muốn tận dụng: <…>
 - Điều không muốn có: <…> (gồm công cụ người dùng khoá: "không hài", "không ẩn dụ"…)
+- Người dùng yêu cầu (giữ nguyên): <câu thoại, câu cửa miệng, nhân vật, tình huống, kết, cách mở… người dùng nói rõ; câu
+  thoại chép nguyên văn> | không
 
 ## Tham khảo (tuỳ chọn)
 không | <file trong shared/tham-khao/> | <kịch bản người dùng đưa kèm>
@@ -263,6 +271,23 @@ Chỉ bật khi người dùng nói rõ ("nhanh", "làm nhanh", "không cần k�
 
 Hai điểm dừng vẫn giữ nguyên. Báo một dòng ở đầu: "chế độ nhanh: ít concept hơn, sửa tối đa 1 vòng".
 
+### 0.6. Chế độ tự chạy
+
+Chỉ bật khi người dùng nói rõ (0.0). Người dùng giao quyền quyết, không giao quyền làm ẩu: mọi bước vẫn chạy đủ, chỉ khác ở
+chỗ skill tự quyết thay người dùng và ghi lại lý do.
+
+| Chỗ | Thường | Tự chạy |
+|---|---|---|
+| Lượt hỏi 0.3 | Hỏi tối đa 4 câu | Không hỏi. Mục suy ra được thì điền; còn lại dùng giá trị khuyên dùng, ghi `(mặc định, tự chạy)` |
+| Brainstorm | Theo chế độ (đầy đủ / nhanh, nghĩ ý mới / phát triển câu chuyện) | **Giữ nguyên số ý thô và số concept** của chế độ đó, không rút bớt |
+| Điểm dừng 1 | Người dùng chọn | Chọn concept tổng điểm pha 3 cao nhất; câu chuyện có sẵn thì chọn C1 bản trung thành. Ghi vào brief "Tông đã chốt" kèm `(tự chọn: <lý do một dòng>)` |
+| Review và sửa | Như bước 3, 4 | Như bước 3, 4. **Mọi bản giao đều phải là bản đã qua review**: bản đã ĐẠT mà muốn sửa thêm lỗi Nhẹ thì bản sửa phải review lại (tính vào số vòng sửa); hết vòng thì giao bản đã review gần nhất và ghi lỗi còn lại vào bàn giao |
+| Điểm dừng 2 | Người dùng duyệt | ĐẠT thì tự duyệt và sang bước 5. CHƯA ĐẠT sau số vòng tối đa thì dừng và báo người dùng như bước 4, không tự giao |
+| Câu hỏi phụ ở bước 5 (lưu mẫu, thêm mã lỗi) | Hỏi | Không làm, ghi vào báo cáo cuối là còn chờ người dùng quyết |
+
+Ghi `chế độ: … · tự chạy` vào `trang-thai.md`. Báo cáo cuối nêu rõ những gì đã tự quyết (diễn giải đầu vào, concept, mặc
+định đã dùng) để người dùng sửa được.
+
 ### Dòng gợi ý lệnh tắt
 
 Cuối mỗi điểm dừng in **một dòng** gợi ý, không giải thích thêm, ví dụ ở điểm dừng 1:
@@ -293,7 +318,7 @@ lớn hơn 1 thì cho chọn nhiều. Nơi không có nút bấm: in bảng tóm
 **Sau khi chọn**, ghi tông, công cụ và thông điệp của từng concept đã chọn vào dòng "Tông đã chốt" của brief, kể cả khi brief đang
 để "để skill đề xuất". Người viết và agent review dựa vào dòng này.
 
-Không tự chọn thay người dùng. Cuối điểm dừng in dòng gợi ý lệnh tắt.
+Không tự chọn thay người dùng, trừ chế độ tự chạy (0.6). Cuối điểm dừng in dòng gợi ý lệnh tắt.
 
 ---
 
@@ -336,7 +361,7 @@ Nhiều kịch bản trong một file: **một** agent review cả lô, báo cá
 
 | Kết luận review | Làm gì |
 |---|---|
-| ĐẠT | Sang điểm dừng 2 |
+| ĐẠT | Sang điểm dừng 2. Không tự sửa thêm rồi giao bản chưa review; muốn sửa lỗi Nhẹ thì bản sửa đi qua bước 3 lại |
 | CHƯA ĐẠT, số vòng sửa < mức tối đa (2; chế độ nhanh 1) | Gọi `vid-viet-kich-ban` chế độ sửa với `03-review-vN.md`, nhận `kich-ban-v(N+1).json` và `sua-vN.md`, rồi quay lại bước 3 |
 | CHƯA ĐẠT, đã sửa đủ số vòng tối đa | **Dừng.** Đưa người dùng: điểm hiện tại, các lỗi còn lại, và một câu nhận định lỗi nằm ở kịch bản hay ở concept. Người dùng quyết: sửa tiếp, đổi concept, hay chấp nhận |
 
@@ -365,6 +390,12 @@ vào thư viện để lần sau gọi 'theo mẫu <tên>' không?" (Có · Khô
 
 Review có "Mã lỗi mới đề xuất", hoặc một lỗi MOI gặp ở từ hai dự án trở lên: sau khi duyệt, hỏi một câu "Thêm <các mã>
 vào danh mục lỗi không?" (Có · Không). Có thì thêm vào `shared/luat/loi-kich-ban.md` với mã chính thức, kèm nguồn.
+
+### Gói đăng
+
+Trước khi xuất bản cuối, thêm `dong_goi` vào từng kịch bản trong `kich-ban-vN.json` bản cuối, theo
+`shared/luat/format-kich-ban.md` mục 4: 2–3 caption, hashtag, ảnh bìa (giây + chữ), comment ghim. Chỉ thêm trường này,
+không đổi nội dung đã review. Khi xuất, gói đăng nằm ở sheet riêng `Gói đăng` trong cùng file `kich-ban-final.xlsx`.
 
 ### Xuất bản cuối
 
@@ -396,7 +427,11 @@ Gom theo bối cảnh, rồi theo góc máy, để một máy quay đỡ phải 
 | Đặc tả | Beat | Ghi chú ánh sáng |
 
 ## Ghi chú cho người dựng
-| Beat | Hiệu ứng / chữ / nhạc / tắt lặng | Mốc giây |
+| Beat | Hiệu ứng / chữ / nhạc / tắt lặng / phụ đề nhấn | Mốc giây |
+
+## Gói đăng
+- Caption: <các phương án>
+- Hashtag · Ảnh bìa · Comment ghim
 ```
 
 Ghi `trang-thai.md`: `bước: xong`.
@@ -413,7 +448,9 @@ Ghi vào `du-an/<dự án>/06-sau-dang.md`, mỗi video một dòng. Không hỏ
 
 ## Không làm
 
-- Không bỏ qua hai điểm dừng, kể cả ở chế độ nhanh.
+- Không bỏ qua hai điểm dừng, kể cả ở chế độ nhanh; chỉ chế độ tự chạy do người dùng bật mới tự quyết ở hai điểm này.
+- Không giao bản kịch bản chưa qua review, kể cả ở chế độ tự chạy.
+- Không đổi hay bỏ phần người dùng yêu cầu để khớp mặc định nghề.
 - Không sửa quá số vòng tối đa (2; chế độ nhanh 1) khi chưa hỏi người dùng.
 - Không hỏi người dùng về hài, ẩn dụ hay cách kể; không mặc định công cụ kể nào.
 - Không hỏi quá một lượt 4 câu ở bước brief; không chen câu hỏi ngoài hai điểm dừng.

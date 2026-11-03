@@ -16,6 +16,10 @@ quay và người dựng đọc là hiểu ngay.
 4. **Ánh sáng có lý do**: đến từ một nguồn có thật trong cảnh, và nói lên cảm xúc.
 5. **Nhịp dựng có chủ đích**: biết lúc nào cắt nhanh, lúc nào giữ lâu.
 
+Điện ảnh **không đo bằng số shot, số đặc tả hay đồ hoạ**. Ba video viral trong `shared/tham-khao/mau/` chỉ có 11–13 cut
+cho 67–122 giây, shot trung bình 5–9 giây, gần như không đồ hoạ; chất phim nằm ở ánh sáng, màu, máy đặt đúng người, tiền
+cảnh mờ và diễn liền. Đặc tả, chèn cảnh, màn hình ghép là công cụ khi chuyện cần, không phải điểm cộng tự thân.
+
 Kiểm nhanh: tắt tiếng, chụp 3 khung bất kỳ. Nhìn 3 khung đó có đoán được tâm trạng của cảnh không?
 
 ## 2. Từ vựng cỡ cảnh và góc máy (dùng ở cột Góc quay)
@@ -112,12 +116,15 @@ Công cụ mạnh:
 
 ## 10. Kiểm "có điện ảnh chưa"
 
-- [ ] Có ít nhất một đặc tả mang nghĩa (đồ vật ẩn dụ nếu có, hoặc chi tiết nói hộ cảm xúc)?
-- [ ] Có ít nhất một khoảnh khắc không thoại, chỉ hình + âm thanh?
+- [ ] Máy luôn đặt đúng người: mặt mang cảm xúc lớn nhất của khoảnh khắc (thường là người nghe)?
 - [ ] Cỡ cảnh thay đổi theo cảm xúc (xa khi lạc lõng, gần khi nhận ra)?
-- [ ] Ánh sáng có nguồn và có nghĩa ở các cảnh chính?
-- [ ] Mỗi khoảnh khắc chính có một tiếng động đặc trưng được viết cụ thể?
-- [ ] Không có beat nào chỉ là "hai người đứng nói chuyện"?
+- [ ] Ánh sáng, màu có nguồn và có nghĩa ở các cảnh chính?
+- [ ] Có một khoảnh khắc lặng (hình + âm thanh, không thoại) ở chỗ đáng lặng?
+- [ ] Khoảnh khắc chính có âm thanh được viết cụ thể?
+- [ ] Đoạn hai người nói chuyện có đổi thế, đổi khoảng cách hoặc đổi người được quay, không đứng yên một kiểu từ đầu tới cuối?
+- [ ] Đặc tả, chèn cảnh, màn hình ghép đều có lý do; bỏ đi thì chuyện mất gì đó?
+
+Không mục nào là bắt buộc riêng lẻ; đây là câu hỏi để soát, không phải số lượng phải đạt.
 
 ## 11. Quay đoạn đối thoại bằng một máy
 
@@ -127,7 +134,13 @@ Công cụ mạnh:
   đổi. Người nói không đứng yên từ đầu tới cuối.
 - **Cỡ cảnh leo cùng căng thẳng:** mở bằng Trung hai người để rõ quan hệ, vào Qua vai rồi Cận khi chuyện nặng dần, giữ cỡ
   gần nhất cho câu nặng nhất.
-- **Cắt sang phản ứng:** đoạn dài không cần luôn nhìn người nói; mặt người nghe thường mang nhiều cảm xúc hơn.
+- **Máy ở người nghe:** đoạn dài không cần luôn nhìn người nói. Có thể giữ hẳn cận người bị buộc tội, bị mắng suốt một
+  tràng thoại của người kia (mẫu `cai-nhau-20-cuoc-goi`: shot 16 giây trên mặt người nghe).
+- **Máy tĩnh, shot dài, diễn liền** là mặc định tốt cho chuyện đối thoại: khoảng 10–15 cut cho mỗi 90 giây là đủ (ba mẫu:
+  11–13 cut). Cắt khi tình thế đổi, không cắt vì "lâu rồi chưa cắt". Ít góc thì diễn viên diễn liền mạch, người dựng đỡ
+  công.
+- **Góc phản ứng lặp:** một góc riêng cho người bị nói (ví dụ góc rất thấp ngửa mặt), chỉ dùng lúc câu thoại đâm trúng, lặp
+  khoảng 3 lần.
 - **Khung dọc:** hai người xếp trước sau (mục 2), không đứng ngang hàng. Tiền cảnh che một phần tạo chiều sâu và cảm giác
   nhìn trộm.
 - **Góc thấp hoặc đổi tầm máy** cho nhân vật đang chiếm thế, tầm ngang khi hai bên ngang nhau.

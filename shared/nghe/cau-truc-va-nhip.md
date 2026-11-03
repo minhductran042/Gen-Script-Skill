@@ -25,10 +25,13 @@ Bảy chức năng. Video ngắn gộp bớt, video dài tách ra. Mỗi beat ch
 | 1 | **Hook** | Lời hứa + đưa vấn đề (hoặc ẩn dụ nếu có) vào khung | Có lướt qua không? |
 | 2 | **Thiết lập** | Ai, ở đâu, muốn gì, câu hỏi kịch tính chính | Người xem đã biết mình đang chờ gì chưa? |
 | 3 | **Leo thang** | Mâu thuẫn tăng lên, số đợt theo độ dài chuyện (video 30s một đợt, video trên 90s có thể 3–5 đợt) | Mỗi lần có tệ / hài / căng hơn lần trước không? |
-| 4 | **Lật** (không bắt buộc) | Một chi tiết đổi hướng câu chuyện hoặc mở khoá ẩn dụ | Có bất ngờ mà vẫn hợp lý không? |
-| 5 | **Khoảng lặng** | Nhân vật (và người xem) nhận ra | Có đủ thời gian để nghĩa ngấm không? |
-| 6 | **Chốt** | Câu / hình ảnh đọng lại | Bỏ câu này đi người xem có còn hiểu không? (nếu có thì có thể bỏ) |
-| 7 | **Thoát** | Miếng hài hoặc hình ảnh nhẹ để kết; tông nặng thì bỏ, dừng ở dư âm | Có thành bài giảng không? |
+| 4 | **Đỉnh** | Câu nặng nhất, hoặc lúc một người nói thật lòng | Đây có phải chỗ căng / chạm nhất không? |
+| 5 | **Khoảng lặng** | 1–4 giây không ai nói, để câu đỉnh ngấm (đặt trước lật, hoặc sau lật với chuyện chậm) | Im lặng có nghĩa, hay là đoạn chết? |
+| 6 | **Lật** (không bắt buộc) | Một chi tiết đổi hướng câu chuyện hoặc mở khoá ẩn dụ; mạnh nhất khi là một câu nói | Có bất ngờ mà vẫn hợp lý không? |
+| 7 | **Chốt / thoát** | Câu, hình đọng lại hoặc miếng thoát, rồi cắt; tông nặng thì dừng ở dư âm | Bỏ đi người xem có còn hiểu không? Có thành bài giảng không? |
+
+Ba video viral trong `shared/tham-khao/mau/` đều đi theo thứ tự Leo thang → Đỉnh → Lặng → Lật → Chốt, cú lật rơi vào
+khoảng 83–94% thời lượng, và video dừng 4–12 giây sau cú lật.
 
 ## 3. Phân bổ giây theo độ dài
 
@@ -36,15 +39,16 @@ Gợi ý khởi điểm, chỉnh theo concept:
 
 | Chức năng | 30s | 60s | 90s |
 |---|---|---|---|
-| Hook | 0–3 | 0–4 | 0–5 |
-| Thiết lập | 3–8 | 4–12 | 5–18 |
-| Leo thang | 8–18 | 12–35 | 18–55 |
-| Lật | 18–22 | 35–42 | 55–65 |
-| Khoảng lặng | 22–25 | 42–48 | 65–73 |
-| Chốt | 25–28 | 48–55 | 73–83 |
-| Thoát | 28–30 | 55–60 | 83–90 |
+| Hook | 0–2 | 0–3 | 0–4 |
+| Thiết lập | 2–6 | 3–10 | 4–14 |
+| Leo thang | 6–18 | 10–38 | 14–60 |
+| Đỉnh | 18–22 | 38–45 | 60–68 |
+| Khoảng lặng | 22–23 | 45–47 | 68–72 |
+| Lật | 23–27 | 47–54 | 72–82 |
+| Chốt / thoát | 27–30 | 54–60 | 82–90 |
 
-Video 30s thường gộp Khoảng lặng + Chốt, và Leo thang chỉ một lần.
+Video 30s thường gộp Đỉnh + Lật, và Leo thang chỉ một lần. Chuyện không có lật thì phần Lật về cho Đỉnh và Chốt. Cảm xúc
+chậm (Ấm, Rung động, Day dứt) được để Chốt dài hơn khi hình cuối vẫn đang nói điều mới.
 
 Video trên 90s: không có bảng cố định. Giữ tỉ lệ của cột 90s, phần tăng thêm chủ yếu vào Leo thang, và mỗi đợt phải có
 điều mới (`thoai-va-do-gan.md` mục 4). Bảng trên là điểm khởi đầu, không phải giới hạn: thời lượng do chuyện quyết định,
@@ -60,6 +64,8 @@ trừ khi brief ghi số cố định.
 | **Một ngày rút gọn** | Sáng → trưa → tối, mỗi mốc vài giây, cùng một chi tiết lặp lại | Thói quen, kiệt sức |
 | **Độc thoại nội tâm** | Hình đời thường + voice-over nghĩ trong đầu, lệch với hành động | Hài tự giễu, độc diễn |
 | **Thế giới đảo luật** | Đặt một luật lạ ở đầu, chơi với luật đó, phá luật ở cuối | Ẩn dụ thế giới giả định |
+| **Tranh luận đổi thế** | A muốn kéo B làm một việc; B phản bằng lý do rất thật; A đổi thế ba nấc (tấn công → nhận phần đúng của B → đứng chung phe); B chịu; một câu cuối lộ động cơ thật (mẫu `ru-em-di-choi-ca-nha`) | Gia đình, bạn bè, hai người cùng có lý |
+| **Mắng rồi thật lòng** | Một người mắng / kể tội (có hài), đổi sang một câu thật lòng ngắn, lặng, rồi lệch kỳ vọng nhẹ để thoát (mẫu `ngu-chua-ban-than-that-tinh`) | Bạn thân, anh em; an ủi kiểu con trai |
 
 ## 5. Ước lượng thời lượng
 
@@ -70,8 +76,8 @@ trừ khi brief ghi số cố định.
 - Cộng tất cả các beat. Brief có mục tiêu cố định mà tổng vượt trên 10% thì cắt, không nén thoại cho nhanh. Brief ghi
   "Theo chuyện" thì chỉ cắt đoạn không có gì mới.
 
-**Thứ tự cắt khi quá dài:** thoại giải thích → beat leo thang trùng ý → phần thiết lập → phần thoát. Không cắt hook,
-lật và khoảng lặng.
+**Thứ tự cắt khi quá dài:** thoại giải thích → phần sau cú lật → beat leo thang trùng ý → phần thiết lập. Không cắt hook,
+đỉnh, lật và khoảng lặng.
 
 ## 6. Quy tắc nhịp
 

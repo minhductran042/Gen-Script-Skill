@@ -22,6 +22,10 @@ Luôn đọc:
 báo cáo. Brief cũ ghi ba trục thì quy đổi theo `tong-cam-xuc.md` mục 2. Luật nào áp theo công cụ nào: mục 7 của file đó.
 Kịch bản không dùng hài, không dùng ẩn dụ, không có thông điệp đều không phải lỗi, và không được gợi ý thêm vào.
 
+**Ý người dùng đi trước mặc định nghề.** Brief ghi rõ phần nào là người dùng yêu cầu (câu chuyện, câu thoại, nhân vật, kết,
+độ dài, cách mở). Phần đó không bị bắt lỗi vì lệch mặc định trong `shared/nghe/`; chỉ báo khi vướng luật cứng, kèm cách
+sửa giữ được ý người dùng. Lỗi ở cách thực hiện ý đó (câu thoại người dùng đưa mà lặp đi ngang, đặt sai chỗ) thì vẫn báo.
+
 Tham khảo: chỉ khi brief ghi. Có tham khảo thì thêm một câu hỏi: kịch bản có đúng tinh thần tham khảo người dùng chọn
 không. Không có tham khảo thì **không chấm theo bất kỳ phong cách riêng nào**, chỉ chấm theo luật và nghề.
 
@@ -48,9 +52,11 @@ macOS / Linux: thay `py -I` bằng `python3 -I` ở mọi lệnh dưới đây.
 
 ## Bước 1: Lượt người lướt
 
-Đọc **chỉ beat đầu**, như người đang lướt.
+Đọc **chỉ beat đầu**, như người đang lướt. Hình dung **khung số 0 bằng mắt**, không bằng chữ: nó sáng hay tối, có người
+không, đang có chuyển động hay tiếng gì? Đọc chữ "phòng tối, người nằm im" thì thấy một khung tối, tĩnh, dù câu chữ hay.
 
 - Ba giây đầu có lý do để dừng không? (HK-01)
+- Giây đầu có chết không: tối, tĩnh, im, chưa thấy người; câu thoại đầu vào lúc nào, chữ hook hiện lúc nào? (HK-07)
 - Hook dùng mấy lớp (hình / âm / chữ)? Hiểu được khi tắt tiếng không? (HK-05)
 - Vấn đề chính (hoặc đồ vật ẩn dụ nếu có) đã có trong khung đầu chưa? (HK-04)
 - Hook thuộc dạng nào (`HK-Dxx`)? Dạng đó có được làm đúng cách chưa?
@@ -63,6 +69,12 @@ ngờ (`tong-cam-xuc.md` mục 6).
 - Câu hỏi kịch tính chính rõ trong 5 giây đầu chưa? (GC-01)
 - Đánh dấu chỗ nào thấy chán, chậm, trùng ý. (GC-02, GC-05)
 - Có đoạn trên 20 giây không có gì mới, cắt đi chuyện không mất gì không? (GC-08)
+- **Bản đồ lướt** (`hook-va-giu-chan.md` mục 7 bài 4): đi theo mốc giây, mỗi khoảng 10 giây ghi một dòng "ở lại thì được gì
+  mới". Khoảng không có gì là điểm lướt đi; ghi vào mục "Bản đồ giữ chân" của báo cáo và bắt lỗi GC-05 / GC-08 nếu đủ dấu
+  hiệu.
+- Cú lật, đỉnh hay thông tin quyết định có nằm trong chữ người xem phải tự đọc không? (GC-09)
+- Bước ngoặt có đến nhờ trùng hợp chưa được cài không? (GC-10)
+- Câu lặp, điệp khúc có lớn dần không? Có câu nào đáng trích không? (TH-03, TH-04)
 - Đọc thoại thành tiếng: có nghe như người thật không? Mỗi nhân vật có lý do riêng không? (TH-01, TH-02)
 - Kết có trùng điều bạn đoán ở giữa không? (GC-04)
 - Có thông điệp: lộ ra ở beat nào, có trước beat lật không? Câu chốt có lộ sớm không? (GC-03)
@@ -71,7 +83,7 @@ ngờ (`tong-cam-xuc.md` mục 6).
 - Chỉ khi dùng ẩn dụ: hiểu ngay không, mở khoá bằng hình hay bằng lời, có nhàm không? (AD-01, AD-02, AD-04)
 - Chỉ khi có hài: cười ở đâu, cơ chế gì, nhịp đúng chưa? (AD-05, AD-06)
 - Kết khiến người xem làm gì (xem lại, comment, tag, lưu)? (KT-01, KT-03)
-- Sau payoff còn kéo dài không? (GC-07)
+- Sau cú lật / payoff còn bao nhiêu giây, có điều mới không? (GC-07)
 - Hook hứa gì, kết có trả đúng không? (HK-02)
 - Chỉ khi có thông điệp, lồng ghép (`chu-de-va-thong-diep.md` mục 1): bỏ thông điệp đi câu chuyện còn xem được không? Thông điệp là phát hiện
   hay mệnh lệnh? Có nhiều hơn một thông điệp không? Có rơi vào bẫy của nhóm chủ đề không? (AD-08, AD-09, AD-10)
@@ -86,6 +98,8 @@ ngờ (`tong-cam-xuc.md` mục 6).
 - Âm thanh, ánh sáng có cụ thể và mang nghĩa không? (DA-04)
 - Có khoảnh khắc lặng không? Dùng ẩn dụ thì có đặc tả đồ vật ẩn dụ không? (DA-05, DA-06)
 - Biểu cảm có quay được không? (DA-07)
+- Có cắt vụn không: beat thoại nhiều góc, đặc tả hay đồ hoạ không thêm nghĩa? (DA-08) Không gợi ý thêm đặc tả, chèn cảnh
+  hay đồ hoạ chỉ để tăng "chất điện ảnh".
 
 ## Bước 4: Lượt đội sản xuất
 
@@ -131,8 +145,9 @@ Theo bảng ở `loi-kich-ban.md` mục 3. Mỗi tiêu chí:
 
 - Chấm 1–10, so với ba mốc (2 / 6 / 10) của bảng.
 - Ghi **một câu lý do** có dẫn tới beat cụ thể.
-- Điểm phải nhất quán với bảng lỗi: còn HK-01 thì tiêu chí Hook không quá 4; còn SX-02 thì "Quay được" không quá 4; còn CX-01 thì
-  "Sức mạnh cảm xúc" không quá 4.
+- Điểm phải nhất quán với bảng lỗi: còn HK-01 thì tiêu chí Hook không quá 4; còn HK-07 thì Hook không quá 7; còn SX-02 thì
+  "Quay được" không quá 4; còn CX-01 thì "Sức mạnh cảm xúc" không quá 4; còn GC-09 ở cú lật thì "Giữ chân, nhịp" không
+  quá 7.
 - Hai tiêu chí "Sức mạnh cảm xúc" và "Cách kể" chấm theo cảm xúc đã chọn và công cụ kịch bản dùng; không trừ điểm vì
   không dùng công cụ nào.
 
@@ -156,6 +171,10 @@ Ghi 2–4 điều làm tốt, có vị trí cụ thể. Mục này để ngườ
 
 ## Soát cấu trúc (kich_ban.py kiem)
 <dán nguyên kết quả>
+
+## Bản đồ giữ chân
+| Giây | Ở lại thì được gì mới | Nguy cơ lướt (thấp / vừa / cao) |
+|---|---|---|
 
 ## Lỗi
 | # | Mã | Mức | Vị trí | Trích | Vấn đề | Gợi ý sửa |
@@ -189,5 +208,6 @@ Một file JSON có nhiều kịch bản thì mỗi kịch bản một mục k�
 - Không gợi ý thêm công cụ (hài, ẩn dụ, mượn thể loại) khi kịch bản không dùng; không bao giờ đưa lại công cụ brief đã khoá.
 - Không gợi ý rút ngắn chỉ vì video dài; muốn cắt phải chỉ ra đoạn dính GC-08.
 - Không gợi ý thêm thoại hay đổi cách kể chỉ để giống một video mẫu.
+- Không bắt lỗi phần brief ghi là người dùng yêu cầu chỉ vì lệch mặc định nghề; vướng luật cứng thì báo kèm cách giữ ý.
 - Không đề xuất concept khác, không thêm việc ngoài bảng lỗi.
 - Không chấm theo phong cách tham khảo khi brief không ghi tham khảo.

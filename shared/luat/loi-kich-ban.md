@@ -5,6 +5,9 @@ Luật bắt buộc cho `vid-review`. `vid-viet-kich-ban` đọc file này để
 - Mỗi lỗi có mã, mức mặc định, dấu hiệu nhận ra và hướng sửa.
 - Mã có nhãn **[script]** được `kich_ban.py kiem` bắt tự động. Các mã còn lại do người review đọc và chấm.
 - Gặp kiểu lỗi mới trong thực tế thì thêm dòng vào đây, kèm nguồn (dự án nào, beat nào).
+- **Thứ người dùng yêu cầu không phải lỗi.** Câu thoại, nhân vật, tình huống, kết, độ dài hay cách mở mà brief ghi là của
+  người dùng thì không bắt lỗi chỉ vì lệch mặc định nghề. Vướng luật cứng (`dieu-kien-san-xuat.md`, `vung-cam.md`) thì vẫn
+  báo, kèm cách sửa giữ được ý người dùng.
 
 ---
 
@@ -29,7 +32,8 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 | HK-03 | Vừa | **[script]** Beat đầu không đánh dấu Hook hoặc không có mốc giây | Cột Mục đích beat 1 thiếu "Hook" hoặc thiếu `giay` | Ghi `Hook (0–3s)` |
 | HK-04 | Vừa | Ẩn dụ / vấn đề chính chưa xuất hiện trong hook | Đồ vật hoặc vấn đề chính chỉ xuất hiện từ giữa video | Đưa đồ vật vào khung đầu tiên |
 | HK-05 | Vừa | Hook không hiểu được khi tắt tiếng | Hook dựa hoàn toàn vào thoại, không có hình lạ hay chữ | Thêm Text nổi bật hoặc đổi sang hook bằng hình |
-| HK-06 | Nhẹ | **[script]** Chữ hook dài | Trên khoảng 10 từ | Rút còn 4–8 từ |
+| HK-06 | Nhẹ | **[script]** Chữ hook dài | Trên khoảng 10 từ | Rút còn 2–8 từ |
+| HK-07 | Vừa | Khung đầu chết | Giây đầu tối, tĩnh hoặc chưa thấy người / vật chính, không có tiếng, trên khoảng 1 giây; hoặc video xung đột bằng thoại mà câu đầu vào sau giây 3. Không áp khi sự im lặng chính là chuyện và khung đủ lạ (Rợn, Day dứt). Nguồn: TAO BẢO RỒI beat 1 | Mở thẳng vào câu thoại hoặc hành động; bật sáng từ đầu; đưa chữ hook lên trước giây 2 |
 
 ### GC: Giữ chân
 
@@ -41,8 +45,10 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 | GC-04 | Vừa | Đoán được kết (chỉ khi chuyện dựa vào bất ngờ) | Đọc tới giữa đã đoán đúng | Thêm một chi tiết lệch hướng; đổi kiểu kết |
 | GC-05 | Vừa | Đoạn chết trên khoảng 5 giây | Không có thông tin, hành động, góc hay âm thanh mới, và cảm xúc không lớn thêm (cảnh giữ lâu có chủ đích ở tông chậm không phải lỗi) | Chèn phản ứng, đặc tả, đổi góc, hoặc cắt |
 | GC-06 | Nhẹ | **[script]** Thoại dài | Một lượt thoại trên khoảng 25 từ. Được bỏ qua nếu là lượt thoại đỉnh | Tách lượt, cắt ý, hoặc thay bằng hình |
-| GC-07 | Vừa | Kéo dài sau payoff | Còn trên 1 beat sau câu chốt mà không phải miếng thoát hay hình kết | Cắt |
+| GC-07 | Vừa | Kéo dài sau payoff | Sau cú lật hoặc payoff chính còn trên khoảng 15 giây, hoặc trên 1 beat, mà không có điều mới. Kết dư âm có hình đang nói điều mới thì không tính. Nguồn: TAO BẢO RỒI beat 7–8 (khoảng 28 giây sau lật) | Cắt, hoặc gộp chốt vào ngay sau lật |
 | GC-08 | Vừa | Dài mà không có lý do | Có đoạn trên 20 giây không có thông tin mới, không đổi thế, cảm xúc không lớn thêm; cắt đi chuyện không mất gì. Đây là căn cứ duy nhất để đề nghị rút ngắn, phải chỉ ra đúng đoạn | Cắt đoạn đó, hoặc thêm một điều mới có thật trong chuyện |
+| GC-09 | Vừa | Then chốt nằm trong chữ phải đọc | Cú lật, đỉnh hay thông tin quyết định chỉ có trong tin nhắn, màn hình, chữ trên 10 từ, không được nói ra hay thấy bằng hình. Nguồn: TAO BẢO RỒI beat 6 (tin nhắn 23 chữ) | Cho nhân vật đọc to, nói lại một vế, hoặc rút chữ còn vài từ và để mặt người kể phần còn lại |
+| GC-10 | Vừa | Trùng hợp tiện lợi | Sự cố, may rủi quyết định bước ngoặt mà không được cài trước, hoặc đến đúng giây chuyện cần một cách quá khéo. Nguồn: THUÊ BAO ĐANG BẬN beat 6 | Cài nguyên nhân sớm và cho người xem thấy; hoặc để nhân vật tự gây ra bước ngoặt |
 
 ### AD: Ẩn dụ, hài và thông điệp
 
@@ -86,6 +92,7 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 | DA-05 | Nhẹ | Không có khoảnh khắc lặng | Không beat nào chỉ có hình + âm thanh | Thêm 1–2 giây lặng trước / sau lật |
 | DA-06 | Nhẹ | Đồ vật ẩn dụ không có đặc tả (chỉ khi dùng ẩn dụ) | Đồ vật chỉ xuất hiện ở góc trung / toàn | Thêm đặc tả |
 | DA-07 | Vừa | Biểu cảm không quay được | Cột Biểu cảm / Nội dung ghi cảm xúc trừu tượng mà không có hành động thể hiện | Ghi hành động nhìn thấy được |
+| DA-08 | Nhẹ | Cắt vụn | Beat thoại có từ 4 góc trở lên, hoặc đồ hoạ, màn hình ghép gánh nhiều beat, mà không thêm nghĩa; tốn công quay, dựng | Gộp về 1–2 góc, máy đặt ở người mang cảm xúc; giữ đặc tả, đồ hoạ nào bỏ đi thì chuyện mất nghĩa |
 
 ### TH: Thoại và độ gần gũi
 
@@ -93,8 +100,10 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 
 | Mã | Mức | Lỗi | Dấu hiệu | Hướng sửa |
 |---|---|---|---|---|
-| TH-01 | Vừa | Thoại như văn viết | Đọc thành tiếng thấy giả; câu trọn vẹn, văn vẻ, xưng hô không đúng quan hệ | Viết lại như người đang nói: câu cụt, ngắt lời, chi tiết cụ thể |
+| TH-01 | Vừa | Thoại như văn viết | Đọc thành tiếng thấy giả; câu trọn vẹn, văn vẻ, xưng hô không đúng quan hệ; cả đoạn xung đột không có câu bỏ dở, ngắt lời, nói lại; quan hệ thân mà không có khẩu ngữ. Nguồn: TAO BẢO RỒI beat 7 ("Tao trả cháo hành") | Viết lại theo `thoai-va-do-gan.md` mục 5: câu cụt, bỏ dở, ngắt lời, khẩu ngữ hợp vai |
 | TH-02 | Vừa | Nhân vật không có lý do riêng | Nhân vật chỉ tồn tại để phục vụ tình huống, không muốn gì cho mình. Hài phóng đại thì hạ xuống Nhẹ | Cho nhân vật một mong muốn và một lý lẽ của mình |
+| TH-03 | Nhẹ | Câu lặp đi ngang | Điệp khúc, câu cửa miệng lặp lại mà không gắt hơn, buồn cười hơn hay đổi nghĩa | Mỗi lần lặp đẩy lên một nấc; lần cuối trả lại với nghĩa khác |
+| TH-04 | Nhẹ | Không có câu để trích | Đọc xong không nhớ câu nào muốn chép vào bình luận hay gửi bạn | Gọt câu đỉnh hoặc câu chốt thành câu ngắn, cụ thể, sinh từ tình huống |
 
 ### KT: Kết
 
@@ -163,11 +172,11 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 
 | Tiêu chí | Trọng số | 2 điểm (kém) | 6 điểm (được) | 10 điểm (xuất sắc) |
 |---|---|---|---|---|
-| **Hook** | 2.5 | Không có lý do dừng lướt | Có tò mò nhưng chỉ một lớp (hình hoặc chữ) | Hai lớp trở lên, vấn đề hoặc ẩn dụ chính có trong khung đầu, hiểu được khi tắt tiếng |
+| **Hook** | 2.5 | Không có lý do dừng lướt | Có tò mò nhưng chỉ một lớp (hình hoặc chữ), hoặc giây đầu còn chết | Giây đầu đã có người, có tiếng, có chuyện; hai lớp trở lên, vấn đề chính có trong khung đầu, hiểu được khi tắt tiếng |
 | **Giữ chân, nhịp** | 2 | Có đoạn chết, đoán được kết | Mâu thuẫn tăng, một chỗ hơi chậm | Mỗi beat mới, có vòng mở, kết bất ngờ mà hợp lý hoặc trọn vẹn đúng tông |
 | **Sức mạnh cảm xúc** | 1.5 | Không gây được cảm xúc rõ, hoặc lệch tông | Đúng tông nhưng nhẹ, hoặc có chỗ gượng | Gây đúng cảm xúc đã chọn, có đỉnh rõ, không gượng; có hài thì hài từ nhân vật, nhịp đúng |
 | **Cách kể** | 1.5 | Phải giải thích mới hiểu, hoặc chung chung | Hiểu được, nhưng quen | Hiểu ngay và mới. Ẩn dụ: mở khoá bằng hình, có diễn biến. Kể thẳng: chi tiết cụ thể, thật. Mượn thể loại: đúng luật thể loại |
-| **Chất điện ảnh** | 1.5 | Đứng nói suông, không dàn cảnh | Có đặc tả, dàn cảnh hoặc âm thanh được thiết kế | Hình, thoại, âm thanh cùng kể; ánh sáng / âm thanh mang nghĩa, có khoảnh khắc lặng |
+| **Chất điện ảnh** | 1.5 | Đứng nói suông, không dàn cảnh | Có dàn cảnh, máy đặt có ý đồ hoặc âm thanh được thiết kế | Máy luôn ở đúng mặt người mang cảm xúc, ánh sáng / màu / âm thanh mang nghĩa, có khoảnh khắc lặng; mọi góc, đặc tả, đồ hoạ đều có lý do. Số shot, số đặc tả không phải điểm cộng |
 | **Quay được** | 1 | Có cảnh không quay được | Quay được nhưng tốn công | Gọn, thiết kế cho một máy quay, hiệu ứng dựng viết rõ |
 
 Điểm tổng = Σ (điểm tiêu chí × trọng số) / 10, giữ hai chữ số thập phân, không làm tròn khi so ngưỡng. Mọi tiêu chí chấm theo

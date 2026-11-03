@@ -31,6 +31,11 @@ Không đọc dòng thời gian của mẫu khi viết, để khỏi bị kéo t
 Đầu vào: brief + một thẻ concept (từ `01-concepts.md` hoặc người dùng mô tả). Concept người dùng đưa thiếu logline,
 tông hay hook thì tự đề xuất phần thiếu, ghi rõ "đề xuất" ở đầu ra.
 
+**Ý người dùng đi trước mặc định nghề.** Câu thoại, câu cửa miệng, nhân vật, tình huống, kết, độ dài người dùng đưa thì giữ
+(câu thoại giữ nguyên văn, chỉ sửa dấu và chính tả), và làm cho chúng mạnh nhất có thể. Các mặc định trong `shared/nghe/`
+(mốc giây, số góc, chữ hook, vị trí lật…) chỉ dùng để lấp chỗ người dùng chưa nói. Mặc định nào làm hỏng ý người dùng thì
+bỏ mặc định, ghi một dòng lý do vào `ghi-chu-viet.md`.
+
 Viết qua tám lượt theo thứ tự. **Mỗi lượt chỉ tập trung một lớp**, không viết tất cả cùng lúc.
 
 ### Lượt 1: Xương sống
@@ -47,12 +52,16 @@ Ghi vào đầu `ghi-chu-viet.md` của dự án (file nháp, không xuất Exce
   `shared/nghe/chu-de-va-thong-diep.md` mục 1. Kiểm bẫy của nhóm chủ đề ở mục 2.
 - **Câu đọng** ở beat chốt.
 - **Đường cảm xúc**: nhân vật chính đi từ trạng thái nào tới trạng thái nào, và người xem cảm thấy gì ở mỗi chặng.
+- **Thứ kéo người xem làm gì đó** (chọn ít nhất một, ghi rõ ở beat nào): vòng lặp về khung đầu; chi tiết cài cho người
+  tinh ý tìm lại; câu để trích hay để tag bạn; chuyện hai bên đều có lý để người xem chọn phe.
 
 ### Lượt 2: Dàn beat
 
 - Chọn cấu trúc theo concept và cảm xúc (`tong-cam-xuc.md` mục 6, `cau-truc-va-nhip.md` mục 4). Số beat theo chuyện, không
   mặc định 8; không có lật thì không tạo lật.
-- Lập danh sách beat: mỗi beat có **Mục đích** (chức năng) và **mốc giây**, theo bảng phân bổ ở mục 3 của file đó.
+- Lập danh sách beat: mỗi beat có **Mục đích** (chức năng) và **mốc giây**, theo bảng phân bổ ở mục 3 của file đó. Có lật
+  thì lật thường rơi vào khoảng 75–90% thời lượng, và sau lật / payoff chính chỉ còn khoảng 3–15 giây, trừ khi kết dư âm
+  có hình đang nói điều mới.
 - Kiểm: mỗi beat chỉ một chức năng; không có hai beat liền nhau cùng ý; tổng giây khớp mục tiêu nếu brief có mục tiêu cố
   định. Brief ghi "Theo chuyện" thì độ dài do chuyện quyết định, mỗi đợt phải có điều mới (`thoai-va-do-gan.md` mục 4).
 
@@ -60,11 +69,14 @@ Ghi vào đầu `ghi-chu-viet.md` của dự án (file nháp, không xuất Exce
 
 Với từng beat, viết phần **hành động** của cột Nội dung, cột **Góc quay**, **Địa điểm**:
 
+- **Khung số 0**: giây đầu đã thấy người hoặc vật chính, đủ sáng, có tiếng (`hook-va-giu-chan.md` mục 3).
 - Mỗi beat có **một hình ảnh chủ đạo**: cái người xem nhớ nếu chỉ thấy một khung của beat đó.
 - Viết hành động máy quay thấy được, động từ cụ thể.
-- Chọn cỡ cảnh theo cảm xúc: xa khi lạc lõng, gần khi nhận ra, đặc tả cho chi tiết mang nghĩa.
-- Ít nhất **một đặc tả mang nghĩa** (đồ vật ẩn dụ nếu có, hoặc chi tiết nói hộ cảm xúc) và **một khoảnh khắc không
-  thoại** trong cả kịch bản.
+- Chọn cỡ cảnh theo cảm xúc: xa khi lạc lõng, gần khi nhận ra.
+- **Gọn trước, chi tiết sau**: beat thoại mặc định 1–2 góc, máy đặt ở mặt người mang cảm xúc lớn nhất (thường là người
+  nghe), diễn liền (`ngon-ngu-dien-anh.md` mục 1, 11). Đặc tả, chèn cảnh, màn hình ghép chỉ thêm khi bỏ đi thì chuyện mất
+  nghĩa; không thêm cho "có chất điện ảnh".
+- Có một khoảnh khắc lặng ở chỗ đáng lặng (thường quanh đỉnh hoặc trước lật).
 - Hình, âm, nhịp dựng theo cảm xúc đã chọn (`tong-cam-xuc.md` mục 3).
 - Cột **Biểu cảm**: trạng thái + biểu hiện nhìn thấy được.
 
@@ -78,6 +90,13 @@ Thêm thoại vào cột Nội dung, sau hành động:
   (`thoai-va-do-gan.md` mục 2). Câu chỉ nói cho người xem nghe mà hình thay được thì bỏ.
 - Lượt thoại thường ngắn, gợi ý dưới khoảng 20 từ, trừ lượt thoại đỉnh; nói như người trẻ nói: câu cụt, tiếng lóng vừa phải, xưng hô hợp quan
   hệ nhân vật.
+- **Đọc to rồi thêm chất nói** (`thoai-va-do-gan.md` mục 5): câu bỏ dở, ngắt lời, kéo âm, nhại giọng, tự rút lời, xưng hô
+  đổi theo thế, chửi nhẹ hợp vai trong giới hạn VC-15. Câu đỉnh và câu lật vẫn nói rõ.
+- **Then chốt phải nghe được**: cú lật, đỉnh, thông tin quyết định được nói ra hoặc thấy bằng hình; tin nhắn, màn hình chỉ
+  đỡ, không gánh một mình (GC-09).
+- **Câu lặp lớn dần**: điệp khúc hay câu cửa miệng (kể cả câu người dùng đưa) mỗi lần lặp gắt hơn, buồn cười hơn hoặc đổi
+  nghĩa (TH-03).
+- **Một câu để trích**: gọt câu đỉnh hoặc câu chốt thành câu ngắn, cụ thể, sinh từ tình huống (TH-04).
 - **Mỗi nhân vật một giọng**: một người nói ngắn và thẳng, người kia vòng vo; một người hay hỏi lại, người kia hay
   đùa. Che tên nhân vật đi mà vẫn đoán được ai nói thì đạt.
 - **Dùng công cụ Hài thì** câu đùa đặt từ gây cười ở cuối câu, trước câu đùa có một nhịp ngừng (ghi ở chỉ dẫn diễn), đúng
@@ -99,10 +118,12 @@ Cột Ghi chú, phần âm thanh:
 
 Cột Text nổi bật:
 
-- Hook: chữ đặt tình huống hoặc câu hỏi, 4–8 từ (bắt buộc nếu hook dựa vào thoại).
+- Hook: 2–8 từ, hiện trước giây 2 (bắt buộc nếu hook dựa vào thoại). Mạnh nhất là một lời phán hoặc câu hỏi lấy từ chính
+  chuyện, được trả bằng thoại ở đỉnh; chữ chỉ ghi bối cảnh thì yếu hơn.
 - Giữa video: tối đa 1–2 chữ nhấn.
 - Beat chốt: câu đọng lại.
-- Không chép phụ đề thoại vào cột này.
+- Không chép phụ đề thoại vào cột này. Từ cần làm nổi trong phụ đề (từ cài – trả, con số, từ gây cười) ghi ở cột Ghi chú
+  dòng `Phụ đề nhấn: …` (`format-kich-ban.md` cột I).
 
 ### Lượt 7: Sản xuất
 
@@ -121,7 +142,8 @@ Cột Text nổi bật:
   là khoảng đã bấm giờ, ví dụ `90–130s`, và chỉ cắt đoạn không có gì mới.
 - Đọc lại cả kịch bản một mạch, như người xem. Chỗ nào thấy chán thì sửa.
 - Kiểm tông: đọc xong có đúng cảm xúc đã chọn không, có rơi vào bẫy của cảm xúc đó không, có chỗ nào tự trôi về hài không?
-- Chạy ba bài kiểm ở `hook-va-giu-chan.md` mục 7.
+- Chạy năm bài kiểm ở `hook-va-giu-chan.md` mục 7, gồm **bản đồ lướt** (mỗi khoảng 10 giây có gì mới) và **bỏ beat** (che
+  từng beat, bỏ mà chuyện không mất gì thì cắt). Bài bỏ beat là thử, không phải hạn mức: độ dài vẫn do chuyện quyết định.
 
 ### Soát và xuất
 
@@ -172,6 +194,8 @@ Lỗi không sửa: | Mã | Lý do |
 8. Chạy `kiem` rồi `xuat` như chế độ 1.
 
 Gợi ý sửa trong review là gợi ý, không bắt buộc chép nguyên văn. Có cách sửa tốt hơn thì dùng, và ghi vào `sua-vN.md`.
+Gợi ý nào bỏ hay đổi phần người dùng yêu cầu thì tìm cách sửa khác giữ được ý đó; không có cách thì ghi vào "Lỗi không
+sửa" kèm lý do.
 
 ---
 

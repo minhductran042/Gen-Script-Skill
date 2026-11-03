@@ -79,7 +79,7 @@ trọ". Chỉ ghi ở dòng đầu, trừ khi beat đổi địa điểm.
 
 ### D. Mục đích
 
-Chức năng của beat, dùng tên trong khung beat: Hook, Thiết lập, Leo thang, Lật, Khoảng lặng, Chốt, Thoát. Có thể thêm
+Chức năng của beat, dùng tên trong khung beat: Hook, Thiết lập, Leo thang, Đỉnh, Khoảng lặng, Lật, Chốt, Thoát. Có thể thêm
 mô tả ngắn: `Leo thang – bạn cùng phòng vạch trần`.
 
 - **Beat đầu bắt buộc** có chữ "Hook" và mốc giây: `Hook (0–3s)`.
@@ -129,10 +129,14 @@ Beat có nhiều góc thì ghi theo thứ tự: `Trung hai người → Cận B 
 
 Chữ hiện trên màn hình. Để trống nếu beat không cần.
 
-- Hook: chữ đặt tình huống hoặc câu hỏi, 4–8 từ.
+- Hook: lời phán, câu hỏi hoặc tình huống, 2–8 từ (`shared/nghe/hook-va-giu-chan.md` mục 3).
 - Giữa video: chữ nhấn câu thoại đắt nhất, hoặc chữ hài (chú thích, đếm số).
 - Beat chốt: câu đọng lại.
-- Không chép lại phụ đề thoại vào cột này. Phụ đề là việc của người dựng.
+- Không chép lại phụ đề thoại vào cột này.
+
+**Phụ đề** chạy suốt video là mặc định (theo `shared/cau-hinh.md`): người dựng làm phụ đề cháy chữ từ thoại, không cần
+chép ra cột nào. Kịch bản chỉ ghi ở cột Ghi chú dòng `Phụ đề nhấn: "<từ>", "<từ>"` cho những từ cần làm nổi (từ được cài
+– trả, con số, từ gây cười), để người tắt tiếng vẫn bắt được.
 
 ### J. Ghi chú
 
@@ -143,6 +147,7 @@ Những gì người quay và người dựng cần biết:
 - **Bắt nét, chuyển nét.**
 - **Dựng**: ghép khung, jump cut, slow motion, đứng hình, giữ khung N giây.
 - **Sản xuất**: "chỉ quay một lần", "cần 3 cốc dự phòng", "quay tách, ghép khi dựng".
+- **Phụ đề nhấn**: các từ cần làm nổi trong phụ đề (xem cột I).
 
 ## 3. Bản JSON (bản gốc để sửa)
 
@@ -173,6 +178,12 @@ Mọi kịch bản lưu dạng JSON. Excel chỉ là bản xuất ra từ JSON.
         "nhan_vat": "<A> (nam): <tính cách>\n<B> (nữ): <tính cách>",
         "luu_y_san_xuat": "<quay một lần / ghép / dự phòng / rủi ro>"
       },
+      "dong_goi": {
+        "caption": "<2–3 phương án, mỗi phương án một dòng>",
+        "hashtag": "<#… #…>",
+        "anh_bia": "<giây lấy khung + chữ trên ảnh bìa>",
+        "comment_ghim": "<câu ghim đầu bình luận>"
+      },
       "canh": [
         {
           "muc_dich": "<tên beat, beat đầu có chữ Hook>",
@@ -193,4 +204,18 @@ Mọi kịch bản lưu dạng JSON. Excel chỉ là bản xuất ra từ JSON.
 - `giay` bắt buộc ở beat Hook, nên có ở các beat còn lại. Khi xuất Excel, `giay` được nối vào cột Mục đích.
 - `thoi_luong`: brief có số cố định thì ghi số đó; brief ghi "Theo chuyện" thì ghi khoảng đã bấm giờ, ví dụ `90–130s`.
 - Beat đổi địa điểm thì ghi thêm `canh[i].dia_diem`.
+- `dong_goi` (gói đăng, tuỳ chọn): `/vid` điền ở bước bàn giao, sau khi duyệt. Excel in vào sheet riêng `Gói đăng` ở cuối
+  cùng file (cột STT, Kịch bản, Caption, Hashtag, Ảnh bìa, Comment ghim; mỗi kịch bản một dòng), để sheet kịch bản chỉ
+  dành cho đội quay mà người dùng vẫn tải một file. Không kịch bản nào có gói đăng thì không có sheet này. Cách viết ở mục 4.
 - Xuống dòng trong ô dùng `\n`.
+
+## 4. Gói đăng (`dong_goi`)
+
+Để người đăng dùng ngay, không phải nghĩ lại. Viết từ kịch bản bản cuối, không thêm điều kịch bản không có.
+
+| Trường | Viết gì |
+|---|---|
+| `caption` | 2–3 phương án, mỗi phương án một dòng, dưới khoảng 100 ký tự. Mỗi phương án một kiểu: câu trích từ thoại; câu hỏi chọn phe; lời "tag" người hợp ("tag thằng bạn hay bảo 'tao bảo rồi'"). Không lộ cú lật. Lời kêu gọi (follow, lưu) nếu có thì nằm ở đây, không nằm trong video (KT-03) |
+| `hashtag` | 3–6 tag: chủ đề, cảm xúc, nhóm người xem; không dùng tag thương hiệu, tên người thật |
+| `anh_bia` | Giây lấy khung (mặt người ở khoảnh khắc căng nhất, không lấy khung lật) + chữ trên ảnh bìa 2–5 từ, đặt 1/3 trên |
+| `comment_ghim` | Một câu ghim đầu bình luận để mở cuộc cãi hoặc kể chuyện mình ("Team Long hay team Tùng?") |

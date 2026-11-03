@@ -9,6 +9,10 @@ argument-hint: <ý tưởng | đường dẫn 00-brief.md>
 Mục tiêu: đưa người dùng **5–8 concept khác nhau thật sự**, mỗi concept đủ rõ để viết kịch bản ngay, và đã tự loại
 những ý không quay được hoặc không giữ chân được.
 
+**Ý người dùng là trục.** Người dùng nói càng cụ thể (chủ đề con, tình huống, nhân vật, một câu thoại, cảm giác muốn có)
+thì mọi concept càng phải bám đúng chỗ đó; sự khác nhau giữa các concept nằm ở insight, góc nhìn, hook, cách kết, không ở
+việc đổi sang chuyện khác. Các luật đa dạng dưới đây chỉ để không lặp ý, không được kéo concept ra xa điều người dùng muốn.
+
 ## Kiến thức dùng
 
 Luôn đọc:
@@ -50,8 +54,10 @@ Trước tiên, đọc **tông** trong brief (`tong-cam-xuc.md` mục 2). Đã c
 
 Rồi xác định **nhóm chủ đề** (`chu-de-va-thong-diep.md` mục 2):
 
-- Brief chỉ có một nhóm: chọn 3–4 chủ đề con khác nhau trong nhóm, và thêm ít nhất **một cặp ghép** với nhóm khác (mục 1,
-  bảng ghép).
+- Brief đã có chủ đề con hoặc tình huống cụ thể ("yêu xa, cãi nhau", "bạn thân mắng thằng vừa bị đá"): giữ đúng chủ đề
+  con đó cho mọi concept, đào nhiều insight khác nhau bên trong nó. Ghép nhóm khác chỉ khi làm chuyện của người dùng sâu hơn.
+- Brief chỉ có một nhóm rộng ("tình yêu"): chọn 3–4 chủ đề con khác nhau trong nhóm, có thể thêm một cặp ghép với nhóm
+  khác (mục 1, bảng ghép).
 - Brief không có nhóm (người dùng nói "tuỳ"): chọn 3 nhóm xa nhau.
 - Dùng insight mẫu, hình ảnh và bẫy của nhóm để kích ý và để tránh, không chép nguyên insight mẫu.
 
@@ -114,11 +120,12 @@ Chọn ra 5–8 ý để phát triển:
 - Lấy theo tổng điểm từ cao xuống.
 - **Loại ngay** ý có "Quay được" = 1 hoặc chạm vùng cấm, bất kể tổng điểm.
 - **Bảo đảm đa dạng**: các concept cuối cùng không trùng ẩn dụ, và trải ít nhất 3 lăng kính và 3 dạng hook khác nhau.
-  Tông do skill đề xuất thì thêm luật đa dạng ở `tong-cam-xuc.md` mục 2.
+  Tông do skill đề xuất thì thêm luật đa dạng ở `tong-cam-xuc.md` mục 2. Luật đa dạng nhường cho ý người dùng: không đẩy một
+  ý điểm thấp vào bộ concept chỉ để đủ số lăng kính, số dạng hook hay số nhóm chủ đề.
 - **Đa dạng khuôn truyện**: không quá một nửa concept cùng một cấu trúc hoặc cùng một kiểu kết (chế độ nhanh: ít nhất 2
   kiểu). Cấu trúc chọn theo cảm xúc ở `tong-cam-xuc.md` mục 6, không mặc định có lật và miếng thoát.
 - Giữ **một concept "liều"**: điểm không cao nhất nhưng lạ nhất. Đánh dấu `(liều)`.
-- Brief không giới hạn nhóm chủ đề: các concept trải ít nhất 2 nhóm chủ đề.
+- Brief chưa nêu chủ đề con nào: các concept trải ít nhất 2 nhóm chủ đề.
 
 ## Pha 4: Phát triển thẻ concept
 
@@ -141,7 +148,8 @@ Mỗi concept một thẻ:
 - **Diễn biến chính:** <các chặng theo cấu trúc đã chọn; có lật thì ghi lật>
 - **Kết (<dạng kết>):** <…>. Câu đọng: "<…>"
 - **Cơ chế hài** (bỏ dòng này nếu không dùng công cụ Hài): <cơ chế, kèm ví dụ cụ thể trong concept>
-- **Khoảnh khắc điện ảnh:** <đặc tả / ánh sáng / âm thanh đắt nhất>
+- **Khoảnh khắc điện ảnh:** <vị trí máy / ánh sáng / âm thanh / khoảnh khắc lặng đắt nhất>
+- **Câu để trích:** <câu thoại hoặc câu chốt người xem muốn chép lại, nếu đã thấy>
 - **Khán giả chính:** <nhóm tuổi> · Người xem sẽ gửi cho ai, kèm câu gì: <…>
 - **Nhân vật:** <số người, vai, tính cách một dòng>
 - **Bối cảnh:** <1–2 nơi> · **Đạo cụ chính:** <…>
@@ -160,6 +168,9 @@ Với mỗi concept, đóng vai người phản biện và ghi 2–3 dòng dư�
   concept "có chiêu"? Có rơi vào bẫy của cảm xúc đó không?
 - **Lồng ghép** (chỉ khi có thông điệp)**:** bỏ thông điệp đi thì câu chuyện bề mặt còn xem được không? Thông điệp có thành mệnh lệnh không?
 - **Bẫy của nhóm chủ đề:** concept có rơi vào bẫy ghi ở nhóm đó không?
+- **Hai bên** (chỉ khi có xung đột giữa người với người)**:** người bị phản đối có lý lẽ riêng không, người xem có lúc
+  nghiêng về họ không? Một phe sai hẳn thì chuyện thành bài giảng, trừ hài phóng đại.
+- **Dựa vào chữ hay trùng hợp:** bước ngoặt có cần người xem đọc chữ dài, hay nhờ một sự cố quá đúng lúc không?
 - **Điểm yếu nhất** của concept là gì, và sửa được bằng cách nào?
 
 Điểm yếu không sửa được thì thay concept đó bằng ý thô kế tiếp ở pha 3.
@@ -171,7 +182,8 @@ Với mỗi concept, đóng vai người phản biện và ghi 2–3 dòng dư�
 Áp khi brief ghi `Chế độ brainstorm: phát triển câu chuyện có sẵn`. Câu chuyện là của người dùng: giữ nhân vật, tình huống
 và điều họ muốn kể; việc của skill là làm nó thành video tốt, không nghĩ chuyện khác thay.
 
-1. **Pha 1:** đào insight của chính câu chuyện đó (nó chạm vào điều gì có thật), không tìm chủ đề con khác.
+1. **Pha 1:** đào insight của chính câu chuyện đó (nó chạm vào điều gì có thật), không tìm chủ đề con khác. Câu thoại,
+   câu cửa miệng người dùng đưa ("trước tao đã bảo mày rồi…") giữ nguyên văn ở cả ba concept, và tìm cách cho nó lớn dần.
 2. **Pha 2 thay bằng ba hướng phát triển**, không phân kỳ 15 ý:
    - **C1 – bản trung thành:** giữ nguyên câu chuyện và kết người dùng muốn; chỉ chọn hook, cấu trúc, cảm xúc, công cụ (nếu
      cần) và chi tiết cụ thể.

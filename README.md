@@ -48,6 +48,10 @@ ty) thì lưu video về máy rồi đưa file `.mp4`, hoặc gửi ảnh chụp
 | `/vid series …` | Lên khung series |
 | `/vid số liệu <dự án> …` | Ghi kết quả sau đăng vào `06-sau-dang.md`; brainstorm lần sau đọc để tham khảo |
 | thêm chữ `nhanh` | Chế độ nhanh: 3 concept, sửa tối đa 1 vòng |
+| thêm `tự chạy` | Không hỏi gì, skill tự chọn concept và tự duyệt; vẫn brainstorm đủ, bản giao luôn là bản đã qua review |
+
+Ý của bạn là trục: câu chuyện, câu thoại, nhân vật, cảm giác, độ dài bạn nói ra được giữ nguyên tới kịch bản. Kiến thức nghề
+trong `shared/nghe/` chỉ lấp chỗ bạn chưa nói và làm ý đó mạnh hơn; review không bắt lỗi phần bạn đã yêu cầu.
 
 Sở thích mặc định của team (thời lượng, khán giả, tông…) ghi ở `shared/cau-hinh.md`; mục nào đã ghi thì không bị hỏi lại.
 
@@ -103,7 +107,7 @@ Sửa nội dung skill ở `.claude/skills/`. Đổi `name`, `description` hoặ
           │ có
    ⏸ người dùng duyệt (cả lô một lần)
           │
-   [5] kich-ban-final.xlsx (mỗi kịch bản một sheet, có Tổng quan) + 05-ban-giao.md
+   [5] kich-ban-final.xlsx (mỗi kịch bản một sheet có Tổng quan, thêm sheet Gói đăng) + 05-ban-giao.md
 ```
 
 Series: chạy `/vid-series` trước để có `series.md`, rồi mỗi tập đi qua `/vid`.

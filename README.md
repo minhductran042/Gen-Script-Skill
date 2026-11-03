@@ -38,7 +38,8 @@ ty) thì lưu video về máy rồi đưa file `.mp4`, hoặc gửi ảnh chụp
 |---|---|
 | `/vid` | Menu: làm video mới · làm tiếp dự án dở · mổ video mẫu · review kịch bản |
 | `/vid bố ít nói, 60s` | Làm video mới từ ý tưởng |
-| `/vid bố ít nói, day dứt, kể thẳng, không hài` | Làm video mới theo đúng tông đã nói |
+| `/vid bố ít nói, xem xong thấy thương bố` | Làm video mới theo cảm giác đã tả |
+| `/vid tôi có chuyện này: …` | Phát triển câu chuyện có sẵn: một bản giữ nguyên + hai biến thể |
 | `/vid làm 3 video về deadline` | Ba kịch bản, một file Excel ba sheet |
 | `/vid <link video> làm theo cái này` | Phân tích mẫu rồi làm video theo công thức của mẫu |
 | `/vid theo mẫu <tên>` | Dùng bản phân tích đã lưu trong thư viện |
@@ -52,18 +53,15 @@ Sở thích mặc định của team (thời lượng, khán giả, tông…) gh
 
 ## Tông cảm xúc
 
-Không có tông mặc định. Hài và ẩn dụ là lựa chọn, không phải điều kiện của kịch bản tốt. Tông gồm ba trục độc lập:
+Tông là **cảm xúc người xem còn lại sau khi xem**, không có mặc định: Vui · Chạm, xót · Ấm · Rung động · Day dứt, tiếc ·
+Căng, hồi hộp · Rợn · Ngầu, phấn khích, hoặc tả bằng lời của bạn ("cười xong thấy chột dạ"). Thêm đường cảm xúc nếu muốn,
+ví dụ `cười → đau`.
 
-| Trục | Giá trị |
-|---|---|
-| Cảm xúc chủ đạo | Vui · Chạm, xót · Ấm · Rung động · Day dứt, tiếc · Căng, hồi hộp · Rợn · Ngầu, phấn khích · Khác |
-| Cách kể | Kể thẳng đời thực · Ẩn dụ · Mượn thể loại |
-| Độ hài | Không · Một miếng thoát · Đan xen · Hài là chính |
-
-Thêm đường cảm xúc nếu muốn, ví dụ `cười → đau`. Thông điệp cũng là lựa chọn: nói "thuần giải trí" hoặc "không thông điệp"
+Hài, ẩn dụ, mượn thể loại **không phải tông** mà là công cụ kể: brainstorm tự chọn khi nó làm cảm xúc mạnh hơn, skill không
+hỏi về chúng. Không muốn công cụ nào thì nói ("không hài") hoặc ghi vào `shared/cau-hinh.md`. Thông điệp cũng là lựa chọn: nói "thuần giải trí" hoặc "không thông điệp"
 thì kịch bản không cần thông điệp. Không phải video nào cũng cần lật hay 8 beat: mỗi cảm xúc có khung truyện riêng. Nói tông khi gọi `/vid`, hoặc chọn ở câu hỏi brief. Chọn "Để skill đề
-xuất" thì mỗi concept tự mang tông suy từ insight, cả bộ trải ít nhất 3 cảm xúc và không quá một nửa dùng ẩn dụ hay hài
-làm chính. Review chấm theo tông đã chọn, nên kịch bản không hài, không ẩn dụ vẫn ĐẠT được. Team muốn một tông cố định thì
+xuất" thì mỗi concept tự mang tông suy từ insight, cả bộ trải ít nhất 3 cảm xúc và không quá một nửa dùng cùng một cách
+tiếp cận. Review chấm theo cảm xúc đã chọn, nên kịch bản không hài, không ẩn dụ vẫn ĐẠT được. Team muốn một tông cố định thì
 ghi vào `shared/cau-hinh.md`. Chi tiết ở `shared/nghe/tong-cam-xuc.md`.
 
 ## Dùng với Codex
@@ -138,10 +136,10 @@ shared/
     bam-mau.md               ba mức bám video mẫu, điều cấm chép (chỉ áp khi có mẫu)
   nghe/                    KIẾN THỨC NGHỀ, luôn dùng làm thước đo
     chu-de-va-thong-diep.md  8 nhóm chủ đề, lồng câu chuyện – thông điệp, ghép chủ đề, xử lý đầu vào chưa rõ
-    tong-cam-xuc.md          ba trục tông, tám cảm xúc và cơ chế, luật nào áp theo tông
+    tong-cam-xuc.md          tám cảm xúc và cơ chế, công cụ kể (ẩn dụ, mượn thể loại, hài), luật nào áp
     khan-gia-va-nen-tang.md  ba nhóm tuổi, hành vi lướt, TikTok vs Shorts, độc lập vs series
     hook-va-giu-chan.md      12 dạng hook, điểm rơi người xem, kỹ thuật giữ chân, kiểu kết
-    an-du-va-hai.md          ẩn dụ và hài, chỉ dùng khi tông có: cách tìm, kho đồ vật, cơ chế và nhịp hài
+    an-du-va-hai.md          ẩn dụ và hài, chỉ dùng khi concept dùng công cụ đó: cách tìm, kho đồ vật, cơ chế và nhịp hài
     ngon-ngu-dien-anh.md     từ vựng góc máy, bố cục dọc, ánh sáng, âm thanh, dựng, quay đối thoại một máy
     thoai-va-do-gan.md       độ gần gũi, thoại có việc để làm, thời lượng có lý do; áp mọi chủ đề và tông
     cau-truc-va-nhip.md      logline, khung beat, phân bổ giây, cấu trúc khác, ước thời lượng

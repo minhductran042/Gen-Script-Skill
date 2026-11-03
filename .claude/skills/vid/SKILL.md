@@ -1,6 +1,6 @@
 ---
 name: vid
-description: "Cửa vào duy nhất của bộ skill kịch bản video ngắn dọc (TikTok / YouTube Shorts) mang chất điện ảnh, tông cảm xúc do người dùng chọn hoặc skill đề xuất (không mặc định hài hay ẩn dụ), khán giả 17–30. Gọi trống thì hiện menu (làm video mới, làm tiếp dự án dở, mổ video mẫu, review kịch bản có sẵn, lên series); có đối số thì tự chọn hướng: câu ý tưởng → làm video mới; link / file video → phân tích mẫu rồi làm theo; du-an/... hoặc 'tiếp' → làm tiếp; file .xlsx / .json → review; 'series' → lên series. Luồng làm video: chốt brief một lượt hỏi, brainstorm, chọn concept bằng thẻ xem trước, viết kịch bản theo format Excel của team (mỗi kịch bản một sheet có tổng quan), review bằng agent độc lập, sửa tối đa 2 vòng (chế độ nhanh 1 vòng), duyệt, xuất Excel kèm gói bàn giao. Làm được nhiều video một lượt. Giữ trạng thái để làm tiếp. Dùng khi user gõ /vid, nói 'làm kịch bản', 'có ý tưởng video', 'làm video từ mẫu này', 'làm theo video <link>', 'theo mẫu <tên>', 'làm 3 video về …', 'làm nhanh', 'tiếp tục kịch bản'."
+description: "Cửa vào duy nhất của bộ skill kịch bản video ngắn dọc (TikTok / YouTube Shorts) mang chất điện ảnh, tông là cảm xúc người xem còn lại, do người dùng tả bằng lời hoặc skill đề xuất; hài, ẩn dụ chỉ là công cụ kể skill tự chọn khi hợp, khán giả 17–30. Gọi trống thì hiện menu (làm video mới, làm tiếp dự án dở, mổ video mẫu, review kịch bản có sẵn, lên series); có đối số thì tự chọn hướng: câu ý tưởng hoặc câu chuyện có sẵn → làm video mới; link / file video → phân tích mẫu rồi làm theo; du-an/... hoặc 'tiếp' → làm tiếp; file .xlsx / .json → review; 'series' → lên series. Luồng làm video: chốt brief một lượt hỏi, brainstorm, chọn concept bằng thẻ xem trước, viết kịch bản theo format Excel của team (mỗi kịch bản một sheet có tổng quan), review bằng agent độc lập, sửa tối đa 2 vòng (chế độ nhanh 1 vòng), duyệt, xuất Excel kèm gói bàn giao. Làm được nhiều video một lượt. Giữ trạng thái để làm tiếp. Dùng khi user gõ /vid, nói 'làm kịch bản', 'có ý tưởng video', 'làm video từ mẫu này', 'làm theo video <link>', 'theo mẫu <tên>', 'làm 3 video về …', 'làm nhanh', 'tiếp tục kịch bản'."
 argument-hint: "[ý tưởng | link / file video mẫu | theo mẫu <tên> | du-an/<thư mục> | tiếp | file kịch bản | series …] [nhanh]"
 ---
 
@@ -59,7 +59,7 @@ Luôn đọc:
 - `shared/luat/dieu-kien-san-xuat.md`: để biết brief nào làm được.
 - `shared/nghe/khan-gia-va-nen-tang.md`: để chốt nhóm khán giả và nền tảng trong brief.
 - `shared/nghe/chu-de-va-thong-diep.md`: để chốt nhóm chủ đề, thông điệp, và xử lý đầu vào chưa rõ.
-- `shared/nghe/tong-cam-xuc.md`: để chốt ba trục tông (mục 1, 2).
+- `shared/nghe/tong-cam-xuc.md`: để chốt cảm xúc và công cụ người dùng tự nêu (mục 1, 2).
 
 Không đọc `shared/tham-khao/`, trừ khi brief ghi ở mục "Tham khảo". Các skill con tự đọc phần nghề của mình.
 
@@ -87,7 +87,7 @@ Máy không có cả `py` lẫn `python3`: cài Python theo bước 0 của `vid
 | Link / file video mà người dùng nói "chỉ phân tích", "mổ video", "video này hay ở đâu" | Giao `vid-phan-tich-mau` chế độ độc lập, dừng |
 | Link / file video kèm ý muốn làm video, hoặc "theo mẫu <tên>" | **Làm video mới có mẫu** (0.1a) |
 | "số liệu", "kết quả đăng" kèm tên dự án | Ghi số liệu sau đăng (cuối bước 5), dừng |
-| Câu ý tưởng / chủ đề, hoặc "làm <n> video về …" | **Làm video mới** (0.2) |
+| Câu ý tưởng / chủ đề, câu chuyện người dùng đã có, hoặc "làm <n> video về …" | **Làm video mới** (0.2) |
 
 Thêm chữ **"nhanh"** ở bất kỳ hướng làm video nào thì bật chế độ nhanh (0.5).
 
@@ -96,14 +96,15 @@ người dùng gõ số.
 
 ```
 Bạn muốn làm gì?
-1. Làm video mới      – có ý tưởng, chủ đề, hoặc để mình gợi ý
+1. Làm video mới      – có câu chuyện sẵn, có ý tưởng / chủ đề, hoặc để mình gợi ý
 2. Làm tiếp dự án dở  – <tên dự án mới nhất> đang ở bước <X>   (chỉ hiện khi có dự án dở)
 3. Mổ video mẫu       – dán link / file, xem vì sao video đó thu hút
 4. Review kịch bản    – đưa file kịch bản có sẵn
 (lựa chọn "Khác" luôn có: lên series, hoặc gõ tự do)
 ```
 
-Chọn 1 mà chưa có ý tưởng thì đi tiếp vào 0.2; câu hỏi chủ đề nằm trong lượt hỏi 0.3, không hỏi riêng.
+Chọn 1 mà chưa nói ý tưởng thì đi tiếp vào 0.2; câu hỏi "đã có câu chuyện chưa" và chủ đề nằm trong lượt hỏi 0.3, không
+hỏi riêng.
 
 ### 0.1. Làm tiếp
 
@@ -149,6 +150,10 @@ Tạo `du-an/<YYYY-MM-DD>-<slug>/`. Điền `00-brief.md` theo khung dưới. V�
 người dùng thì điền và đánh dấu `(suy ra)`; có trong **`shared/cau-hinh.md`** thì điền và đánh dấu `(cấu hình)`; có
 **mặc định** trong khung thì điền và đánh dấu `(mặc định)`; còn lại thì đưa vào danh sách hỏi.
 
+Người dùng **đã có câu chuyện** (có nhân vật, tình huống, hoặc diễn biến, dù thô): chép nguyên văn vào "Câu chuyện bề mặt",
+ghi `Chế độ brainstorm: phát triển câu chuyện có sẵn` và `Số concept muốn nhận: 3`. Brainstorm giữ nguyên câu chuyện, không
+nghĩ ý mới thay thế.
+
 "Làm <n> video về …": ghi `Số video: <n>` ở mục "Số concept muốn nhận". Mỗi video sẽ là một kịch bản trong cùng file
 JSON và một sheet trong cùng file Excel.
 
@@ -166,12 +171,12 @@ JSON và một sheet trong cùng file Excel.
 - Thông điệp: Có: <một câu, dạng phát hiện> | Không | để skill đề xuất
 - Câu chuyện bề mặt (nếu người dùng đã có): <…>
 - Nhóm khán giả chính: 17–21 | 22–25 | 26–30 (xem nghe/khan-gia-va-nen-tang.md mục 1)
-- Tông (xem nghe/tong-cam-xuc.md; chưa chọn thì ghi "để skill đề xuất"):
+- Tông (xem nghe/tong-cam-xuc.md mục 1, 2; chưa chọn thì ghi "để skill đề xuất"):
+  - Người dùng tả: <nguyên văn câu tả cảm giác, nếu có>
   - Cảm xúc chủ đạo: Vui | Chạm, xót | Ấm | Rung động | Day dứt, tiếc | Căng, hồi hộp | Rợn | Ngầu, phấn khích | <khác>
-  - Cách kể: Kể thẳng đời thực | Ẩn dụ | Mượn thể loại
-  - Độ hài: Không | Một miếng thoát | Đan xen | Hài là chính
   - Đường cảm xúc (nếu có): <ví dụ cười → đau>
-- Tông đã chốt (điền ở điểm dừng 1, mỗi kịch bản một dòng): KB<số>: <cảm xúc> · <cách kể> · <độ hài> · Thông điệp <Có | Không>
+- Công cụ muốn dùng (chỉ khi người dùng tự nói): <ẩn dụ | hài | mượn thể loại <tên> | không nêu>
+- Tông đã chốt (điền ở điểm dừng 1, mỗi kịch bản một dòng): KB<số>: <cảm xúc> (· <đường cảm xúc>) · Công cụ <…> · Thông điệp <Có | Không>
 - Dạng: độc lập (mặc định) | tập <n> của series <tên>
 - Thời lượng mục tiêu: <Theo chuyện | ~60s | ~90s | ~120s | số người dùng nói>
 - Nền tảng: TikTok + YouTube Shorts (mặc định)
@@ -180,7 +185,7 @@ JSON và một sheet trong cùng file Excel.
 - Nhân vật / diễn viên chỉ định: <…>
 - Bối cảnh muốn dùng / phải tránh: <…>
 - Đạo cụ có sẵn muốn tận dụng: <…>
-- Điều không muốn có: <…>
+- Điều không muốn có: <…> (gồm công cụ người dùng khoá: "không hài", "không ẩn dụ"…)
 
 ## Tham khảo (tuỳ chọn)
 không | <file trong shared/tham-khao/> | <kịch bản người dùng đưa kèm>
@@ -190,6 +195,7 @@ không | <file trong shared/tham-khao/> | <kịch bản người dùng đưa kè
 
 ## Chế độ
 đầy đủ (mặc định) | nhanh
+Chế độ brainstorm: nghĩ ý mới (mặc định) | phát triển câu chuyện có sẵn
 
 ## Số concept muốn nhận
 <mặc định 6; chế độ nhanh 3> · Số video: <mặc định 1>
@@ -205,8 +211,9 @@ cấu hình, hoặc người dùng đã nói sẵn thì bỏ qua.
 
 | Ưu tiên | Câu | Khi nào cần |
 |---|---|---|
+| 0 | Ý tưởng: Chưa có, gợi ý giúp tôi (khuyên dùng) · Có câu chuyện / ý tưởng (gõ vào ô Khác) | Người dùng chọn "Làm video mới" từ menu mà chưa nói ý tưởng |
 | 1 | Thời lượng: Theo chuyện (khuyên dùng) · ~60s · ~90s · ~120s | Không suy ra được, không có trong cấu hình, không có mẫu để theo |
-| 2 | Tông: Để skill đề xuất (khuyên dùng) · Vui, nhẹ · Chạm, day dứt · Căng, rợn (gõ "Khác" để tả tông khác) | Người dùng chưa nói, cấu hình trống, không có mẫu để theo, không phải tập series |
+| 2 | Cảm giác: "Xem xong, bạn muốn người xem cảm thấy gì?" Để skill đề xuất (khuyên dùng) · Vui, buồn cười · Chạm, day dứt · Ấm, rung động; ô Khác để tả bằng lời của bạn (ví dụ "cười xong thấy chột dạ", "căng như phim", "rợn") | Người dùng chưa nói, cấu hình trống, không có mẫu để theo, không phải tập series |
 | 3 | Nhóm chủ đề: 8 nhóm chia hai câu chọn nhiều, mỗi câu 4 nhóm (tính là 2 câu) | Hoàn toàn không có chủ đề (xem `chu-de-va-thong-diep.md` mục 3; các trường hợp khác tự đề xuất, ghi `(đề xuất)`) |
 | 4 | Mức bám mẫu: Cùng công thức (khuyên dùng) · Cảm hứng · Bắt trend, mỗi lựa chọn một dòng giải thích từ `bam-mau.md` mục 1 | Có video mẫu |
 | 5 | Học gì từ mẫu (chọn nhiều): hook · cấu trúc, nhịp · tông, ẩn dụ, thông điệp · điện ảnh, giọng hài | Có video mẫu |
@@ -216,9 +223,11 @@ Câu không được hỏi vì đã đủ 4: dùng giá trị khuyên dùng ho�
 "đã dùng mặc định cho <…>, sửa thì nói".
 
 - **Không hỏi** các mục có mặc định trong khung (nền tảng, dạng).
-- **Tông:** xử lý theo `tong-cam-xuc.md` mục 2, không điền hài hay ẩn dụ theo quán tính. Câu hỏi tông không được hỏi vì
-  đã đủ 4 câu thì ghi "để skill đề xuất". Chọn một cảm xúc thì hai trục còn lại lấy bảng gợi ý ở mục 1, ghi `(đề xuất)`,
-  không hỏi thêm.
+- **Tông chỉ hỏi cảm xúc**, xử lý theo `tong-cam-xuc.md` mục 2. Câu tả tự do của người dùng là câu trả lời chính, các nút
+  chỉ là gợi ý nhanh. Nơi không có nút bấm thì in đủ tám cảm xúc kèm dòng "hoặc tả bằng lời của bạn". Câu hỏi này không
+  được hỏi vì đã đủ 4 câu thì ghi "để skill đề xuất".
+- **Không bao giờ hỏi** cách kể, độ hài, có muốn ẩn dụ hay hài không: đó là công cụ kể do brainstorm chọn
+  (`tong-cam-xuc.md` mục 4). Người dùng tự nói thì ghi vào "Công cụ muốn dùng" hoặc "Điều không muốn có".
 - **Không hỏi về tham khảo**, không hỏi có video mẫu không. Người dùng không nhắc thì ghi "không".
 - **Có video mẫu**: trước lượt hỏi, đưa người dùng khối "Báo người dùng" của agent phân tích. Brief lấy từ bản phân tích
   những gì suy ra được, ghi `(theo mẫu)`: thời lượng (mẫu dài bao nhiêu thì đề xuất bấy nhiêu), nhóm chủ đề, nhóm khán
@@ -281,7 +290,7 @@ lớn hơn 1 thì cho chọn nhiều. Nơi không có nút bấm: in bảng tóm
 | "Nghĩ lại theo hướng …" | Thêm hướng mới vào brief mục "Định hướng", chạy lại bước 1, giữ bản cũ thành `01-concepts-lan1.md` |
 | Sửa một concept | Sửa trong `01-concepts.md`, rồi sang bước 2 |
 
-**Sau khi chọn**, ghi tông và thông điệp của từng concept đã chọn vào dòng "Tông đã chốt" của brief, kể cả khi brief đang
+**Sau khi chọn**, ghi tông, công cụ và thông điệp của từng concept đã chọn vào dòng "Tông đã chốt" của brief, kể cả khi brief đang
 để "để skill đề xuất". Người viết và agent review dựa vào dòng này.
 
 Không tự chọn thay người dùng. Cuối điểm dừng in dòng gợi ý lệnh tắt.
@@ -406,7 +415,7 @@ Ghi vào `du-an/<dự án>/06-sau-dang.md`, mỗi video một dòng. Không hỏ
 
 - Không bỏ qua hai điểm dừng, kể cả ở chế độ nhanh.
 - Không sửa quá số vòng tối đa (2; chế độ nhanh 1) khi chưa hỏi người dùng.
-- Không mặc định hài hay ẩn dụ khi brief không chọn.
+- Không hỏi người dùng về hài, ẩn dụ hay cách kể; không mặc định công cụ kể nào.
 - Không hỏi quá một lượt 4 câu ở bước brief; không chen câu hỏi ngoài hai điểm dừng.
 - Không tự bật chế độ nhanh.
 - Không hiện menu khi người dùng đã đưa đối số.

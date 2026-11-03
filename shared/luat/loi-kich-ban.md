@@ -46,14 +46,14 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 
 ### AD: Ẩn dụ, hài và thông điệp
 
-Áp theo tông (`shared/nghe/tong-cam-xuc.md` mục 7): AD-01, 02, 04, 07 chỉ khi dùng ẩn dụ; AD-05, 06 chỉ khi có hài; AD-08, 09,
+Áp theo công cụ kịch bản dùng (`shared/nghe/tong-cam-xuc.md` mục 7): AD-01, 02, 04, 07 chỉ khi dùng Ẩn dụ; AD-05, 06 chỉ khi dùng Hài; AD-08, 09,
 11 chỉ khi có thông điệp; AD-03, 10 áp mọi tông. Thiếu thứ kịch bản không chọn thì không phải lỗi.
 
 | Mã | Mức | Lỗi | Dấu hiệu | Hướng sửa |
 |---|---|---|---|---|
 | AD-01 | Nặng | Ẩn dụ không hiểu được nếu không giải thích | Không có khoảnh khắc mở khoá bằng hình; hoặc điểm khớp quá xa | Chọn ẩn dụ có điểm khớp rõ hơn (`an-du-va-hai.md` mục 3) |
 | AD-02 | Vừa | Nhân vật giải thích ẩn dụ | Câu thoại nói thẳng "cái này giống như…", "đó chính là…" | Để hình nói; giữ tối đa một câu ngắn |
-| AD-03 | Vừa | Thành bài giảng | Kết bằng lời triết lý, nói hộ người xem | Cắt câu giảng, để hình hoặc hành động bình thường khép lại; tông có hài thì thêm miếng thoát |
+| AD-03 | Vừa | Thành bài giảng | Kết bằng lời triết lý, nói hộ người xem | Cắt câu giảng, để hình hoặc hành động bình thường khép lại; kịch bản dùng Hài thì thêm miếng thoát |
 | AD-04 | Vừa | Ẩn dụ đã nhàm | Ẩn dụ quen thuộc ai cũng đoán được | Đổi đồ vật, hoặc lật cách dùng ẩn dụ |
 | AD-05 | Vừa | Hài cần ngữ cảnh người xem không có | Meme cũ, đùa nội bộ, tham chiếu quá hẹp | Đổi sang hài tình huống / nhân vật |
 | AD-06 | Nhẹ | Nhịp hài sai | Từ gây cười không ở cuối câu; không có khoảng ngừng; nhân vật tự cười | Đảo câu, thêm ngừng, cắt sang phản ứng |
@@ -69,7 +69,7 @@ Người review được nâng hoặc hạ mức một bậc nếu bối cảnh 
 
 | Mã | Mức | Lỗi | Dấu hiệu | Hướng sửa |
 |---|---|---|---|---|
-| CX-01 | Nặng | Lệch tông | Cảm xúc đọng lại khác tông đã chọn; hoặc có thứ brief đã khoá (có hài khi Độ hài là Không) | Viết lại beat đỉnh theo cơ chế ở `tong-cam-xuc.md` mục 3; bỏ phần lệch |
+| CX-01 | Nặng | Lệch tông | Cảm xúc đọng lại khác tông đã chọn; hoặc có công cụ brief đã khoá (có hài khi brief ghi "không hài"), hoặc hài vượt liều của cảm xúc (`tong-cam-xuc.md` mục 5) | Viết lại beat đỉnh theo cơ chế ở `tong-cam-xuc.md` mục 3; bỏ phần lệch |
 | CX-02 | Vừa | Cảm xúc không leo thang | Cảm xúc đều từ đầu đến cuối, không có đỉnh | Dồn tới một beat đỉnh; beat trước chuẩn bị cho nó |
 | CX-03 | Vừa | Sến, ép cảm xúc | Nhạc, tiếng khóc hoặc thoại gọi tên cảm xúc thay cho tình huống | Bỏ phần ép, thay bằng hành động nhỏ, cụ thể |
 | CX-04 | Vừa | Hài phá cảnh lặng | Miếng hài chen vào ngay đỉnh cảm xúc hoặc khoảng lặng | Dời hài ra xa đỉnh ít nhất một beat, hoặc bỏ |

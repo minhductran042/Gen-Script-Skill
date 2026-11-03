@@ -26,7 +26,7 @@ Thoại hay không phải thoại ít, mà là thoại có việc để làm. M�
 | Đổi thế | Người đang yếu thành mạnh, người đang hỏi thành bị hỏi |
 | Lộ điều không nói ra | Lời nói một đằng, điều muốn nói một nẻo |
 | Đẩy tới quyết định | Sau đoạn này nhân vật không thể quay lại như cũ |
-| Tạo tiếng cười | Theo cơ chế ở `an-du-va-hai.md` mục 6 (chỉ khi tông có hài) |
+| Tạo tiếng cười | Theo cơ chế ở `an-du-va-hai.md` mục 6 (chỉ khi dùng công cụ Hài) |
 
 Đoạn thoại không làm việc nào thì cắt, dù nghe hay.
 

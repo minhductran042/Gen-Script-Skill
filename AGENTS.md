@@ -14,8 +14,9 @@ của team ở `shared/cau-hinh.md`.
     tắc, không phải công thức bắt buộc. Brief của lần làm được ghi đè.
   - `tham-khao/`: **tham khảo tuỳ chọn** do team cung cấp. Chỉ đọc khi brief của lần đó ghi ở mục "Tham khảo". Không
     tự ghi vào thư mục này, trừ `tham-khao/mau/` khi người dùng đồng ý lưu bản phân tích video mẫu.
-- Tông cảm xúc không có mặc định: hài và ẩn dụ chỉ là lựa chọn, người dùng chọn hoặc skill đề xuất theo
-  `shared/nghe/tong-cam-xuc.md`. Không tự thêm hài hay ẩn dụ khi tông không có.
+- Tông là cảm xúc người xem còn lại, không có mặc định; người dùng tả hoặc skill đề xuất. Hài, ẩn dụ, mượn thể loại là
+  công cụ kể do brainstorm chọn khi làm cảm xúc mạnh hơn (`shared/nghe/tong-cam-xuc.md` mục 4): không hỏi người dùng về
+  chúng, không dùng công cụ người dùng đã khoá.
 - Skill có bản gốc ở `.claude/skills/`, dùng chung cho Claude Code và Codex. `.agents/skills/` do
   `shared/scripts/dong_bo_codex.py` sinh, không sửa tay; đổi `name`, `description` hoặc thêm, xoá skill thì chạy lại script.
 - Video mẫu là tuỳ chọn. Không hỏi người dùng có mẫu không; có mẫu thì phân tích bằng `vid-phan-tich-mau` và áp

@@ -2,65 +2,61 @@
 
 Tài liệu nghề, mọi skill đều dùng. Ví dụ là minh hoạ do người viết skill nghĩ ra, không đưa nguyên vào kịch bản.
 
-**Không có tông mặc định.** Hài và ẩn dụ là hai lựa chọn trong nhiều lựa chọn, không phải điều kiện của một kịch bản tốt.
-Một video đạt khi nó gây được đúng cảm xúc đã chọn, dù không có một câu đùa hay một đồ vật ẩn dụ nào.
+**Tông là cảm xúc người xem còn lại sau khi xem.** Không có tông mặc định. Một video đạt khi nó gây được đúng cảm xúc đó.
+
+Hài, ẩn dụ và mượn thể loại **không phải một phần của tông**. Chúng là **công cụ kể** (mục 4, 5), giống dạng hook hay cấu
+trúc truyện: dùng khi chúng làm cảm xúc mạnh hơn, không dùng khi không cần. Không hỏi người dùng về chúng, không có hạn
+mức, và không có công cụ nào là mặc định.
 
 ---
 
-## 1. Ba trục và đường cảm xúc
+## 1. Cảm xúc và đường cảm xúc
 
-Tông gồm ba trục độc lập. Chọn trục này không ép trục kia.
+| Cảm xúc chủ đạo | Xem xong người xem… |
+|---|---|
+| **Vui** | cười, muốn tag bạn |
+| **Chạm, xót** | thấy thương một ai đó, nghẹn |
+| **Ấm** | mỉm cười, thấy dễ chịu |
+| **Rung động** | tim đập nhanh, nhớ cảm giác thích ai đó |
+| **Day dứt, tiếc** | ngồi lặng, nghĩ về một lựa chọn |
+| **Căng, hồi hộp** | nín thở chờ kết quả |
+| **Rợn** | lạnh gáy, muốn xem lại tìm chi tiết |
+| **Ngầu, phấn khích** | muốn đứng dậy làm gì đó |
+| **Khác** | người dùng tự gọi tên: chột dạ, nhẹ nhõm, xấu hổ… quy về cơ chế gần nhất ở mục 3 |
 
-| Trục | Câu hỏi | Giá trị |
-|---|---|---|
-| **Cảm xúc chủ đạo** | Xem xong, người xem còn lại cảm giác gì? | Vui · Chạm, xót · Ấm · Rung động · Day dứt, tiếc · Căng, hồi hộp · Rợn · Ngầu, phấn khích · Khác (người dùng tự gọi tên) |
-| **Cách kể** | Chuyện được kể bằng gì? | Kể thẳng đời thực · Ẩn dụ · Mượn thể loại |
-| **Độ hài** | Có bao nhiêu hài? | Không · Một miếng thoát · Đan xen · Hài là chính |
+**Đường cảm xúc** (tuỳ chọn) là cú chuyển trong video, ví dụ `cười → đau`, `căng → vỡ oà`, `ấm → day dứt`. Cảm xúc chủ đạo
+là cảm xúc ở **cuối** đường. Đây là cách duy nhất để "buồn mà có hài": hài nằm ở chặng đầu, cảm xúc buồn ở cuối.
 
-**Đường cảm xúc** (tuỳ chọn) là cú chuyển trong video, ví dụ `cười → đau`, `căng → vỡ oà`, `ấm → day dứt`. Video ngắn có
-cú chuyển thường mạnh hơn tông đều từ đầu đến cuối, nhưng cảm xúc chủ đạo vẫn là cảm xúc ở **cuối** đường.
-
-**Thông điệp** là lựa chọn riêng, độc lập với ba trục: `Có` hoặc `Không`. Video thuần giải trí, thuần cảm xúc không cần
-thông điệp. Người dùng không nói thì tuỳ concept: Vui + Hài là chính, Rợn, Ngầu mặc định Không; còn lại mặc định Có.
-
-Gợi ý khi người dùng mới chọn cảm xúc (các trục còn lại ghi `(đề xuất)`):
-
-| Cảm xúc | Cách kể gợi ý | Độ hài gợi ý |
-|---|---|---|
-| Vui | Ẩn dụ hoặc Mượn thể loại | Hài là chính |
-| Chạm, xót | Kể thẳng | Một miếng thoát hoặc Không |
-| Ấm | Kể thẳng | Đan xen nhẹ |
-| Rung động | Kể thẳng | Đan xen nhẹ |
-| Day dứt, tiếc | Kể thẳng | Không |
-| Căng, hồi hộp | Kể thẳng hoặc Mượn thể loại | Không |
-| Rợn | Mượn thể loại | Không |
-| Ngầu, phấn khích | Mượn thể loại | Không hoặc Một miếng thoát |
+**Thông điệp** là lựa chọn riêng: `Có` hoặc `Không`. Video thuần giải trí, thuần cảm xúc không cần thông điệp. Người dùng
+không nói thì tuỳ concept: Vui, Rợn, Ngầu mặc định Không; còn lại mặc định Có.
 
 ## 2. Chốt tông từ đầu vào
 
+Người dùng chỉ cần nói **một điều: xem xong muốn người xem cảm thấy gì**, bằng lời của mình. Skill quy câu đó về mục 1.
+
 | Đầu vào | Xử lý |
 |---|---|
-| Người dùng nói rõ ("buồn, kể thẳng, không hài") | Áp đúng, không hỏi lại |
-| Nói một phần ("video căng") | Áp phần đã nói, phần còn lại lấy bảng gợi ý ở mục 1, ghi `(đề xuất)` |
-| Nói mơ hồ ("hơi nặng tâm lý", "kiểu phim nghệ thuật") | Quy về ba trục, ghi `(đề xuất)` |
-| "Không hài", "không ẩn dụ" ở bất kỳ đâu | Khoá trục đó. Không skill nào được thêm lại, kể cả gợi ý sửa của review |
+| Lời tự do ("thấy thương bố", "cười xong thấy chột dạ", "hơi nặng tâm lý") | Quy về cảm xúc chủ đạo và đường cảm xúc nếu có, ghi `(suy ra)`. Giữ nguyên câu của người dùng trong brief |
+| Chọn một cảm xúc ở câu hỏi | Áp đúng, không hỏi thêm gì về hài hay ẩn dụ |
+| Nói thêm "muốn có hài" với cảm xúc buồn, căng, rợn | Đổi thành đường cảm xúc `cười → <cảm xúc đó>` |
+| "Không hài", "không ẩn dụ", "không mượn thể loại" | Ghi vào "Điều không muốn có" của brief. Công cụ đó bị khoá, không skill nào được thêm lại, kể cả gợi ý sửa của review |
+| "Muốn ẩn dụ", "quay kiểu phim tài liệu"… | Ghi vào "Công cụ muốn dùng" của brief; brainstorm dùng cho mọi concept |
+| "Thuần giải trí", "không cần thông điệp" | Thông điệp: Không. Khoá lại |
 | `shared/cau-hinh.md` có ghi Tông | Dùng làm mặc định, ghi `(cấu hình)` |
-| Có video mẫu | Lấy tông từ mục 4.5 của bản phân tích, ghi `(theo mẫu)` |
+| Có video mẫu | Lấy cảm xúc từ mục 4.5 của bản phân tích, ghi `(theo mẫu)` |
 | Series | Tập kế thừa tông trong `series.md`; đổi ở tập nào thì ghi trong brief tập đó |
-| Không nói gì | Hỏi một câu ở brief. Chọn "Để skill đề xuất" thì mỗi concept tự mang tông suy từ insight |
-| "Thuần giải trí", "không cần thông điệp" | Thông điệp: Không. Khoá lại như trục hài |
-| Brief cũ chỉ có dòng "Tông: ẩn dụ hài đời thường" | Quy đổi: Vui · Ẩn dụ · Đan xen |
+| Không nói gì | Hỏi một câu mở ở brief, có lựa chọn "Để skill đề xuất" |
+| Brief cũ ghi ba trục (`<cảm xúc> · <cách kể> · <độ hài>`) hoặc "ẩn dụ hài đời thường" | Cảm xúc giữ nguyên ("ẩn dụ hài đời thường" thành Vui); cách kể và độ hài chuyển thành công cụ của concept |
 
-**Khi skill tự đề xuất**, trong bộ concept phải:
+**Khi skill tự đề xuất**, trong bộ concept phải trải ít nhất **3 cảm xúc** khác nhau (chế độ nhanh: 2), và không quá một
+nửa concept dùng **cùng một cách tiếp cận** (cùng ẩn dụ, cùng hài là chính, cùng mượn thể loại, hay cùng kể thẳng không
+công cụ). Luật này để bộ concept đa dạng, không phải để bắt dùng công cụ.
 
-- trải ít nhất **3 cảm xúc** khác nhau (chế độ nhanh: 2);
-- có ít nhất **2 cách kể** khác nhau;
-- **không quá một nửa** số concept dùng ẩn dụ, và không quá một nửa có Độ hài là Hài là chính.
-
-Khi người dùng đã chọn tông, mọi concept theo đúng tông đó; sự khác nhau nằm ở insight, tình huống và hook.
+Khi người dùng đã chọn cảm xúc, mọi concept theo đúng cảm xúc đó; sự khác nhau nằm ở insight, tình huống, hook và công cụ.
 
 **Tông của từng kịch bản** được chốt khi người dùng chọn concept và ghi ở mục "Tông đã chốt" của brief, rồi vào
-`overview.tong`. `overview.tong` luôn là tông cụ thể, không bao giờ là "để skill đề xuất".
+`overview.tong`. **Công cụ** của concept ghi vào `overview.cong_cu`. `overview.tong` luôn là cảm xúc cụ thể, không bao giờ là
+"để skill đề xuất".
 
 ## 3. Tám cảm xúc
 
@@ -68,7 +64,7 @@ Mỗi cảm xúc có **cơ chế** riêng. Viết theo cơ chế, không viết 
 
 ### Vui
 
-- **Cơ chế:** lệch kỳ vọng, nhân vật có tật, leo thang tới mức phi lý. Chi tiết ở `an-du-va-hai.md` mục 6.
+- **Cơ chế:** lệch kỳ vọng, nhân vật có tật, leo thang tới mức phi lý. Công cụ hài ở mục 5 và `an-du-va-hai.md` mục 6.
 - **Hình, dựng:** cắt nhanh, phản ứng, máy tĩnh cho hài deadpan.
 - **Kết:** lật cuối, gọi lại hook, vòng lặp.
 - **Bẫy:** câu đùa thay cho tình huống; nhân vật tự cười; hài hạ thấp người khác.
@@ -136,22 +132,31 @@ Mỗi cảm xúc có **cơ chế** riêng. Viết theo cơ chế, không viết 
 - **Kết:** khung đẹp nhất để cuối, câu ngắn.
 - **Bẫy:** hành động nguy hiểm dễ bắt chước (VC-03); đẹp mà không có chuyện; vượt thiết bị hiện có (SX-02).
 
-## 4. Ba cách kể
+## 4. Công cụ kể
 
-| Cách kể | Sức mạnh | Cần có | Không cần |
+Mặc định là **kể thẳng đời thực**: không cần công cụ nào. Chỉ chọn thêm công cụ khi trả lời được "công cụ này làm cảm xúc
+đã chọn mạnh hơn thế nào". Mọi công cụ dùng được với mọi cảm xúc.
+
+| Công cụ | Làm gì cho cảm xúc | Cần có | Kiến thức |
 |---|---|---|---|
-| **Kể thẳng đời thực** | Thật, dễ thấy mình trong đó | Chi tiết cụ thể đúng tới mức người xem giật mình; một câu hỏi kịch tính rõ | Đồ vật ẩn dụ, khoảnh khắc mở khoá |
-| **Ẩn dụ** | Nói được điều khó nói, dễ nhớ | Điểm khớp rõ, mở khoá bằng hình (`an-du-va-hai.md`) | Hài: ẩn dụ buồn vẫn là ẩn dụ tốt |
-| **Mượn thể loại** | Lạ ngay từ hook, dễ làm điện ảnh | Giữ đúng luật của thể loại (trinh thám, kinh dị, tài liệu giả, phim võ hiệp…) | Phá kỳ vọng: thể loại có thể được kể nghiêm túc |
+| **Kể thẳng đời thực** (không công cụ) | Thật, dễ thấy mình trong đó | Chi tiết cụ thể đúng tới mức người xem giật mình; một câu hỏi kịch tính rõ | `thoai-va-do-gan.md` |
+| **Ẩn dụ** | Nói được điều khó nói, dễ nhớ; ẩn dụ buồn vẫn là ẩn dụ tốt | Điểm khớp rõ, mở khoá bằng hình | `an-du-va-hai.md` mục 1–5 |
+| **Mượn thể loại** | Lạ ngay từ hook, dễ làm điện ảnh | Giữ đúng luật của thể loại (trinh thám, kinh dị, tài liệu giả…); có thể kể nghiêm túc | `an-du-va-hai.md` mục 2 |
+| **Hài** | Cười; làm phần sau chạm mạnh hơn nhờ tương phản | Hài từ nhân vật và tình huống, đúng liều ở mục 5 | `an-du-va-hai.md` mục 6 |
 
-## 5. Bốn độ hài
+Một video thường dùng **nhiều nhất một công cụ chính**. Ghi ở thẻ concept dòng "Công cụ" và ở `overview.cong_cu`, ví dụ
+`Ẩn dụ đồ vật`, `Hài · Đan xen`, `Mượn thể loại tài liệu · Hài là chính`; không dùng công cụ nào thì ghi `Kể thẳng`.
 
-| Độ hài | Nghĩa | Lưu ý |
+## 5. Liều hài (khi dùng công cụ Hài)
+
+| Liều | Nghĩa | Hợp với cảm xúc chủ đạo |
 |---|---|---|
-| **Không** | Không có miếng hài nào | Không thêm "cho nhẹ bớt". Bài giảng được tránh bằng cách để hình nói, không phải bằng hài |
-| **Một miếng thoát** | Một chỗ duy nhất, thường ở cuối | Không đặt ngay trong khoảnh khắc chạm |
-| **Đan xen** | Hài nền của nhân vật và tình huống, xen phần cảm xúc khác | Dừng hài trước đỉnh cảm xúc ít nhất một beat |
-| **Hài là chính** | Mục tiêu là cười | Dùng trọn `an-du-va-hai.md` mục 6 |
+| **Một miếng thoát** | Một chỗ duy nhất, thường ở cuối | Chạm, Day dứt, Căng, Rợn, Ngầu; không đặt ngay trong khoảnh khắc chạm |
+| **Đan xen** | Hài nền của nhân vật và tình huống, xen phần cảm xúc khác | Vui, Ấm, Rung động; dừng hài trước đỉnh cảm xúc ít nhất một beat |
+| **Hài là chính** | Mục tiêu là cười | Chỉ Vui |
+
+Cảm xúc chủ đạo không phải Vui mà cần nhiều hài hơn liều trong bảng: dùng đường cảm xúc `cười → <cảm xúc>`, hài nằm ở
+chặng đầu. Không dùng hài thì không thêm "cho nhẹ bớt": bài giảng được tránh bằng cách để hình nói, không phải bằng hài.
 
 ## 6. Khung truyện theo cảm xúc
 
@@ -175,19 +180,22 @@ cảnh lâu hơn, miễn là có căng thẳng hoặc cảm xúc đang lớn d�
 **Đoán được kết** chỉ là lỗi khi chuyện dựa vào bất ngờ. Với Day dứt, Ấm, Rung động, người xem đoán được mà vẫn muốn xem là
 đạt.
 
-## 7. Luật nào áp theo tông
+## 7. Luật nào áp
+
+Theo **công cụ kịch bản thật sự dùng** (`overview.cong_cu`, không có thì đọc từ kịch bản), không theo tông:
 
 | Luật | Áp khi |
 |---|---|
-| Đặc tả đồ vật ẩn dụ, khoảnh khắc mở khoá, AD-01, AD-02, AD-04, AD-07, DA-06 | Cách kể là Ẩn dụ |
-| Kho cơ chế hài, nhịp hài, AD-05, AD-06 | Độ hài khác Không |
-| Miếng thoát ở kết | Độ hài là Một miếng thoát, Đan xen, Hài là chính. Các trường hợp khác kết bằng dư âm |
+| Đặc tả đồ vật ẩn dụ, khoảnh khắc mở khoá, AD-01, AD-02, AD-04, AD-07, DA-06 | Kịch bản dùng Ẩn dụ |
+| Kho cơ chế hài, nhịp hài, AD-05, AD-06 | Kịch bản dùng Hài |
+| Miếng thoát ở kết | Kịch bản dùng Hài; các trường hợp khác kết bằng dư âm hoặc kiểu kết của cảm xúc |
+| Luật của thể loại được mượn | Kịch bản dùng Mượn thể loại |
 | Thông điệp, lồng ghép (AD-08, AD-09, AD-11, phần thông điệp của GC-03) | Thông điệp là Có |
 | GC-04, bài đoán kết, phần "kết bất ngờ" | Chuyện dựa vào bất ngờ (mục 6) |
-| AD-03, AD-10, hook, giữ chân, chất điện ảnh, sản xuất, vùng cấm, nhóm CX | Mọi tông |
+| AD-03, AD-10, hook, giữ chân, thoại, chất điện ảnh, sản xuất, vùng cấm, nhóm CX | Mọi kịch bản |
 
-Thiếu thứ không áp dụng thì **không phải lỗi**: kể thẳng không có ẩn dụ, day dứt không có hài, video giải trí không có
-thông điệp đều là đúng.
+Không dùng công cụ nào thì **không phải lỗi**, và không được gợi ý thêm công cụ chỉ để "hay hơn". Kể thẳng không có ẩn dụ,
+day dứt không có hài, video giải trí không có thông điệp đều là đúng.
 
 Tông nặng phải đối chiếu `shared/luat/vung-cam.md`, nhất là VC-16 (không đùa về trầm cảm, tự hại; không mô tả hành vi tự
 hại).

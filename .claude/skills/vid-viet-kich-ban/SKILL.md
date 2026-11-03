@@ -13,9 +13,9 @@ Luôn đọc:
 - `shared/luat/dieu-kien-san-xuat.md`: sáu diễn viên (1 nữ, 5 nam), một máy quay, hai người dựng.
 - `shared/luat/vung-cam.md`.
 - `shared/luat/loi-kich-ban.md`: biết trước lỗi để tránh.
-- `shared/nghe/tong-cam-xuc.md`: ba trục tông, cơ chế và bẫy của cảm xúc đã chọn, luật nào áp theo tông (mục 7).
+- `shared/nghe/tong-cam-xuc.md`: cơ chế và bẫy của cảm xúc đã chọn, công cụ kể và liều hài, luật nào áp (mục 4, 5, 7).
 - `shared/nghe/cau-truc-va-nhip.md`, `hook-va-giu-chan.md`, `ngon-ngu-dien-anh.md`, `chu-de-va-thong-diep.md`, `thoai-va-do-gan.md`.
-- `shared/nghe/an-du-va-hai.md`: chỉ khi tông có ẩn dụ hoặc hài.
+- `shared/nghe/an-du-va-hai.md`: chỉ khi concept dùng công cụ Ẩn dụ, Mượn thể loại hoặc Hài.
 
 Tham khảo: **chỉ khi brief ghi ở mục "Tham khảo"**, và chỉ đúng thứ được nêu. Không lấy nội dung trong
 `shared/mau-format/`.
@@ -37,8 +37,8 @@ Viết qua tám lượt theo thứ tự. **Mỗi lượt chỉ tập trung một
 
 Ghi vào đầu `ghi-chu-viet.md` của dự án (file nháp, không xuất Excel):
 
-- **Tông**: chép ba trục và lựa chọn Thông điệp từ dòng "Tông đã chốt" của brief, không có thì từ thẻ concept. Mọi lượt
-  sau viết theo tông này.
+- **Tông**: chép cảm xúc, đường cảm xúc, **công cụ** và lựa chọn Thông điệp từ dòng "Tông đã chốt" của brief, không có thì
+  từ thẻ concept. Mọi lượt sau viết theo tông và công cụ này; không thêm công cụ khác.
 - **Logline** và **câu hỏi kịch tính chính** (xem `cau-truc-va-nhip.md` mục 1).
 - **Cài – trả**: chi tiết nào cài ở đầu, trả lại ở cuối với nghĩa gì.
 - **Đỉnh cảm xúc**: ở beat nào, bằng hình gì, theo cơ chế nào (`tong-cam-xuc.md` mục 3).
@@ -80,8 +80,8 @@ Thêm thoại vào cột Nội dung, sau hành động:
   hệ nhân vật.
 - **Mỗi nhân vật một giọng**: một người nói ngắn và thẳng, người kia vòng vo; một người hay hỏi lại, người kia hay
   đùa. Che tên nhân vật đi mà vẫn đoán được ai nói thì đạt.
-- **Có hài thì** câu đùa đặt từ gây cười ở cuối câu, trước câu đùa có một nhịp ngừng (ghi ở chỉ dẫn diễn). Độ hài là
-  Không thì không có câu đùa nào.
+- **Dùng công cụ Hài thì** câu đùa đặt từ gây cười ở cuối câu, trước câu đùa có một nhịp ngừng (ghi ở chỉ dẫn diễn), đúng
+  liều ở `tong-cam-xuc.md` mục 5. Không dùng Hài thì không có câu đùa nào.
 - **Không có câu giải thích ẩn dụ**, không có câu gọi tên cảm xúc thay cho tình huống, không có câu nói thẳng thông điệp
   trước beat lật.
 - Chỉ dẫn diễn ngắn đặt trước câu thoại: `A (nói nhỏ): "…"`.
@@ -128,8 +128,8 @@ Cột Text nổi bật:
 macOS / Linux: thay `py -I` bằng `python3 -I` ở mọi lệnh dưới đây.
 
 Ghi `du-an/<dự án>/kich-ban-v1.json` theo cấu trúc ở `format-kich-ban.md` mục 3. Điền đủ phần tổng quan (`overview`,
-mục 1a): lấy nhóm chủ đề, thông điệp, khán giả từ brief; tông từ dòng "Tông đã chốt" (ghi tông cụ thể, thông điệp Không thì để
-trống `thong_diep`); hook, diễn biến, kết, nhân vật từ thẻ concept và từ chính
+mục 1a): lấy nhóm chủ đề, thông điệp, khán giả từ brief; tông từ dòng "Tông đã chốt" (ghi cảm xúc cụ thể, thông điệp Không thì để
+trống `thong_diep`); công cụ vào `cong_cu`; hook, diễn biến, kết, nhân vật từ thẻ concept và từ chính
 kịch bản vừa viết (kịch bản đã khác concept thì ghi theo kịch bản); lưu ý sản xuất từ lượt 7. Rồi:
 
 ```
@@ -158,7 +158,7 @@ Báo lại: đường dẫn hai file, tổng giây ước tính, số nhân vậ
      quay lại lượt 1–2 cho phần liên quan, không vá từng câu.
 3. Sửa **mọi lỗi Nặng và Vừa**. Lỗi Nhẹ sửa khi không làm hỏng chỗ khác.
 4. **Giữ nguyên** những gì review ghi ở "Điểm mạnh nên giữ". Sửa mà phải đụng vào điểm mạnh thì ghi lý do.
-   **Giữ nguyên tông**: không thêm hài hay ẩn dụ để gỡ điểm, kể cả khi gợi ý sửa có nói vậy.
+   **Giữ nguyên tông và công cụ**: không thêm hài, ẩn dụ hay công cụ khác để gỡ điểm, kể cả khi gợi ý sửa có nói vậy.
 5. Sửa xong một lỗi cấu trúc thì chạy lại lượt 8 (bấm giờ) cho toàn kịch bản.
 6. Ghi bản mới `kich-ban-v(N+1).json`, **không ghi đè** bản cũ.
 7. Ghi `sua-vN.md`:

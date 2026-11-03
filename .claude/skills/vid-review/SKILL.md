@@ -1,6 +1,6 @@
 ---
 name: vid-review
-description: "Review một kịch bản video ngắn dọc qua năm lượt đọc với năm vai: người lướt (3 giây đầu, tắt tiếng), người xem hết (nhịp, đoán kết, đúng tông cảm xúc, cách kể), đạo diễn (chất điện ảnh), đội sản xuất (một máy quay, sáu diễn viên, bối cảnh, đạo cụ, dựng), và nền tảng (vùng cấm, bản quyền). Mỗi lỗi có mã từ danh mục (HK, GC, AD, CX, DA, TH, KT, SX, AT, NH, SR), mức Nặng / Vừa / Nhẹ, vị trí beat và giây, trích nguyên văn, và gợi ý sửa viết sẵn. Chấm điểm theo bảng tiêu chí có mốc, kết luận ĐẠT / CHƯA ĐẠT, ghi điểm mạnh nên giữ. Nhận JSON hoặc file Excel đúng format team. Dùng khi user nói 'review kịch bản', 'kịch bản này ổn chưa', 'chấm kịch bản', 'chỗ nào chưa ổn', 'cải tiến kịch bản này', 'góp ý kịch bản'. Không sửa kịch bản (sửa thì dùng vid-viet-kich-ban chế độ sửa)."
+description: "Review một kịch bản video ngắn dọc qua năm lượt đọc với năm vai: người lướt (3 giây đầu, tắt tiếng), người xem hết (nhịp, đoán kết, đúng cảm xúc, công cụ kể), đạo diễn (chất điện ảnh), đội sản xuất (một máy quay, sáu diễn viên, bối cảnh, đạo cụ, dựng), và nền tảng (vùng cấm, bản quyền). Mỗi lỗi có mã từ danh mục (HK, GC, AD, CX, DA, TH, KT, SX, AT, NH, SR), mức Nặng / Vừa / Nhẹ, vị trí beat và giây, trích nguyên văn, và gợi ý sửa viết sẵn. Chấm điểm theo bảng tiêu chí có mốc, kết luận ĐẠT / CHƯA ĐẠT, ghi điểm mạnh nên giữ. Nhận JSON hoặc file Excel đúng format team. Dùng khi user nói 'review kịch bản', 'kịch bản này ổn chưa', 'chấm kịch bản', 'chỗ nào chưa ổn', 'cải tiến kịch bản này', 'góp ý kịch bản'. Không sửa kịch bản (sửa thì dùng vid-viet-kich-ban chế độ sửa)."
 argument-hint: <kich-ban-vN.json | file .xlsx>
 ---
 
@@ -17,10 +17,10 @@ Luôn đọc:
 - `shared/nghe/` (cả tám file): làm thước đo.
 - `00-brief.md` của dự án nếu có: mục tiêu, nhóm khán giả, thời lượng, **tông**. Series thì đọc thêm `series.md`.
 
-**Chấm theo tông đã chọn, không theo sở thích hài.** Lấy tông từng kịch bản theo thứ tự: `overview.tong`, dòng "Tông đã
-chốt" của brief, các trục đã khoá trong brief; không có thì suy từ kịch bản và ghi `(suy ra)` ở đầu báo cáo. Luật nào áp
-theo tông nào: `tong-cam-xuc.md` mục 7. Thiếu hài ở kịch bản Độ hài Không, thiếu ẩn dụ ở kịch bản kể thẳng, thiếu thông
-điệp ở kịch bản không chọn thông điệp đều không phải lỗi, và không được gợi ý thêm vào.
+**Chấm theo cảm xúc đã chọn, không theo sở thích hài hay ẩn dụ.** Lấy tông và công cụ từng kịch bản theo thứ tự:
+`overview.tong` và `overview.cong_cu`, dòng "Tông đã chốt" của brief; không có thì suy từ kịch bản và ghi `(suy ra)` ở đầu
+báo cáo. Brief cũ ghi ba trục thì quy đổi theo `tong-cam-xuc.md` mục 2. Luật nào áp theo công cụ nào: mục 7 của file đó.
+Kịch bản không dùng hài, không dùng ẩn dụ, không có thông điệp đều không phải lỗi, và không được gợi ý thêm vào.
 
 Tham khảo: chỉ khi brief ghi. Có tham khảo thì thêm một câu hỏi: kịch bản có đúng tinh thần tham khảo người dùng chọn
 không. Không có tham khảo thì **không chấm theo bất kỳ phong cách riêng nào**, chỉ chấm theo luật và nghề.
@@ -133,7 +133,8 @@ Theo bảng ở `loi-kich-ban.md` mục 3. Mỗi tiêu chí:
 - Ghi **một câu lý do** có dẫn tới beat cụ thể.
 - Điểm phải nhất quán với bảng lỗi: còn HK-01 thì tiêu chí Hook không quá 4; còn SX-02 thì "Quay được" không quá 4; còn CX-01 thì
   "Sức mạnh cảm xúc" không quá 4.
-- Hai tiêu chí "Sức mạnh cảm xúc" và "Cách kể" chấm theo tông đã chọn, không trừ điểm vì thiếu hài hay ẩn dụ.
+- Hai tiêu chí "Sức mạnh cảm xúc" và "Cách kể" chấm theo cảm xúc đã chọn và công cụ kịch bản dùng; không trừ điểm vì
+  không dùng công cụ nào.
 
 Kết luận **ĐẠT** khi không còn lỗi Nặng **và** điểm tổng ≥ 8. Ngược lại là **CHƯA ĐẠT**. Ghi điểm hai chữ số thập phân và so
 ngưỡng bằng số chưa làm tròn. Điểm từ 7.8 đến 8.2: ghi thêm "sát ngưỡng" và nêu tiêu chí quyết định kết luận.
@@ -150,7 +151,7 @@ Ghi 2–4 điều làm tốt, có vị trí cụ thể. Mục này để ngườ
 # Review kich-ban-vN: <tên>
 
 **Kết luận: ĐẠT | CHƯA ĐẠT** · Điểm <x.x>/10 · <n> Nặng · <n> Vừa · <n> Nhẹ
-**Tông chấm theo:** <cảm xúc> · <cách kể> · <độ hài> (brief | overview | suy ra)
+**Tông chấm theo:** <cảm xúc> (· <đường cảm xúc>) · Công cụ <…> (brief | overview | suy ra)
 **Vấn đề lớn nhất (một câu):** <…>
 
 ## Soát cấu trúc (kich_ban.py kiem)
@@ -185,7 +186,7 @@ Một file JSON có nhiều kịch bản thì mỗi kịch bản một mục k�
 - Không sửa file kịch bản.
 - Không viết lại toàn bộ kịch bản. Mọi gợi ý gắn với một lỗi cụ thể.
 - Không chấm ĐẠT khi còn lỗi Nặng.
-- Không gợi ý thêm hài hay ẩn dụ khi tông không có.
+- Không gợi ý thêm công cụ (hài, ẩn dụ, mượn thể loại) khi kịch bản không dùng; không bao giờ đưa lại công cụ brief đã khoá.
 - Không gợi ý rút ngắn chỉ vì video dài; muốn cắt phải chỉ ra đoạn dính GC-08.
 - Không gợi ý thêm thoại hay đổi cách kể chỉ để giống một video mẫu.
 - Không đề xuất concept khác, không thêm việc ngoài bảng lỗi.

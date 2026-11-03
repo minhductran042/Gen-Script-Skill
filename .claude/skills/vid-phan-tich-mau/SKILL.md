@@ -27,7 +27,7 @@ Luôn đọc, vì đây là thước đo để gọi tên những gì thấy tro
 
 - `shared/nghe/hook-va-giu-chan.md`: dạng hook `HK-D01..D12`, điểm rơi, kỹ thuật giữ chân, kiểu kết.
 - `shared/nghe/cau-truc-va-nhip.md`: khung beat, cấu trúc khác, phân bổ giây.
-- `shared/nghe/tong-cam-xuc.md`: ba trục tông, cơ chế của từng cảm xúc, đường cảm xúc.
+- `shared/nghe/tong-cam-xuc.md`: cảm xúc và cơ chế, đường cảm xúc, công cụ kể và liều hài.
 - `shared/nghe/an-du-va-hai.md`: kiểu ẩn dụ, lúc lộ ẩn dụ, cơ chế hài, nhịp hài.
 - `shared/nghe/ngon-ngu-dien-anh.md`: cỡ cảnh, chuyển động, ánh sáng, âm thanh, nhịp dựng.
 - `shared/nghe/thoai-va-do-gan.md`: thoại làm việc gì, độ gần gũi.
@@ -152,8 +152,8 @@ Hình / âm / chữ (ba lớp) · dạng `HK-Dxx` · lời hứa với người 
 Khung beat (đối chiếu cau-truc-va-nhip.md) · vị trí lật · phân bổ giây
 ### 4.4. Câu chuyện, thông điệp, chủ đề
 Nhóm chủ đề · câu chuyện bề mặt · thông điệp · kiểu ẩn dụ, lúc lộ ẩn dụ (nếu có)
-### 4.5. Tông cảm xúc và hài
-Cảm xúc chủ đạo · cách kể · độ hài · đường cảm xúc · cơ chế tạo cảm xúc · nhịp hài nếu có (cài – chờ – bung)
+### 4.5. Tông cảm xúc và công cụ kể
+Cảm xúc chủ đạo · đường cảm xúc · công cụ kể (kể thẳng, ẩn dụ, mượn thể loại, hài và liều hài) · cơ chế tạo cảm xúc · nhịp hài nếu có (cài – chờ – bung)
 ### 4.6. Điện ảnh
 Cỡ cảnh chủ đạo · chuyển động máy · ánh sáng · màu · âm thanh (tiếng động, nhạc, im lặng)
 ### 4.7. Kết

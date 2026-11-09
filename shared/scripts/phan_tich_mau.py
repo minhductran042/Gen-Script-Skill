@@ -307,8 +307,15 @@ def _frame_times(dur, cuts):
         keep = [p for p in picked if p[1] != "giua"]
         fill = [p for p in picked if p[1] == "giua"]
         room = max(MAX_FRAMES - len(keep), 0)
-        step = max(len(fill) // room, 1) if room else len(fill) + 1
-        picked = sorted(keep + fill[::step][:room])[:MAX_FRAMES]
+        if room and fill:                        # spread the survivors over the whole video,
+            if room == 1:                        # never keep only the first ones: that blanks
+                idx = {len(fill) // 2}           # out the late shots of a cut-heavy video
+            else:
+                idx = {round(i * (len(fill) - 1) / (room - 1)) for i in range(room)}
+            fill = [fill[i] for i in sorted(idx)]
+        else:
+            fill = []
+        picked = sorted(keep + fill)             # never drop a cut frame: keep alone may exceed
     return picked
 
 

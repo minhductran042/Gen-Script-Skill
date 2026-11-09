@@ -267,6 +267,9 @@ hơn một video); điểm riêng của từng mẫu; một công thức chung �
 | Mac báo Python quá cũ, tải link video lỗi | Python 3.9 đi kèm Xcode | Script tự tìm Python 3.10 trở lên, cả ở `/opt/homebrew/bin` và `/usr/local/bin`; không có thì cảnh báo, cài bằng `brew install python` |
 | `OMP: Error #15` làm chép lời dừng đột ngột trên Mac | Hai bản OpenMP trong các gói | Script đặt `KMP_DUPLICATE_LIB_OK` trước khi nạp whisper |
 | `UnicodeEncodeError: 'charmap'` khi in json bằng `py -I -c` | `-I` bỏ qua cấu hình mã hoá trên Windows | Đọc file bằng Read, không in bằng Python |
+| Lưới không có khung nào trong một shot dài ở **cuối** video (ví dụ shot 15,5s mà không có ảnh lấp) | Video nhiều cut thì số khung vượt trần 60; `_frame_times` cắt `[:MAX_FRAMES]` sau khi đã sắp theo thời gian, nên bỏ hết khung lấp của phần cuối. Nguồn: mẫu "Môn đăng hộ đối", 2026-11-09 | Đã sửa trong `phan_tich_mau.py`: khi phải bớt khung thì lấy mẫu **đều trên cả dải**, và không bao giờ bỏ khung cut |
+| Hai shot liền nhau không bị nhận là cut dù nhìn rõ có cắt | Cùng nhân vật, cùng cỡ cảnh, cùng bảng màu thì điểm đổi cảnh của ffmpeg rất thấp; hạ `--nguong` xuống 0,2 vẫn không bắt | Không phải lỗi script. Shot nào dài bất thường thì mở vài khung trong `khung/` kiểm bằng mắt; mục 3 ghi "số cut đo được … , kiểm bằng mắt thấy thêm …" |
+| Thời lượng nội dung dài hơn thực tế khoảng 1 giây | Video kết bằng fade to đen rồi mới tới outro nền tảng; ranh giới mờ nên `_outro_start` nhận muộn | Kiểm khung quanh mốc `outro_tu`, ghi số đã kiểm vào mục 3 và nói rõ số của script |
 
 ## Không làm
 
